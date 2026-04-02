@@ -1,0 +1,131 @@
+############################################
+# Unity generated folders
+############################################
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+[Uu]ser[Ss]ettings/
+
+############################################
+# Asset Store tools cache
+############################################
+[Aa]ssets/AssetStoreTools/
+
+############################################
+# Addressables cache
+############################################
+[Aa]ssets/AddressableAssetsData/*/*.bin*
+
+############################################
+# Unity crash reports
+############################################
+sysinfo.txt
+
+############################################
+# IDEs and editors
+############################################
+.vscode/
+.idea/
+.vs/
+*.sln
+*.csproj
+*.unityproj
+*.booproj
+*.pidb
+*.svd
+*.user
+*.userprefs
+*.suo
+*.tmp
+
+############################################
+# Rider
+############################################
+.idea/
+*.DotSettings.user
+
+############################################
+# Visual Studio cache
+############################################
+.vs/
+.vsconfig
+
+############################################
+# OS generated files
+############################################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+############################################
+# Build artifacts
+############################################
+*.apk
+*.aab
+*.exe
+*.dll
+*.pdb
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+############################################
+# Unity Package Manager
+############################################
+Packages/packages-lock.json
+
+############################################
+# Logs
+############################################
+*.log
+
+############################################
+# Large source assets (INTENTIONALLY NOT TRACKED)
+# Prevents the need for Git LFS
+############################################
+*.psd
+*.psb
+*.blend
+*.fbx~
+*.kra
+*.xcf
+*.aif
+*.aiff
+*.wav
+*.mp3
+*.flac
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+############################################
+# Optional: Source asset folders
+# (use if you keep raw art outside runtime assets)
+############################################
+_ArtSource/
+Assets_Source/
+SourceAssets/
+
+############################################
+# Optional: Backups
+############################################
+*.bak
+*.backup
+*.old
+
+############################################
+# Optional: Unity test output
+############################################
+TestResults/
