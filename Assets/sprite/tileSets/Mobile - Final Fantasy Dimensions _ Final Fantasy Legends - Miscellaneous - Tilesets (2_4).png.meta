@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 887611466f6c6bc4291ff54a35073dd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1871248838229631864
+    second: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+      - Tilesets (2_4)_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1366
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6db62d13e1890747b1093914aa03384
+      internalID: 1871248838229631864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 1366
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bb8164c95ca954cbe34ae7152f4663
+      internalID: -1789995371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walltopLeftCorner
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 1049
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 191ab63d2372bb848afbb0f05cb68ccc
+      internalID: -991480500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 684
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe281bc4da506f14da7d57c9725a8d3f
+      internalID: -560865368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_4
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 684
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04cce94bd8c4a043bcb0cc69830fdae
+      internalID: 1520102749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: horWall1
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 953
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e95c902ac5df54e80bc26589bf09d7
+      internalID: -251136918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9995020db4198964dbdfa718a95548f5
+      internalID: 1369932382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_7
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bda00eff2b8554a4b8fd1f4eb4fa71e8
+      internalID: 1666300381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous
+        - Tilesets (2_4)_8
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 2
+        width: 579
+        height: 682
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d464ffea6cc503489e156e6fd21093b
+      internalID: 1202222982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e28f25d2983dd094d88991017e525623
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":1042.0,"y":1229.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_0: 1871248838229631864
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_1: -1789995371
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_3: -560865368
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_4: 1520102749
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_6: 1369932382
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_7: 1666300381
+      Mobile - Final Fantasy Dimensions _ Final Fantasy Legends - Miscellaneous - Tilesets (2_4)_8: 1202222982
+      horWall1: -251136918
+      walltopLeftCorner: -991480500
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
