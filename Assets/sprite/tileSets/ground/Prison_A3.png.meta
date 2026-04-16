@@ -619,7 +619,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_A3_23
+      name: guardFloors
       rect:
         serializedVersion: 2
         x: 672
@@ -795,7 +795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_A3_31
+      name: guardFloors2
       rect:
         serializedVersion: 2
         x: 672
@@ -848,7 +848,6 @@ TextureImporter:
       Prison_A3_20: 440509572
       Prison_A3_21: -415920295
       Prison_A3_22: -1739981982
-      Prison_A3_23: -403523372
       Prison_A3_24: -1516506102
       Prison_A3_25: -256634675
       Prison_A3_26: -1901960685
@@ -857,13 +856,14 @@ TextureImporter:
       Prison_A3_29: -141432964
       Prison_A3_3: -580549701
       Prison_A3_30: -849922996
-      Prison_A3_31: 386629651
       Prison_A3_4: -911217003
       Prison_A3_5: 1007764198
       Prison_A3_6: 1338646552
       Prison_A3_7: -1316096660
       Prison_A3_8: 1496151748
       Prison_A3_9: 1084060369
+      guardFloors: -403523372
+      guardFloors2: 386629651
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
