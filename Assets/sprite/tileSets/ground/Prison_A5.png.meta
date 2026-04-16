@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 40
+  spritePixelsToUnits: 48
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -157,13 +157,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_A5_3
+      name: showerdrain
       rect:
         serializedVersion: 2
-        x: 192
-        y: 720
-        width: 48
-        height: 48
+        x: 193
+        y: 721
+        width: 46
+        height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,10 +292,10 @@ TextureImporter:
       name: blackout1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 720
-        width: 47
-        height: 48
+        x: 49
+        y: 721
+        width: 46
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2643,13 +2643,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_A5_115
+      name: towerFloor
       rect:
         serializedVersion: 2
-        x: 192
-        y: 48
-        width: 48
-        height: 48
+        x: 193
+        y: 50
+        width: 46
+        height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2940,7 +2940,6 @@ TextureImporter:
       Prison_A5_112: 68281861
       Prison_A5_113: 1238372960
       Prison_A5_114: 701987501
-      Prison_A5_115: -1509910216
       Prison_A5_116: -1319719204
       Prison_A5_117: -514482439
       Prison_A5_118: 1134086130
@@ -2971,7 +2970,6 @@ TextureImporter:
       Prison_A5_27: -1141627855
       Prison_A5_28: -210684129
       Prison_A5_29: 1052200466
-      Prison_A5_3: -379961369
       Prison_A5_30: -402224560
       Prison_A5_31: -1624819984
       Prison_A5_32: -59228642
@@ -3049,6 +3047,8 @@ TextureImporter:
       Prison_A5_98: -319701954
       Prison_A5_99: 86789436
       blackout1: 1242412325
+      showerdrain: -379961369
+      towerFloor: -1509910216
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
