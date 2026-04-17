@@ -1340,9 +1340,9 @@ TextureImporter:
       name: cellOpen2
       rect:
         serializedVersion: 2
-        x: 807
+        x: 1005
         y: 109
-        width: 406
+        width: 200
         height: 343
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1362,9 +1362,9 @@ TextureImporter:
       name: cellClosed
       rect:
         serializedVersion: 2
-        x: 312
+        x: 401
         y: 613
-        width: 406
+        width: 200
         height: 343
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1512,6 +1512,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: barwalls_0
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 207
+        width: 69
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0034b1358f3af948b6b5ddd849922a0
+      internalID: -1803355334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1526,6 +1548,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      barwalls_0: -1803355334
       barwalls_1: -6688329424713033779
       barwalls_10: 5296935714759886752
       barwalls_11: -982057055957938801
