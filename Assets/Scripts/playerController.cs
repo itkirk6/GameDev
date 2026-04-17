@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngineInternal;
 
 public class playerController : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class playerController : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    // camera stuffs
+    private Camera cam;
+    [SerializeField] private Vector2 deadZone = new Vector2(1.5f, 1f);
+
     // runtime variables
     private Vector2 movementInput;
     private Vector2 lastMove = Vector2.down;
@@ -18,12 +23,14 @@ public class playerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        cam = FindFirstObjectByType<Camera>();
     }
 
     private void Update()
     {
         getInput();
         handleAnimations();
+        handleCamera();
     }
 
     private void FixedUpdate()
@@ -72,6 +79,36 @@ public class playerController : MonoBehaviour
         animator.SetBool("isMoving", isMoving);
         animator.SetFloat("moveX", lastMove.x);
         animator.SetFloat("moveY", lastMove.y);
+    }
+
+    void handleCamera()
+    {
+        Vector3 camPos = cam.transform.position;
+
+        float xDiff = transform.position.x - camPos.x;
+        float yDiff = transform.position.y - camPos.y;
+
+        if (xDiff > deadZone.x)
+        {
+            camPos.x = transform.position.x - deadZone.x;
+        }
+
+        if (xDiff < -deadZone.x)
+        {
+            camPos.x = transform.position.x + deadZone.x;
+        }
+
+        if (yDiff > deadZone.y)
+        {
+            camPos.y = transform.position.y - deadZone.y;
+        }
+        if (yDiff < deadZone.y)
+        {
+            camPos.y = transform.position.y + deadZone.y;
+        }
+
+        cam.transform.position = new Vector3(camPos.x, camPos.y, cam.transform.position.z);
+
     }
 
 }
