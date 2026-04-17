@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    [Header("Door State")]
+    [Header("doors State")]
     public bool isOpen = false;
     public bool isLocked = false;
 
-    [Header("Key Requirement")]
+    [Header("key required")]
     public string requiredKeyID = "";
 
-    [Header("Door Visuals")]
+    [Header("door images")]
     public SpriteRenderer spriteRend;
     public Sprite closedImg;
     public Sprite openImg;
-    [Header("Collision")]
+    [Header("collider")]
     public Collider2D doorCollider;
 
-    public void Interact(PlayerInventory playerInventory)
+    public void interact(PlayerInventory playerInventory)   //change this for the player inventory for keys to work
     {
         if (isLocked)
         {
