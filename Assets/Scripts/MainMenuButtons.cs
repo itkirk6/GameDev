@@ -16,7 +16,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene("Prison");
+        SceneManager.LoadScene("prison");
     }
 
     public void OpenHowToPlay()
