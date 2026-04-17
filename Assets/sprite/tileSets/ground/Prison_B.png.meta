@@ -666,15 +666,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_B_19
+      name: bar1
       rect:
         serializedVersion: 2
-        x: 674
-        y: 549
-        width: 45
-        height: 72
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 289
+        y: 144
+        width: 47
+        height: 48
+      alignment: 9
+      pivot: {x: 0.48944286, y: 0.7222414}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1062,7 +1062,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_B_37
+      name: laundrycab2
       rect:
         serializedVersion: 2
         x: 336
@@ -1084,7 +1084,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_B_38
+      name: laundryCab1
       rect:
         serializedVersion: 2
         x: 384
@@ -1106,7 +1106,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_B_39
+      name: laundryCab3
       rect:
         serializedVersion: 2
         x: 432
@@ -1259,6 +1259,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: bar2
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 144
+        width: 48
+        height: 48
+      alignment: 9
+      pivot: {x: 0.50516766, y: 0.6912311}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b54fdf3e9ed75c49a403a640a9af585
+      internalID: -1793859722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1283,7 +1305,6 @@ TextureImporter:
       Prison_B_16: -5665440628513020235
       Prison_B_17: -709830168171480181
       Prison_B_18: -2652605371726390520
-      Prison_B_19: -7987484701194141477
       Prison_B_2: 1915029830232225769
       Prison_B_20: -5320035024951378878
       Prison_B_22: -3877899629157237819
@@ -1299,9 +1320,6 @@ TextureImporter:
       Prison_B_34: -5613067464706683302
       Prison_B_35: -5311284130867201599
       Prison_B_36: -5064569322630949251
-      Prison_B_37: -3197364422757601068
-      Prison_B_38: -7389643381891729680
-      Prison_B_39: -2743242737262797932
       Prison_B_4: 7905522274542776974
       Prison_B_40: -4822929180490290293
       Prison_B_41: 811630391269031518
@@ -1314,9 +1332,14 @@ TextureImporter:
       Prison_B_7: -1371403737032420504
       Prison_B_8: -5085258908933613176
       Prison_B_9: 8496651443450199733
+      bar1: -7987484701194141477
+      bar2: -1793859722
       fence1: 1309703557516563587
       fenceLeft: 2224691599264815528
       fenceRight: -7472943883528771971
+      laundryCab1: -7389643381891729680
+      laundryCab3: -2743242737262797932
+      laundrycab2: -3197364422757601068
       table2: -5425894980648025895
       table3: 2476395973431991649
   mipmapLimitGroupName: 

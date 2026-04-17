@@ -3419,7 +3419,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_C_132
+      name: towelStack
       rect:
         serializedVersion: 2
         x: 528
@@ -3441,13 +3441,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Prison_C_133
+      name: towel
       rect:
         serializedVersion: 2
-        x: 548
-        y: 29
-        width: 102
-        height: 130
+        x: 491
+        y: 161
+        width: 25
+        height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3535,8 +3535,6 @@ TextureImporter:
       Prison_C_13: 8462392771023352406
       Prison_C_130: 4950738425265145763
       Prison_C_131: -3120907209189197813
-      Prison_C_132: -4645493076688823390
-      Prison_C_133: -2820761970026589892
       Prison_C_134: 8539060220412238600
       Prison_C_14: 5993205022260456285
       Prison_C_15: -4492019492162952568
@@ -3633,6 +3631,8 @@ TextureImporter:
       Prison_C_98: -2269512512407798421
       Prison_C_99: -5506666252725332292
       caffeteria: 8892963301072395427
+      towel: -2820761970026589892
+      towelStack: -4645493076688823390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
