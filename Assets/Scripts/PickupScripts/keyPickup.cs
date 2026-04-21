@@ -1,17 +1,17 @@
-using UnityEngine;
+// using UnityEngine;
 
-public class keyPickup : MonoBehaviour, IPickup
-{
-    public keyTypes key;
+// public class keyPickup : MonoBehaviour, IPickup
+// {
+//     public keyTypes key;
  
-    public void pickup(PlayerInteraction playerInteraction)
-    {
-        playerInventory playerInv = playerInteraction.GetComponent<playerInventory>();
+//     public void pickup(PlayerInteraction playerInteraction)
+//     {
+//         playerInventory playerInv = playerInteraction.GetComponent<playerInventory>();
 
-        if (playerInv != null)
-        {
-            playerInv.addKey(key);
-            Destroy(gameObject);
-        }
-    }
-}
+//         if (playerInv != null)
+//         {
+//             playerInv.addKey(key);
+//             Destroy(gameObject);
+//         }
+//     }
+// }

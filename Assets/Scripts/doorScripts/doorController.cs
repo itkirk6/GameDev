@@ -1,62 +1,25 @@
 using UnityEngine;
 
-public class doorController : MonoBehaviour, IInteractable
+public class DoorController : MonoBehaviour
 {
-    public bool isLocked;
-    public bool isOpen;
-    public keyTypes requiredKey = keyTypes.none;
-
+    [Tooltip("The name of the key that is required to open this specific door. e.g. cafeteria")]
+    public string requiredKeyName;
     public Sprite closedSprite;
     public Sprite openSprite;
 
     public SpriteRenderer spriteRenderer;
     public Collider2D blockingCollider;
+    private bool isOpen = false;
+    private bool isLocked = true;
 
     private void Awake()
     {
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
 
-        updateDoorVisual();
+        UpdateDoorVisual();
     }
-
-    public void Interact(PlayerInteraction playerInteraction)
-    {
-        playerInventory playerInv = playerInteraction.GetComponent<playerInventory>();
-
-        if (isLocked)
-        {
-            if (playerInv != null && playerInv.hasKey(requiredKey))
-            {
-                isLocked = false;
-                Debug.Log("unlocked door with " + requiredKey);
-            }
-            else
-            {
-                Debug.Log("door is locked, requires " + requiredKey);
-                return;
-            }
-        }
-
-        if (isOpen)
-            closeDoor();
-        else
-            openDoor();
-    }
-
-    private void openDoor()
-    {
-        isOpen = true;
-        updateDoorVisual();
-    }
-
-    private void closeDoor()
-    {
-        isOpen = false;
-        updateDoorVisual();
-    }
-
-    private void updateDoorVisual()
+    private void UpdateDoorVisual()
     {
         if (spriteRenderer != null)
         {
@@ -68,5 +31,43 @@ public class doorController : MonoBehaviour, IInteractable
 
         if (blockingCollider != null)
             blockingCollider.enabled = !isOpen;
+    }
+
+    public void TryOpen()
+    {
+        PlayerInventory inv = FindFirstObjectByType<PlayerInventory>();
+
+        if(isLocked)
+        {
+            if(inv != null && inv.HasKey(requiredKeyName))
+            {
+                isLocked = false;
+                Debug.Log("unlocked door with " + requiredKeyName);
+            }
+            else
+            {
+                Debug.Log("door is locked, requires " + requiredKeyName);
+                return;
+            }
+        }
+
+        if(isOpen)
+            CloseDoor();
+        else
+            OpenDoor();
+    }
+
+    private void OpenDoor()
+    {
+        isOpen = true;
+        UpdateDoorVisual();
+        Debug.Log("Door opened");
+    }
+
+    private void CloseDoor()
+    {
+        isOpen = false;
+        UpdateDoorVisual();
+        Debug.Log("Door closed");
     }
 }

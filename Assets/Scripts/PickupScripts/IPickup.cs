@@ -1,4 +1,4 @@
-public interface IPickup
-{
-    void pickup(PlayerInteraction playerInteraction);
-}
+// public interface IPickup
+// {
+//     void pickup(PlayerInteraction playerInteraction);
+// }

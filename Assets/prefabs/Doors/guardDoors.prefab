@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5984859719475265003}
   - component: {fileID: 9077077526473625392}
   - component: {fileID: 2952129617404553318}
+  - component: {fileID: 90477206188203535}
   m_Layer: 6
   m_Name: guardDoors
   m_TagString: Untagged
@@ -106,9 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469528d68d5fdbc4e9a7fd47cd3e8174, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::doorController
-  isLocked: 1
-  isOpen: 0
-  requiredKey: 3
+  requiredKeyName: Guard
   closedSprite: {fileID: 893768026290445078, guid: 0768097925580614e8a77dd76ebba346, type: 3}
   openSprite: {fileID: 5244584, guid: 0768097925580614e8a77dd76ebba346, type: 3}
   spriteRenderer: {fileID: 5196295439051739166}
@@ -205,3 +204,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.55633044, y: 1.7359103}
   m_EdgeRadius: 0
+--- !u!114 &90477206188203535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447348095953366993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299e8b532554631468ec6b47cc5f44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  hoverMultiplier: 1.1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5984859719475265003}
+        m_TargetAssemblyTypeName: DoorController, Assembly-CSharp
+        m_MethodName: TryOpen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
