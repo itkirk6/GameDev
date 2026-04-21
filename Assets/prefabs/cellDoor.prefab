@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5999863406511293609}
   - component: {fileID: 5196295439051739166}
-  - component: {fileID: 9077077526473625392}
   - component: {fileID: 5984859719475265003}
-  m_Layer: 0
+  - component: {fileID: 9077077526473625392}
+  - component: {fileID: 2952129617404553318}
+  m_Layer: 6
   m_Name: cellDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2007, y: -3.5973, z: 0}
-  m_LocalScale: {x: 0.64567804, y: 0.50838894, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.50838894, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,20 +80,39 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -5044231
+  m_SortingLayer: -2
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1993111064862304691, guid: 9753f3a0151e70a4290295964fc40efb, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.16, y: 0.98}
+  m_Size: {x: 0.28, y: 0.53}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5984859719475265003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5447348095953366993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469528d68d5fdbc4e9a7fd47cd3e8174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::doorController
+  isLocked: 1
+  isOpen: 0
+  requiredKey: 1
+  closedSprite: {fileID: -2559203469631848017, guid: 34a090eceea4a2544b300ff3593c650e, type: 3}
+  openSprite: {fileID: 6546672625700160552, guid: 34a090eceea4a2544b300ff3593c650e, type: 3}
+  spriteRenderer: {fileID: 5196295439051739166}
+  blockingCollider: {fileID: 9077077526473625392}
 --- !u!61 &9077077526473625392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,24 +150,58 @@ BoxCollider2D:
   m_Offset: {x: 0.0025190115, y: -0.0031992793}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5714286, y: 0.98}
-    newSize: {x: 1.16, y: 0.98}
+    pivot: {x: 0.25378036, y: 0.39076167}
+    oldSize: {x: 0.56, y: 1.42}
+    newSize: {x: 0.28, y: 0.53}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.55037796, y: 0.96067107}
+  m_Size: {x: 1, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &5984859719475265003
-MonoBehaviour:
+--- !u!61 &2952129617404553318
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5447348095953366993}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 469528d68d5fdbc4e9a7fd47cd3e8174, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::doorController
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.9, y: 2}
+  m_EdgeRadius: 0

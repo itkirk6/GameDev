@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 709485191118320488}
   - component: {fileID: 7149990435050150261}
   - component: {fileID: 5856785434287556769}
+  - component: {fileID: 1029281208009209144}
+  - component: {fileID: 6117309677905526186}
   - component: {fileID: 4972828584291348964}
   - component: {fileID: 7345167233347501042}
   - component: {fileID: 8219190591520073468}
@@ -108,6 +110,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerController
   movementSpeed: 1.5
+  deadZone: {x: 1.5, y: 1}
+--- !u!114 &1029281208009209144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475872235262945198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26a81a0864e94f5458f7762904b89431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::playerInventory
+--- !u!114 &6117309677905526186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475872235262945198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649793aee424a3e4f80e0ba75526ac0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  interactRadius: 2
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  pickupLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  currentItemPrefab: {fileID: 0}
 --- !u!50 &4972828584291348964
 Rigidbody2D:
   serializedVersion: 5
