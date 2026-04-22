@@ -41,6 +41,9 @@ TagManager:
   - name: floor
     uniqueID: 2781235061
     locked: 0
+  - name: behind walls
+    uniqueID: 4260876817
+    locked: 0
   - name: walls
     uniqueID: 4289923065
     locked: 0

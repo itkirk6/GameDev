@@ -27,13 +27,30 @@ public class Dialogue : MonoBehaviour
     public float typingSpeed = 0.02f;
     public float duration = 4f;
     private bool active = true;
+    public bool isTalking { get; private set; }
+    public bool isOnLastLine => sentences != null && index >= sentences.Length - 1;
+    private bool lineFinished = false;
+
     
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Skip();
+        }
+    }
+
 
     IEnumerator Type()
     {
-        
-        animController.ResetTrigger("Disappear");
+        if (sentences == null || sentences.Length == 0)
+            yield break;
+
+        if (index < 0 || index >= sentences.Length)
+            yield break;
+            animController.ResetTrigger("Disappear");
         textBox.text = "";
+        lineFinished = false;
         foreach (var letter in sentences[index].ToCharArray())
         {
             if (active)
@@ -46,11 +63,16 @@ public class Dialogue : MonoBehaviour
             else
             {
                 textBox.text = sentences[index];
+                lineFinished = true;
+                yield break;
             }
 
         }
+        lineFinished = true;
 
     }
+
+    
 
     IEnumerator TypeMany()
     {
@@ -100,68 +122,93 @@ public class Dialogue : MonoBehaviour
 
     public void Say(string _text, string _characterName = null, float _duration = 0)
     {
+        StopAllCoroutines();
+        active = true;
+        isTalking = true;
         animController.SetTrigger("Appear");
-        string[] phrase = { _text};
-        sentences = phrase;
 
+        string[] phrase = { _text };
+        sentences = phrase;
         index = 0;
+
         if (_duration > 0)
         {
             duration = _duration;
         }
+
         UpdateName(_characterName);
         StartCoroutine(Type());
     }
 
     public void Say(string[] _text, string _characterName = null, float _duration = 0)
     {
+        StopAllCoroutines();
+        active = true;
+        isTalking = true;
         animController.SetTrigger("Appear");
+
         sentences = _text;
         index = 0;
-        if (_duration>0)
+
+        if (_duration > 0)
         {
             duration = _duration;
         }
+
         UpdateName(_characterName);
-        StartCoroutine(TypeMany());
+        StartCoroutine(Type());
     }
 
 
     public void Skip()
     {
-        if (index < sentences.Length-1)
+        Debug.Log("skipped");
+        if (sentences == null || sentences.Length == 0)
+            return;
+
+        if (!lineFinished)
         {
-            if (active)
-            {
-                active = false;
-                Invoke("SkipInvoke", 1f);
-            }
-            else
-            {
-                index++;
-                StartCoroutine(Type());
-                Invoke("SkipInvoke", 1f);
-            }
+            active = false;
+            return;
+        }
+
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            active = true;
+            StopAllCoroutines();
+            StartCoroutine(Type());
+            Invoke(nameof(resetActive), 0.1f);
         }
         else
         {
-            //Debug.Log("Should Shrink");
-            animController.SetTrigger("Disappear");
+            Clear();
         }
-           
+    }
+    private void resetActive()
+    {
+        active = true;
     }
 
     private void SkipInvoke()
     {
         active = true;
     }
+    private void endDialogue()
+    {
+        isTalking = false;
+        animController.SetTrigger("Disappear");
+    }
 
     public void Clear()
     {
+        StopAllCoroutines();
+        isTalking = false;
         animController.SetTrigger("Disappear");
         sentences = null;
         UpdateName();
         textBox.text = "";
+        isTalking = false;
 
     }
 }

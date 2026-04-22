@@ -16,14 +16,13 @@ public class showerController : MonoBehaviour
 
     public void Interact()
     {
-        Debug.Log("madeit");
         if (waterParticles == null)
             return;
 
         if (togShower)
-        {
+        {  
             if (isOn)
-                turnOff();
+                turnOff();  
             else
                 turnOn();
         }
