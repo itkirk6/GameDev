@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemPrefab: {fileID: 4280108871288490006}
   itemName: Flashlight
   itemType: 0
   itemValue: 0

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Flashlight: MonoBehaviour, IUsable
+public class Flashlight: MonoBehaviour, IUsableItem
 {
     public void UseItem()
     {

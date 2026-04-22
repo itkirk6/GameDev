@@ -1,5 +1,5 @@
 using UnityEngine;
-public class Gun : MonoBehaviour, IUsable
+public class Gun : MonoBehaviour, IUsableItem
 {
     public GameObject bulletPrefab;
     public Transform firedFrom;

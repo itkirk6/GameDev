@@ -1,8 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
     public enum PickupType {Equippable, Key, Consumable}
+    public GameObject itemPrefab;
     public string itemName;
     public PickupType itemType;
     public int itemValue;
@@ -12,8 +14,7 @@ public class ItemPickup : MonoBehaviour
         if(inv != null)
         {
             inv.ProcessPickup(this);
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
-
     }
 }

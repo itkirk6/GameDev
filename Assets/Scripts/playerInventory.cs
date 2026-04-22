@@ -1,52 +1,86 @@
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    // private HashSet<keyTypes> keys = new HashSet<keyTypes>();
-
-    // public void addKey(keyTypes key)
-    // {
-    //     if (key != keyTypes.none)
-    //     {
-    //         keys.Add(key);
-    //         Debug.Log("picked up key: " + key);
-    //     }
-    // }
-
-    // public bool hasKey(keyTypes key)
-    // {
-    //     if (key == keyTypes.none)
-    //         return true;
-
-    //     return keys.Contains(key);
-    // }
-
-    public string currentEquippedItem = "None";
-    public string previouslyEquippedItem;
+    // public string currentEquippedItem = "None";
+    // public string previouslyEquippedItem;
     public List<string> keys = new List<string>();
     public int playerHealth = 100;
+    public Image equippedItemUIBox;
+    public GameObject currentEquippedItem;
+     GameObject currentDropPrefab;
 
+    void Start()
+    {
+        if(equippedItemUIBox != null)
+            equippedItemUIBox.enabled = false;
+    }
+
+    void Update()
+    {
+        if(Input.GetMouseButtonDown(0) && currentEquippedItem != null)
+        {
+            IUsableItem usableItem = currentEquippedItem.GetComponent<IUsableItem>();
+            if(usableItem != null)
+            {
+                usableItem.UseItem();
+            }
+        }
+    }
     public void ProcessPickup( ItemPickup pickupInfo)
     {
+        Debug.Log("ProcessPickup() was called");
         switch(pickupInfo.itemType)
         {
             case ItemPickup.PickupType.Equippable:
-                previouslyEquippedItem = currentEquippedItem;
-                currentEquippedItem = pickupInfo.itemName;
-                Debug.Log("Equipped: {currentEquippedItem}");
+            
+                //Debug.Log($"Current Drop Prefab is: {(currentDropPrefab == null ? "NULL" : currentDropPrefab.name + "something ")}");
+
+                if(currentEquippedItem != null)
+                {
+                    currentEquippedItem.transform.SetParent(null);
+                    currentEquippedItem.transform.localScale = currentEquippedItem.GetComponent<InteractableObject>().originalScale;
+                    currentEquippedItem.transform.position = transform.position;
+                    currentEquippedItem.GetComponent<SpriteRenderer>().enabled = true;
+                    currentEquippedItem.GetComponent<Collider2D>().enabled = true;
+                    currentEquippedItem.GetComponent<InteractableObject>().enabled = true;
+                    currentEquippedItem.GetComponent<ItemPickup>().enabled = true;
+
+                }
+
+                currentEquippedItem = pickupInfo.gameObject;
+
+                currentEquippedItem.transform.SetParent(transform);
+                currentEquippedItem.transform.position = Vector3.zero;
+
+                currentEquippedItem.GetComponent<SpriteRenderer>().enabled = false;
+                currentEquippedItem.GetComponent<Collider2D>().enabled = false;
+
+                currentEquippedItem.GetComponent<InteractableObject>().enabled = false;;
+                currentEquippedItem.GetComponent<ItemPickup>().enabled = false;
+
+                if(equippedItemUIBox != null)
+                {
+                    equippedItemUIBox.sprite = pickupInfo.GetComponent<SpriteRenderer>().sprite;
+                    equippedItemUIBox.enabled = true;
+                    equippedItemUIBox.color = Color.white;
+                }
+
+                Debug.Log($"Equipped: {currentEquippedItem}");
                 break;
             
             case ItemPickup.PickupType.Consumable:
                 playerHealth += pickupInfo.itemValue;
-                Debug.Log("Restored {pickupInfo.itemValue} health.");
+                Debug.Log($"Restored {pickupInfo.itemValue} health.");
                 break;
 
             case ItemPickup.PickupType.Key:
                 if(!keys.Contains(pickupInfo.itemName))
                 {
                     keys.Add(pickupInfo.itemName);
-                    Debug.Log("Added {pickupInfo.itemName} key to inventory.");
+                    Debug.Log($"Added {pickupInfo.itemName} key to inventory.");
                 }
                 break;
         }

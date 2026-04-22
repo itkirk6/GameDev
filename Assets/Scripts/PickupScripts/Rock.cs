@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Rock : MonoBehaviour, IUsable
+public class Rock : MonoBehaviour, IUsableItem
 {
     public GameObject rockPrefab;
     public float throwDistance = 3f;

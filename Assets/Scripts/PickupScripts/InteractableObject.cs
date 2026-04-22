@@ -5,7 +5,7 @@ public class InteractableObject : MonoBehaviour
 {
     public float hoverMultiplier = 1.1f;
     public UnityEvent onInteract;
-    private Vector3 originalScale;
+    public Vector3 originalScale;
     private bool isHovering = false;
 
     void Start()
@@ -33,7 +33,7 @@ public class InteractableObject : MonoBehaviour
 
     private void Interact()
     {
-        Debug.Log("Interacted with {gameObject.name}!");
+        Debug.Log($"Interacted with {gameObject.name}!");
         onInteract.Invoke();
     }
 }
