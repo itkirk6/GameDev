@@ -8,7 +8,6 @@
      public LayerMask pickupLayer;
      public GameObject currentItemPrefab;
 
-     private IUsable currentUsableItem;
      void Start()
      {
         
@@ -25,9 +24,6 @@
          if (Input.GetKeyDown(KeyCode.F))
              TryPickup();
 
-        if(Input.GetMouseButtonDown(0))
-             if( currentUsableItem != null)
-                 currentUsableItem.UseItem();
      }
 
      private void TryInteract()
@@ -98,7 +94,7 @@
         
          currentItemPrefab = newItemPrefab;
      }
-
+/*
      public void UseItem()
      {
          ItemInfo info = currentItemPrefab.GetComponent<ItemInfo>();
@@ -110,5 +106,5 @@
 
         
     }
-
+*/
  }
