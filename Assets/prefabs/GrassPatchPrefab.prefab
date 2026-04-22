@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &276403653349295518
+--- !u!1 &7333576371646224498
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 734662814509500266}
-  - component: {fileID: 6098906789368080854}
-  - component: {fileID: 4645388360511868713}
-  - component: {fileID: -8269921676352662612}
-  - component: {fileID: -8674142050732544000}
-  - component: {fileID: 8493555376412547262}
-  m_Layer: 6
-  m_Name: Pickup_Gun
-  m_TagString: Untagged
+  - component: {fileID: 6109313890893269133}
+  - component: {fileID: 6149753932555741711}
+  - component: {fileID: -2325114107791554996}
+  - component: {fileID: 7058436860367788024}
+  m_Layer: 0
+  m_Name: GrassPatchPrefab
+  m_TagString: GrassPatch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &734662814509500266
+--- !u!4 &6109313890893269133
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
+  m_GameObject: {fileID: 7333576371646224498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1, y: -2.34, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: 1.414, y: 3.237, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6098906789368080854
+--- !u!212 &6149753932555741711
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
+  m_GameObject: {fileID: 7333576371646224498}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,23 +83,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 5738789582080602574, guid: 9dde818d60cd3f04c81b4f290759db6d, type: 3}
+  m_Sprite: {fileID: 161542502, guid: f21d1bf092a1c95469bbf19b29b427ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.96, y: 0.95}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &4645388360511868713
+--- !u!61 &-2325114107791554996
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
+  m_GameObject: {fileID: 7333576371646224498}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -129,73 +127,27 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.0036312342, y: 0.007262349}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.26, y: 0.34}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.96, y: 0.95}
+    newSize: {x: 0.96, y: 0.95}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32459855, y: 0.36091018}
+  m_Size: {x: 0.96, y: 0.95}
   m_EdgeRadius: 0
---- !u!114 &-8269921676352662612
+--- !u!114 &7058436860367788024
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
+  m_GameObject: {fileID: 7333576371646224498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299e8b532554631468ec6b47cc5f44cd, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c1cfcdaaff0d5749becb7e8c600cd05, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  hoverMultiplier: 1.1
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -8674142050732544000}
-        m_TargetAssemblyTypeName: ItemPickup, Assembly-CSharp
-        m_MethodName: Collect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  originalScale: {x: 0, y: 0, z: 0}
---- !u!114 &-8674142050732544000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemName: Gun
-  itemType: 0
-  itemValue: 0
---- !u!114 &8493555376412547262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 276403653349295518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e42f62c6badd7a94bb8faf423d138ab2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gun
-  bulletPrefab: {fileID: 769094135114850664, guid: 3ef773e9537f59f49b0fbb8edb10bece, type: 3}
-  firedFrom: {fileID: 0}
+  m_EditorClassIdentifier: '::'

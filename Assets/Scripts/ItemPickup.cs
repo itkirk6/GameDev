@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public enum PickupType {Equippable, Key, Consumable}
-    public GameObject itemPrefab;
+    public enum PickupType {Equippable, Key, Consumable, QuestItem}
+    //public GameObject itemPrefab;
     public string itemName;
     public PickupType itemType;
     public int itemValue;

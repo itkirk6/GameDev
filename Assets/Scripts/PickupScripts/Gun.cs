@@ -4,6 +4,11 @@ public class Gun : MonoBehaviour, IUsableItem
     public GameObject bulletPrefab;
     public Transform firedFrom;
 
+    void Start()
+    {
+        firedFrom = FindFirstObjectByType<playerController>().transform;
+    }
+
     public void UseItem()
     {
         if(bulletPrefab != null)
