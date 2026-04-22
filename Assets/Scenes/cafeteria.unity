@@ -119,6 +119,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &123167711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.804
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475872235262945198, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_Name
+      value: character
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
 --- !u!1001 &225309384
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6814,34 +6871,34 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[0]'
+      propertyPath: multipleLines.Array.data[0]
       value: Hey, wanna do a lil sum for me?
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[1]'
+      propertyPath: multipleLines.Array.data[1]
       value: The guards took my precious knife I spent so long makin after I stabed
         a fool who was actin so tuff.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[2]'
+      propertyPath: multipleLines.Array.data[2]
       value: Now that I don't got a means of defence I need a replacement.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[3]'
+      propertyPath: multipleLines.Array.data[3]
       value: Inside the kitchen ovah there past that locked door they should have
         enough knives for me to stab everyone here.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[4]'
+      propertyPath: multipleLines.Array.data[4]
       value: Now I need you to get in there somehow and grab me one of them knives
         and I'll give you this key to the infirmary.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[5]'
+      propertyPath: multipleLines.Array.data[5]
       value: Sound like a deal?
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'completedLines.Array.data[0]'
+      propertyPath: completedLines.Array.data[0]
       value: Thanks for snaggin that knife for me here's that key to the Infirmary.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -18732,6 +18789,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &5829916238710907920
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8216119345653725943, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8732346685458627538, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
+      propertyPath: m_Name
+      value: KnifePrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8184de0384a018a44ba905c8eb78fde2, type: 3}
 --- !u!1 &2060705647
 GameObject:
   m_ObjectHideFlags: 0
@@ -18776,5 +18890,7 @@ SceneRoots:
   - {fileID: 748486781}
   - {fileID: 907517131}
   - {fileID: 929437515}
+  - {fileID: 5829916238710907920}
+  - {fileID: 123167711}
   - {fileID: 2060705648}
   - {fileID: 225309384}

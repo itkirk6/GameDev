@@ -7,10 +7,10 @@ public class PlayerInventory : MonoBehaviour
     // public string currentEquippedItem = "None";
     // public string previouslyEquippedItem;
     public List<string> keys = new List<string>();
+    public List<string> questItems = new List<string>();
     public int playerHealth = 100;
     public Image equippedItemUIBox;
     public GameObject currentEquippedItem;
-     GameObject currentDropPrefab;
 
     void Start()
     {
@@ -35,8 +35,6 @@ public class PlayerInventory : MonoBehaviour
         switch(pickupInfo.itemType)
         {
             case ItemPickup.PickupType.Equippable:
-            
-                //Debug.Log($"Current Drop Prefab is: {(currentDropPrefab == null ? "NULL" : currentDropPrefab.name + "something ")}");
 
                 if(currentEquippedItem != null)
                 {
@@ -74,6 +72,7 @@ public class PlayerInventory : MonoBehaviour
             case ItemPickup.PickupType.Consumable:
                 playerHealth += pickupInfo.itemValue;
                 Debug.Log($"Restored {pickupInfo.itemValue} health.");
+                Destroy(pickupInfo.gameObject);
                 break;
 
             case ItemPickup.PickupType.Key:
@@ -82,7 +81,19 @@ public class PlayerInventory : MonoBehaviour
                     keys.Add(pickupInfo.itemName);
                     Debug.Log($"Added {pickupInfo.itemName} key to inventory.");
                 }
+                Destroy(pickupInfo.gameObject);
                 break;
+            
+            case ItemPickup.PickupType.QuestItem:
+                //Debug.Log("Enterd here");
+                if(!questItems.Contains(pickupInfo.itemName))
+                {
+                    questItems.Add(pickupInfo.itemName);
+                    Debug.Log($"Added {pickupInfo.itemName} to inventory.");
+                }
+                Destroy(pickupInfo.gameObject);
+                break;
+
         }
     }
 
