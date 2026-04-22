@@ -13,6 +13,7 @@ public class talkingManager : MonoBehaviour
     private string[] currentLines;
     private int currentLineIndex;
     private bool isTalking;
+    private bool canAdvance = false;
 
     private void Awake()
     {
@@ -30,10 +31,10 @@ public class talkingManager : MonoBehaviour
 
     private void Update()
     {
-        if (!isTalking)
+        if (!isTalking || !canAdvance)
             return;
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             showNextLine();
         }
@@ -47,6 +48,7 @@ public class talkingManager : MonoBehaviour
         currentLines = lines;
         currentLineIndex = 0;
         isTalking = true;
+        canAdvance = false;
 
         if (dialoguePanel != null)
             dialoguePanel.SetActive(true);
@@ -56,6 +58,8 @@ public class talkingManager : MonoBehaviour
 
         if (dialogueText != null)
             dialogueText.text = currentLines[currentLineIndex];
+        
+        Invoke(nameof(enableAdvance), 0.1f);
     }
 
     public void showNextLine()
@@ -88,5 +92,9 @@ public class talkingManager : MonoBehaviour
     public bool getIsDialogueActive()
     {
         return isTalking;
+    }
+    private void enableAdvance()
+    {
+        canAdvance = true;
     }
 }

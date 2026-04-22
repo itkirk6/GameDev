@@ -5432,6 +5432,10 @@ PrefabInstance:
       propertyPath: requiredKey
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: requiredKeyName
+      value: none
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.47481245

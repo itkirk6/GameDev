@@ -1,6 +1,6 @@
 public enum keyTypes
 {
-    none,
+    None,
     cellKey,
     cafeteriaKey,
     guardRoomKeys,

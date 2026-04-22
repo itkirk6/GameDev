@@ -39,7 +39,7 @@ public class DoorController : MonoBehaviour
 
         if(isLocked)
         {
-            if(inv != null && inv.HasKey(requiredKeyName))
+            if(inv != null && inv.HasKey(requiredKeyName) || requiredKeyName.ToLower() == "none")
             {
                 isLocked = false;
                 Debug.Log("unlocked door with " + requiredKeyName);
