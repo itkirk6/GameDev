@@ -2,14 +2,22 @@ using UnityEngine;
 
 public class DialogueTestScript : MonoBehaviour, IInteractable
 {
+    [Header("Dialogue")]
     public Dialogue dialogue;
     public string characterName;
     public string singleLine;
     public string[] multipleLines;
+    public string[] completedLines;
     public float delayBetweenLines = 4f;
     public float typingSpeed = 0.02f;
 
-    private bool isTalking = false;
+    [Header("Quest")]
+    public bool isQuestNpc = false;
+    public string requiredItemName;
+    public GameObject rewardItemPrefab;
+    public Transform rewardDropPoint;
+
+    private bool questCompleted = false;
 
     public void Interact(PlayerInteraction playerInteraction)
     {
@@ -19,13 +27,30 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
         if (dialogue.isTalking)
             return;
 
-        startDialogue();
+        if (isQuestNpc)
+        {
+            PlayerInventory playerInventory = playerInteraction.GetComponent<PlayerInventory>();
+
+            if (!questCompleted && playerInventory != null && playerHasRequiredItem(playerInventory))
+            {
+                completeQuest(playerInventory);
+                startDialogue(completedLines);
+                return;
+            }
+
+            if (questCompleted)
+            {
+                startDialogue(completedLines);
+                return;
+            }
+        }
+
+        startNormalDialogue();
     }
 
-    private void startDialogue()
+    private void startNormalDialogue()
     {
         dialogue.typingSpeed = typingSpeed;
-        isTalking = true;
 
         if (multipleLines == null || multipleLines.Length == 0)
         {
@@ -37,32 +62,56 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
         }
     }
 
-
-
-/*
-    private void Update()
+    private void startDialogue(string[] lines)
     {
+        if (lines == null || lines.Length == 0)
+            return;
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Skip();
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Clear();
-        }
+        dialogue.typingSpeed = typingSpeed;
+        dialogue.Say(lines, characterName, delayBetweenLines);
     }
-    */
-/*
-    public void startDialogue(Dialogue dialogue)
+
+    private bool playerHasRequiredItem(PlayerInventory playerInventory)
     {
-        currentLines = dialogue.lines;
-        currentLineIndex = 0;
-        isTalking = true;
+        if (playerInventory.currentEquippedItem == null)
+            return false;
 
-        dialoguePanel.SetActive(true);
-        nameText.text = dialogue.npcName;
-        dialogueText.text = currentLines[currentLineIndex];
+        ItemPickup heldItemPickup = playerInventory.currentEquippedItem.GetComponent<ItemPickup>();
+
+        if (heldItemPickup == null)
+            return false;
+
+        return heldItemPickup.itemName == requiredItemName;
     }
-    */
+
+    private void completeQuest(PlayerInventory playerInventory)
+    {
+        GameObject heldItem = playerInventory.currentEquippedItem;
+        playerInventory.currentEquippedItem = null;
+
+        if (playerInventory.equippedItemUIBox != null)
+        {
+            playerInventory.equippedItemUIBox.sprite = null;
+            playerInventory.equippedItemUIBox.enabled = false;
+        }
+
+        if (heldItem != null)
+        {
+            Destroy(heldItem);
+        }
+
+        Vector3 spawnPosition = transform.position;
+
+        if (rewardDropPoint != null)
+        {
+            spawnPosition = rewardDropPoint.position;
+        }
+
+        if (rewardItemPrefab != null)
+        {
+            Instantiate(rewardItemPrefab, spawnPosition, Quaternion.identity);
+        }
+
+        questCompleted = true;
+    }
 }
