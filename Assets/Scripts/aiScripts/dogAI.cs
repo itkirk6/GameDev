@@ -129,7 +129,12 @@ public class dogAI : MonoBehaviour
 
         if(Time.time >= nextAttackTime)
         {
-            player.GetComponent<PlayerInventory>().playerHealth -= damage;
+            PlayerInventory playerInventory = player.GetComponent<PlayerInventory>();
+
+            if (playerInventory != null)
+            {
+                playerInventory.takeDamage(damage);
+            }
             nextAttackTime = Time.time + (1f / attackRate);
         }
     }

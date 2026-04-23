@@ -7169,11 +7169,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 162173055133141931, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.7894745
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 162173055133141931, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.13673444
+      value: -4.2
       objectReference: {fileID: 0}
     - target: {fileID: 162173055133141931, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7262,8 +7262,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[3]'
-      value: Inside the kitchen ovah there past that locked door they should have
-        enough knives for me to stab everyone here.
+      value: Inside the kitchen ovah there past that Guard and locked door they should
+        have enough knives for me to stab everyone here.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[4]'
@@ -19586,6 +19586,10 @@ PrefabInstance:
       value: cafeteriaDoor
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 1843111940}
+    - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: requiredKey
       value: 2
       objectReference: {fileID: 0}
@@ -19741,7 +19745,7 @@ Transform:
   m_GameObject: {fileID: 2060705647}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.47, y: -0.04, z: 0}
+  m_LocalPosition: {x: -1.58, y: -4.66, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
