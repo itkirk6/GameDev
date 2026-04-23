@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class BulletLogic : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public float speed = 6f;
+    public float lifetime = 3f;
+
+    public void Shoot(Vector2 direction)
     {
-        
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = direction * speed;
+        Destroy(gameObject, lifetime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if(!collision.CompareTag("Player"))
+        {
+            Debug.Log($"Collided with {collision.name}");
+            Destroy(gameObject);
+        }
     }
 }
