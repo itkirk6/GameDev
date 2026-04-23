@@ -1,6 +1,6 @@
 using UnityEngine;
-
-public class HidingWireCutters : MonoBehaviour
-{
-    public bool isHidingWireCutters;
-}
+  
+public class HidingWireCutters : MonoBehaviour 
+{   
+    public bool isHidingWireCutters;   
+}   

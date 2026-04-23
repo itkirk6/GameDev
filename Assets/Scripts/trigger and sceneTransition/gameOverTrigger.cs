@@ -6,6 +6,7 @@ public class GameOverTrigger : MonoBehaviour
 
     private AudioSource audioSource;
     public GameObject gameOverPanel;
+    private GameObject uiCanvas;
 
     private bool isGameOver = false;
 
@@ -18,6 +19,7 @@ public class GameOverTrigger : MonoBehaviour
     private void Start()
     {
         findGameOverPanel();
+        findUICanvas();
     }
 
     public void triggerGameOver()
@@ -29,6 +31,13 @@ public class GameOverTrigger : MonoBehaviour
 
             if (gameOverPanel != null)
             {
+                findUICanvas();
+
+                if (uiCanvas != null)
+                {
+                    uiCanvas.SetActive(false);
+                }
+
                 gameOverPanel.SetActive(true);
             }
 
@@ -49,6 +58,14 @@ public class GameOverTrigger : MonoBehaviour
             gameOverPanel = panelObject;
             gameOverPanel.SetActive(false);
         }
+    }
+
+    private void findUICanvas()
+    {
+        if (uiCanvas != null)
+            return;
+
+        uiCanvas = GameObject.Find("UICanvas");
     }
 
 }

@@ -11,7 +11,7 @@ using TMPro;
 // Clear() clears the stored data and closes the text box. 
 
 
-public class Dialogue : MonoBehaviour
+public class Dialogue : MonoBehaviour  
 {
     [Header("Setup")]
     public TextMeshProUGUI textBox;
@@ -25,15 +25,15 @@ public class Dialogue : MonoBehaviour
     public string[] sentences;
     private int index;
     public float typingSpeed = 0.02f;
-    public float duration = 4f;
-    private bool active = true;
-    public bool isTalking { get; private set; }
+    public float duration = 4f;  
+    private bool active = true;  
+    public bool isTalking { get; private set; } 
     public bool isOnLastLine => sentences != null && index >= sentences.Length - 1;
-    private bool lineFinished = false;
+    private bool lineFinished = false;  
 
     
     private void Update()
-    {
+    {  
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Skip();
@@ -44,45 +44,45 @@ public class Dialogue : MonoBehaviour
     IEnumerator Type()
     {
         if (sentences == null || sentences.Length == 0)
-            yield break;
+            yield break;  
 
         if (index < 0 || index >= sentences.Length)
             yield break;
             animController.ResetTrigger("Disappear");
         textBox.text = "";
-        lineFinished = false;
+        lineFinished = false; 
         foreach (var letter in sentences[index].ToCharArray())
         {
-            if (active)
+            if (active)  
             {
-                textBox.text += letter;
+                textBox.text += letter; 
                 yield return new WaitForSeconds(typingSpeed);
                 animController.ResetTrigger("Appear");
 
-            }
-            else
+            } 
+            else  
             {
                 textBox.text = sentences[index];
                 lineFinished = true;
-                yield break;
-            }
-
+                yield break; 
+            } 
+  
         }
         lineFinished = true;
 
-    }
-
+    }   
+ 
     
 
     IEnumerator TypeMany()
-    {
-        for (int i = 0; i < sentences.Length+1; i++)
+    { 
+        for (int i = 0; i < sentences.Length+1; i++)  
         {
-            
+             
             if (index < sentences.Length)
             {
                 StartCoroutine(Type());
-            }            
+            }             
             yield return new WaitForSeconds(duration);
             if (index < sentences.Length)
             {
@@ -102,7 +102,7 @@ public class Dialogue : MonoBehaviour
 
 
 
-    //Character Socket
+    //Character Socket  
     public void UpdateName(string name = null)
     {
         if (name == null)
@@ -129,7 +129,7 @@ public class Dialogue : MonoBehaviour
 
         string[] phrase = { _text };
         sentences = phrase;
-        index = 0;
+        index = 0; 
 
         if (_duration > 0)
         {
@@ -180,7 +180,7 @@ public class Dialogue : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(Type());
             Invoke(nameof(resetActive), 0.1f);
-        }
+        }  
         else
         {
             Clear();
@@ -193,10 +193,10 @@ public class Dialogue : MonoBehaviour
 
     private void SkipInvoke()
     {
-        active = true;
+        active = true; 
     }
     private void endDialogue()
-    {
+    {  
         isTalking = false;
         animController.SetTrigger("Disappear");
     }
@@ -207,7 +207,7 @@ public class Dialogue : MonoBehaviour
         isTalking = false;
         animController.SetTrigger("Disappear");
         sentences = null;
-        UpdateName();
+        UpdateName();  
         textBox.text = "";
         isTalking = false;
 
