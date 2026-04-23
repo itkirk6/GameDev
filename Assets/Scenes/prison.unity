@@ -50085,11 +50085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2c93950dbf8a64eb7f995dfca58159, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTestScript
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 2113514275}
   characterName: Cole Maxton
   singleLine: 
-  multipleLines:
-  - Get out of my sight WORM.
+  multipleLines: []
   completedLines: []
   delayBetweenLines: 4
   typingSpeed: 0.02
