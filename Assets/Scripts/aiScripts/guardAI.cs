@@ -1,65 +1,58 @@
 using System;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
-using UnityEngine;
-
-public class guardAI : MonoBehaviour
+using UnityEngine; 
+ 
+public class guardAI : MonoBehaviour  
 {
 
     [Serializable] public class patrolPoint
     {
-        public Transform waypoint;
+        public Transform waypoint; 
         public float waitTime = 1f;
-        public Vector2 facingAfterArrival = Vector2.down;
+        public Vector2 facingAfterArrival = Vector2.down;  
     }
-
-    [Header("Patrol")]
     [SerializeField] private List<patrolPoint> patrolPoints = new List<patrolPoint>();
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private bool loop = true;
-
-    [Header("Combat")]
-    public Transform player;
-    public float viewDistance = 14f;
-    public float FOV = 120f;
-    public LayerMask LOSMask;
-    public GameObject bulletPrefab;
-    public float fireRate = 1.5f;
+    public Transform player;  
+    public float viewDistance = 14f; 
+    public float FOV = 120f;  
+    public LayerMask LOSMask; 
+    public GameObject bulletPrefab;  
+    public float fr = 1.5f;   //firerate variable
 
     private Animator animator;
-    private Rigidbody2D rb;
-
-    // runtime variables
-    private Vector2 movementInput;
-    private Vector2 lastMove = Vector2.down;
-
+    private Rigidbody2D rigb;  //rigidbody
+    private Vector2 movementInput; 
+    private Vector2 lastMove = Vector2.down;  
     private int currentIndex = 0;
-    private bool isWaiting = false;
+    private bool isWaiting = false; 
     private float waitTimer = 0f;
-
-    private bool eyesOnPlayer = false;
+   
+    private bool seePlayer = false;
     private float nextFireTime = 0f;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        rigb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>(); 
     }
 
     private void Update()
-    {
+    {   
         CheckLOS();
         //Debug.Log($"Eyes on Player: {eyesOnPlayer}");
-        if(eyesOnPlayer)
-        {
-            EngagePlayer();
-        }
-        else
-            handleWaitTimer();
+        if(seePlayer)
+        {  
+            attackPlayer();
+        } 
+        else  
+            waitTimerFunc(); 
 
         handleAnimations();
     }
-
+  
     private void FixedUpdate()
     {
         handleMovement();
@@ -77,7 +70,7 @@ public class guardAI : MonoBehaviour
                 return;
         }
 
-        eyesOnPlayer = false;
+        seePlayer = false;
 
         Vector2 toPlayer = player.position - transform.position;
         Vector2 directionToPlayer = toPlayer.normalized;
@@ -92,40 +85,40 @@ public class guardAI : MonoBehaviour
 
                 if(hit.collider != null && hit.collider.CompareTag("Player"))
                 {
-                    eyesOnPlayer = true;
+                    seePlayer = true;
                     return;
                 }
             }
         }
     }
 
-    private void EngagePlayer()
-    {
+    private void attackPlayer()
+    {  
         movementInput = Vector2.zero;
         isWaiting = false;
 
         Vector2 toPlayer = (player.position - transform.position).normalized;
-
+ 
         if(Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
-            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);
-        else
+            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);  
+        else 
             lastMove = new Vector2(0f, Mathf.Sign(toPlayer.y));
 
-        if(Time.time >= nextFireTime)
+        if(Time.time >= nextFireTime) 
         {
-            Shoot(toPlayer);
-            nextFireTime = Time.time + fireRate;
+            Shoot(toPlayer);  
+            nextFireTime = Time.time + fr;
         }
     }
 
     private void Shoot(Vector2 direction)
     {
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f;
-        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle);
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f; 
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle);  
         
         GameObject bullet = Instantiate(bulletPrefab, transform.position, bulletRotation);
 
-        BulletLogic bulletScript = bullet.GetComponent<BulletLogic>();
+        BulletLogic bulletScript = bullet.GetComponent<BulletLogic>(); 
         if (bulletScript != null)
         {
             bulletScript.Shoot(direction);
@@ -142,15 +135,14 @@ public class guardAI : MonoBehaviour
 
         Transform target = patrolPoints[currentIndex].waypoint;
 
-        Vector2 currentPos = rb.position;
+        Vector2 currentPos = rigb.position;
         Vector2 targetPos = target.position;
-
+  
         Vector2 toTarget = targetPos - currentPos;
-
-        // arrived
+  
         if (toTarget.magnitude <= 0.05)
         {
-            rb.MovePosition(targetPos);
+            rigb.MovePosition(targetPos);
             startWaiting();
             return;
         }
@@ -168,7 +160,7 @@ public class guardAI : MonoBehaviour
             lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));
         }
 
-        rb.MovePosition(rb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));
+        rigb.MovePosition(rigb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));
     }
 
     private void startWaiting()
@@ -191,43 +183,43 @@ public class guardAI : MonoBehaviour
         waitTimer = patrolPoints[currentIndex].waitTime;
     }
 
-    private void handleWaitTimer()
+    private void waitTimerFunc()   //function to handle the wait time
     {
         if (!isWaiting)
             return;
 
-        waitTimer -= Time.deltaTime;
+        waitTimer -= Time.deltaTime; 
 
-        if (waitTimer <= 0f)
-        {
+        if (waitTimer <= 0f)   
+        {  
             advancePoint();
             isWaiting = false;
         }
     }
 
     private void advancePoint()
-    {
+    { 
         currentIndex++;
 
         if (currentIndex >= patrolPoints.Count)
         {
             if (loop)
-            {
+            {   
                 currentIndex = 0;
             }
             else
             {
                 currentIndex = patrolPoints.Count - 1;
             }
-        }
+        }  
     }
 
-    private void handleAnimations()
-    {
-        bool isMoving = (movementInput != Vector2.zero);
+     private void handleAnimations()
+    {  
+        bool isMoving = (movementInput != Vector2.zero); 
 
         animator.SetBool("isMoving", isMoving);
-        animator.SetFloat("moveX", lastMove.x);
+        animator.SetFloat("moveX", lastMove.x); 
         animator.SetFloat("moveY", lastMove.y);
     }
 }
