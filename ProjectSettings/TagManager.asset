@@ -10,6 +10,7 @@ TagManager:
   - EquippedItemBox
   - DeathPanel
   - WinPanel
+  - pausePanel
   layers:
   - Default
   - TransparentFX
