@@ -4,6 +4,7 @@ public class BulletLogic : MonoBehaviour
 {
     public float speed = 6f;
     public float lifetime = 3f;
+    public int damage = 25;
 
     public void Shoot(Vector2 direction)
     {
@@ -14,10 +15,18 @@ public class BulletLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Guard"))
+        if(collision.CompareTag("Guard")) return;
+        if(collision.CompareTag("Player") && !collision.isTrigger) return;
+
+        Debug.Log($"Collided with {collision.name}");
+        if(collision.CompareTag("Player"))
         {
-            Debug.Log($"Collided with {collision.name}");
-            Destroy(gameObject);
-        }
+            PlayerInventory inv = collision.GetComponent<PlayerInventory>();
+            if(inv.playerHealth <= damage)
+                Destroy(collision.gameObject);
+            else
+                inv.playerHealth -= damage; 
+        }      
+        Destroy(gameObject);
     }
 }
