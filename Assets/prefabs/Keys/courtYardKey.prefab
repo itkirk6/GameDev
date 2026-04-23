@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1855980578981529685}
   - component: {fileID: 8358821833157086110}
   - component: {fileID: 9126860646925110748}
-  - component: {fileID: 1264399372804319263}
+  - component: {fileID: 862553596102409064}
   m_Layer: 7
   m_Name: courtYardKey
   m_TagString: Untagged
@@ -156,7 +156,7 @@ MonoBehaviour:
   onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1264399372804319263}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ItemPickup, Assembly-CSharp
         m_MethodName: Collect
         m_Mode: 1
@@ -168,7 +168,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1264399372804319263
+  originalScale: {x: 0, y: 0, z: 0}
+--- !u!114 &862553596102409064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,5 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   itemName: CourtYard
-  itemType: 1
+  itemType: 3
   itemValue: 0
+  addToKeys: 1
+  addToQuestItems: 1
