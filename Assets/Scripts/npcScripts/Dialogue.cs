@@ -137,6 +137,7 @@ public class Dialogue : MonoBehaviour
         }
 
         UpdateName(_characterName);
+        Debug.Log("Starting line coroutine");
         StartCoroutine(Type());
     }
 
@@ -162,7 +163,7 @@ public class Dialogue : MonoBehaviour
 
     public void Skip()
     {
-        Debug.Log("skipped");
+        //Debug.Log("skipped");
         if (sentences == null || sentences.Length == 0)
             return;
 
