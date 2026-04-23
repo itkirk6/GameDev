@@ -111,4 +111,14 @@ public class playerController : MonoBehaviour
 
     }
 
+    public Vector2 getMovementInput()
+    {
+        return movementInput;
+    }
+
+    public Vector2 getLastMove()
+    {
+        return lastMove;
+    }
+
 }
