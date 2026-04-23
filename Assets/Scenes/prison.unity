@@ -2161,7 +2161,7 @@ Transform:
   m_GameObject: {fileID: 425178201}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.37405002, y: 6.31, z: 0}
+  m_LocalPosition: {x: -1.31, y: 6.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49055,6 +49055,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2952129617404553318, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Size.x
+      value: 0.21291262
+      objectReference: {fileID: 0}
+    - target: {fileID: 2952129617404553318, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.16607502
+      objectReference: {fileID: 0}
     - target: {fileID: 5196295439051739166, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -49126,6 +49134,14 @@ PrefabInstance:
     - target: {fileID: 5999863406511293609, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077077526473625392, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Size.x
+      value: 0.19920012
+      objectReference: {fileID: 0}
+    - target: {fileID: 9077077526473625392, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.17192806
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -49247,7 +49263,7 @@ GameObject:
   - component: {fileID: 1473043093}
   - component: {fileID: 1473043092}
   - component: {fileID: 1473043094}
-  m_Layer: 8
+  m_Layer: 2
   m_Name: props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51207,7 +51223,7 @@ Transform:
   m_GameObject: {fileID: 1758899206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.51, y: 0.2, z: 0}
+  m_LocalPosition: {x: 21.3, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -52288,6 +52304,10 @@ PrefabInstance:
       propertyPath: pickupRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8901061088671128433, guid: 48c1bb45a729ee94ea38a5c6665fe00a, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -52485,7 +52505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueTestScript
   dialogue: {fileID: 2113514275}
   characterName: Cole Maxton
-  singleLine: 
+  singleLine: I think that John Payne guy has it out for me...
   multipleLines: []
   completedLines: []
   delayBetweenLines: 4
