@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Rock
   rockPrefab: {fileID: 924637469562327405, guid: 464c86177bac62345b97730b0cb37a90, type: 3}
-  throwDistance: 3
+  throwDist: 3
   throwSpeed: 8
 --- !u!114 &-4168422006910216191
 MonoBehaviour:
@@ -200,3 +200,6 @@ MonoBehaviour:
   itemName: Rock
   itemType: 0
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0

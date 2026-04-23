@@ -185,6 +185,9 @@ MonoBehaviour:
   itemName: Gun
   itemType: 0
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!114 &8493555376412547262
 MonoBehaviour:
   m_ObjectHideFlags: 0

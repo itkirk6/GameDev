@@ -111,6 +111,8 @@ MonoBehaviour:
   requiredKeyName: Cell
   closedSprite: {fileID: -2559203469631848017, guid: 34a090eceea4a2544b300ff3593c650e, type: 3}
   openSprite: {fileID: 6546672625700160552, guid: 34a090eceea4a2544b300ff3593c650e, type: 3}
+  dialogue: {fileID: 0}
+  lockedMessageDuration: 2
   openDoorClip: {fileID: 8300000, guid: 58e4d9fd1c77a3b44956916ba7b3fd51, type: 3}
   closeDoorClip: {fileID: 8300000, guid: 42d83f664cf00e241a7ab403ade3bf6e, type: 3}
   spriteRenderer: {fileID: 5196295439051739166}
@@ -251,7 +253,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.458
   m_Pitch: 1
   Loop: 0
   Mute: 0

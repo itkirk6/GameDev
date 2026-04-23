@@ -125,6 +125,9 @@ MonoBehaviour:
   itemName: Cash
   itemType: 3
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!212 &6006737656560043048
 SpriteRenderer:
   serializedVersion: 2

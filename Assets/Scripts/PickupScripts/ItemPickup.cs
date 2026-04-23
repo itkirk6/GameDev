@@ -6,7 +6,7 @@ public class ItemPickup : MonoBehaviour, IPickup
     public string itemName;
     public PickupType itemType;
     public int itemValue;
-    public float pickupRange = 3f;
+    public float pickupRange = .5f;
 
     public bool addToKeys = false;
     public bool addToQuestItems = false;

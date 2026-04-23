@@ -7,6 +7,8 @@ public class GameOverTrigger : MonoBehaviour
 
     private AudioSource audioSource;
 
+    private bool isGameOver = false;
+
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
@@ -25,7 +27,11 @@ public class GameOverTrigger : MonoBehaviour
 
     public void triggerGameOver()
     {
-        gameOverCanvas.SetActive(true);
-        audioSource.PlayOneShot(gameOverSound);
+        if (!isGameOver)
+        {
+            isGameOver = true;
+            gameOverCanvas.SetActive(true);
+            audioSource.PlayOneShot(gameOverSound);
+        }
     }
 }

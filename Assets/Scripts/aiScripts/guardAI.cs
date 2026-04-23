@@ -18,6 +18,9 @@ public class guardAI : MonoBehaviour
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private bool loop = true;
 
+    [SerializeField] private AudioClip attackClip;
+    private AudioSource audioSource;
+
     [Header("Combat")]
     public Transform player;
     public float viewDistance = 14f;
@@ -44,6 +47,7 @@ public class guardAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -128,6 +132,7 @@ public class guardAI : MonoBehaviour
         BulletLogic bulletScript = bullet.GetComponent<BulletLogic>();
         if (bulletScript != null)
         {
+            audioSource.PlayOneShot(attackClip);
             bulletScript.Shoot(direction);
         }
     }

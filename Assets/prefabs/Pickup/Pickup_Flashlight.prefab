@@ -156,7 +156,7 @@ MonoBehaviour:
   itemName: Flashlight
   itemType: 3
   itemValue: 0
-  pickupRange: 3
+  pickupRange: 0.5
   addToKeys: 0
   addToQuestItems: 0
 --- !u!114 &8864214524959470008
