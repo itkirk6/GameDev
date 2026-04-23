@@ -205,16 +205,23 @@ public class PlayerInventory : MonoBehaviour
         healthSlider = null;
         equippedItemUIBox = null;
         deathPanel = null;
+        gameOverPanel = null;
 
         findHealthSlider();
         findEquippedItemUIBox();
         findDeathPanel();
+        findGameOverPanel();
         updateHealthSlider();
         updateEquippedItemUI();
 
         if (deathPanel != null)
         {
             deathPanel.SetActive(false);
+        }
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
         }
     }
 

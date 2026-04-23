@@ -43130,7 +43130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1293505585
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53957,7 +53957,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverTrigger
   gameOverSound: {fileID: 8300000, guid: 46a3cdec3cf4b7f42af69d156c8ca530, type: 3}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1293505584}
 --- !u!4 &2120870877
 Transform:
   m_ObjectHideFlags: 0
