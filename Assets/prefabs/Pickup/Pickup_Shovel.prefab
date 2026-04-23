@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c758dd6617b76d84a94fa0dd389402fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shovel
-  wireCutterPrefab: {fileID: 6008498621922733630, guid: f58fb064a848c2b4ebb709eb98435931, type: 3}
+  wireCutterPrefab: {fileID: 3698358983778486349, guid: 6299838a4cc185448b59318fca5ea672, type: 3}
 --- !u!114 &2484625625187313965
 MonoBehaviour:
   m_ObjectHideFlags: 0

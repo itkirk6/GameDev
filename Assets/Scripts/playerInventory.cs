@@ -104,6 +104,16 @@ public class PlayerInventory : MonoBehaviour
                 break;
 
         }
+        if (pickupInfo.addToKeys && !keys.Contains(pickupInfo.itemName))
+        {
+            keys.Add(pickupInfo.itemName);
+        }
+
+        if (pickupInfo.addToQuestItems && !questItems.Contains(pickupInfo.itemName))
+        {
+            questItems.Add(pickupInfo.itemName);
+        }
+
     }
 
     public bool HasKey(string requiredKey)
