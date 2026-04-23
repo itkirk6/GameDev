@@ -49,7 +49,7 @@ public class guardAI : MonoBehaviour
     private void Update()
     {
         CheckLOS();
-        Debug.Log($"Eyes on Player: {eyesOnPlayer}");
+        //Debug.Log($"Eyes on Player: {eyesOnPlayer}");
         if(eyesOnPlayer)
         {
             EngagePlayer();

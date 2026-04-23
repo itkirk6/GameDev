@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngineInternal;
 
 public class playerController : MonoBehaviour
@@ -6,6 +7,9 @@ public class playerController : MonoBehaviour
 
     [SerializeField] private float movementSpeed;
 
+    // footsteps
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private float footstepInterval = 0.4f;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -16,6 +20,8 @@ public class playerController : MonoBehaviour
     [SerializeField] private Vector2 deadZone = new Vector2(1.5f, 1f);
 
     // runtime variables
+    private AudioSource audioSource;
+    private float footstepTimer;
     private Vector2 movementInput;
     private Vector2 lastMove = Vector2.down;
 
@@ -36,6 +42,7 @@ public class playerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         cam = FindFirstObjectByType<Camera>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -44,6 +51,7 @@ public class playerController : MonoBehaviour
         getInput();
         handleAnimations();
         handleCamera();
+        handleFootsteps();
     }
 
     private void FixedUpdate()
@@ -128,6 +136,26 @@ public class playerController : MonoBehaviour
         cam.transform.position = new Vector3(camPos.x, camPos.y, cam.transform.position.z);
 
     }
+
+    private void handleFootsteps()
+    {
+        if (movementInput != Vector2.zero)
+        {
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0f)
+            {
+                audioSource.PlayOneShot(footstepClip);
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
+    }
+
+
 
     public Vector2 getMovementInput()
     {
