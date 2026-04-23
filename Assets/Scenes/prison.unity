@@ -595,6 +595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -807,6 +811,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: laundryDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
       value: 5
@@ -1007,7 +1015,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1594472084744165431, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
-      propertyPath: m_ActiveFontFeatures.Array.data[0]
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
     - target: {fileID: 1594472085162221780, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
@@ -1207,7 +1215,7 @@ PrefabInstance:
       value: 4278190080
       objectReference: {fileID: 0}
     - target: {fileID: 1594472085550609579, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
-      propertyPath: m_ActiveFontFeatures.Array.data[0]
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
       value: 1801810542
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1465,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -1535,6 +1547,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: doorCollider
@@ -1682,6 +1698,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -1745,7 +1765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 663777918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: areaDoorHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1870,6 +1890,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -1935,6 +1959,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -2025,6 +2053,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_Name
       value: courtYardDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2218,6 +2250,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -24328,6 +24364,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cafeteriaDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
       value: 0
@@ -24759,9 +24799,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 663777918}
     m_Modifications:
+    - target: {fileID: 1290766746605024998, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Name
       value: guardDoorsR
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24857,9 +24905,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 663777918}
     m_Modifications:
+    - target: {fileID: 1290766746605024998, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Name
       value: guardDoorsL
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: requiredKey
@@ -24921,6 +24977,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -25030,6 +25090,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -29933,6 +29997,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -29996,7 +30064,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346282466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cellDoors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30048,7 +30116,7 @@ GameObject:
   - component: {fileID: 1352709272}
   - component: {fileID: 1352709271}
   - component: {fileID: 1352709273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47423,28 +47491,28 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[0]
+      propertyPath: 'multipleLines.Array.data[0]'
       value: Everyone keeps tellin me to take a shower...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[1]
+      propertyPath: 'multipleLines.Array.data[1]'
       value: but I prefer to keep everyone away with my AURA!
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[2]
+      propertyPath: 'multipleLines.Array.data[2]'
       value: Though I would like to have some clean clothes.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[3]
+      propertyPath: 'multipleLines.Array.data[3]'
       value: Say, if you fetch me some clean clothes from the Laundry room I'll give
         you some cash.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[0]
+      propertyPath: 'completedLines.Array.data[0]'
       value: Awesome! now I feel a little better.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[1]
+      propertyPath: 'completedLines.Array.data[1]'
       value: Right... heres  that cash I promised.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -47460,6 +47528,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 663777918}
     m_Modifications:
+    - target: {fileID: 1290766746605024998, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5196295439051739166, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -47467,6 +47539,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Name
       value: guardDoors
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: isOpen
@@ -47540,6 +47616,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -47640,7 +47720,7 @@ GameObject:
   - component: {fileID: 1473043093}
   - component: {fileID: 1473043092}
   - component: {fileID: 1473043094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48580,6 +48660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -48676,6 +48760,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_Name
       value: infirmaryDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
@@ -48849,6 +48937,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -49119,21 +49211,21 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7185809434058862833, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: talkingLines.Array.data[0]
+      propertyPath: 'talkingLines.Array.data[0]'
       value: HEY YOU!
       objectReference: {fileID: 0}
     - target: {fileID: 7185809434058862833, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: talkingLines.Array.data[1]
+      propertyPath: 'talkingLines.Array.data[1]'
       value: The guards won't let me out mah cell cause I stole food while workin
         the caffeteria.
       objectReference: {fileID: 0}
     - target: {fileID: 7185809434058862833, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: talkingLines.Array.data[2]
+      propertyPath: 'talkingLines.Array.data[2]'
       value: If you give me your portion of food today I'll give you the key to the
         kitchen I yoinked before I was caught.
       objectReference: {fileID: 0}
     - target: {fileID: 7185809434058862833, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: talkingLines.Array.data[3]
+      propertyPath: 'talkingLines.Array.data[3]'
       value: You get me some food, and I'll give you the key.
       objectReference: {fileID: 0}
     - target: {fileID: 8299111908199431082, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
@@ -49228,6 +49320,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: showerDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
       value: 0
@@ -49301,6 +49397,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 663777918}
     m_Modifications:
+    - target: {fileID: 1290766746605024998, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5196295439051739166, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -49308,6 +49408,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_Name
       value: guardDoors (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: isOpen
@@ -49380,7 +49484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -49653,6 +49757,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
       value: None
@@ -49718,6 +49826,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -49795,6 +49907,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
@@ -49934,6 +50050,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKey

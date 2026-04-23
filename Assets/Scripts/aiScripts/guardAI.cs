@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class guardAI : MonoBehaviour
@@ -20,6 +21,7 @@ public class guardAI : MonoBehaviour
     [Header("Combat")]
     public Transform player;
     public float viewDistance = 14f;
+    public float FOV = 120f;
     public LayerMask LOSMask;
     public GameObject bulletPrefab;
     public float fireRate = 1.5f;
@@ -42,8 +44,6 @@ public class guardAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update()
@@ -80,30 +80,21 @@ public class guardAI : MonoBehaviour
         eyesOnPlayer = false;
 
         Vector2 toPlayer = player.position - transform.position;
+        Vector2 directionToPlayer = toPlayer.normalized;
 
         if(toPlayer.magnitude <= viewDistance)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, toPlayer.normalized, viewDistance, LOSMask);
+            float angleToPlayer = Vector2.Angle(lastMove, directionToPlayer);
 
-            // --- VISUAL DEBUGGING CODE ---
-            if (hit.collider != null)
+            if(angleToPlayer <= FOV/2f)
             {
-                // Draws a RED line to the exact point it hit something
-                Debug.DrawLine(transform.position, hit.point, Color.red);
-                Debug.Log($"Raycast hit a collider named: {hit.collider.name} with Tag: {hit.collider.tag}");
-            }
-            else
-            {
-                // Draws a GREEN line showing where it looked if it hit absolutely nothing
-                Debug.DrawRay(transform.position, toPlayer.normalized * viewDistance, Color.green);
-                Debug.Log("Raycast fired but hit absolutely nothing.");
-            }
-            // -----------------------------
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, viewDistance, LOSMask);
 
-            if(hit.collider != null && hit.collider.CompareTag("Player"))
-            {
-                eyesOnPlayer = true;
-                return;
+                if(hit.collider != null && hit.collider.CompareTag("Player"))
+                {
+                    eyesOnPlayer = true;
+                    return;
+                }
             }
         }
     }

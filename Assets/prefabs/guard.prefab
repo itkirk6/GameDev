@@ -218,7 +218,8 @@ MonoBehaviour:
   movementSpeed: 0.75
   loop: 1
   player: {fileID: 0}
-  viewDistance: 14
+  viewDistance: 7
+  FOV: 90
   LOSMask:
     serializedVersion: 2
     m_Bits: 264
