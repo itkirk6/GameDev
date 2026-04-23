@@ -19,8 +19,6 @@ public class dogAI : MonoBehaviour
 
     [SerializeField] private AudioClip attackClip;
     private AudioSource audioSource;
-
-
     public Transform player;
     public float detectionRadius = 5f;
     public float chaseSpeed = 3.5f;
@@ -35,11 +33,11 @@ public class dogAI : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 lastMove = Vector2.down;
 
-    private int currentIndex = 0;
-    private bool isWaiting = false;
+    private int curIndex = 0;
+    private bool isWait = false;
     private float waitTimer = 0f;
 
-    private bool isChasing = false;
+    private bool isChas = false;
     private float nextAttackTime = 0f;
 
     void Start()
@@ -53,9 +51,9 @@ public class dogAI : MonoBehaviour
     {
         CheckForPlayer();
 
-        if(isChasing)
+        if(isChas)
         {
-            isWaiting = false;
+            isWait = false;
             if(Vector2.Distance(transform.position, player.position) <= attackRange)
             {
                 AttackPlayer();
@@ -69,7 +67,7 @@ public class dogAI : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(isChasing)
+        if(isChas)
         {
             if(Vector2.Distance(transform.position, player.position) > attackRange)
             {
@@ -96,11 +94,11 @@ public class dogAI : MonoBehaviour
         }
 
         float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        isChasing = (distanceToPlayer <= detectionRadius);
+        isChas = (distanceToPlayer <= detectionRadius);
     }
 
     private void ChasePlayer()
-    {
+    {     
         Vector2 toTarget = (Vector2)player.position - rb.position;
         movementInput = toTarget.normalized;
 
@@ -112,95 +110,92 @@ public class dogAI : MonoBehaviour
         rb.MovePosition(rb.position + (movementInput * chaseSpeed * Time.fixedDeltaTime));
     }
 
-    private void AttackPlayer()
+    private void AttackPlayer() 
     {
-        if (attackClip != null)
+        if (attackClip != null)  
         {
-            audioSource.PlayOneShot(attackClip);
+            audioSource.PlayOneShot(attackClip); 
         }
+        movementInput = Vector2.zero;    
 
-        movementInput = Vector2.zero;
-
-        Vector2 toPlayer = (player.position - transform.position).normalized;
+        Vector2 toPlayer = (player.position - transform.position).normalized;  //gets position of player
         if (Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
-            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);
-        else
+            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);  
+        else 
             lastMove = new Vector2(0f, Mathf.Sign(toPlayer.y));
 
         if(Time.time >= nextAttackTime)
         {
-            PlayerInventory playerInventory = player.GetComponent<PlayerInventory>();
+            PlayerInventory playerInventory = player.GetComponent<PlayerInventory>(); 
 
-            if (playerInventory != null)
-            {
-                playerInventory.takeDamage(damage);
+            if (playerInventory != null)  
+            {   
+                playerInventory.takeDamage(damage);   //applies damage to player
             }
             nextAttackTime = Time.time + (1f / attackRate);
-        }
-    }
-
+        }  
+    } 
+   
     private void handleMovement()
-    {
-        if (patrolPoints.Count == 0 || isWaiting)
+    {  
+        if (patrolPoints.Count == 0 || isWait) 
         {
-            movementInput = Vector2.zero;
-            return;
+            movementInput = Vector2.zero;    
+            return; 
         }
 
-        Transform target = patrolPoints[currentIndex].waypoint;
-
-        Vector2 currentPos = rb.position;
+        Transform target = patrolPoints[curIndex].waypoint;
+  
+        Vector2 currentPos = rb.position;  
         Vector2 targetPos = target.position;
 
-        Vector2 toTarget = targetPos - currentPos;
+        Vector2 toTarget = targetPos - currentPos; 
 
-        // arrived
         if (toTarget.magnitude <= 0.05)
         {
-            rb.MovePosition(targetPos);
+            rb.MovePosition(targetPos);  
             startWaiting();
             return;
         }
 
         movementInput = toTarget.normalized;
 
-        // snap to 4 directions
-        // copied most of this code from player script
+        //snap to 4 directions 
+        //copied most of this code from player script
         if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
         {
-            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);
+            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);  
         }
         else
         {
-            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));
+            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));  
         }
 
-        rb.MovePosition(rb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));
+        rb.MovePosition(rb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));  
     }
 
-    private void startWaiting()
+    private void startWaiting()   //function for starting a timer
     {
-        isWaiting = true;
+        isWait = true;
         movementInput = Vector2.zero;
 
-        // set facing direction immediately
-        Vector2 dir = patrolPoints[currentIndex].facingAfterArrival;
+        Vector2 dir = patrolPoints[curIndex].facingAfterArrival;  //sets the facing direction immediately
 
         if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
         {
-            lastMove = new Vector2(Mathf.Sign(dir.x), 0f);
+            lastMove = new Vector2(Mathf.Sign(dir.x), 0f); 
         }
         else
         {
-            lastMove = new Vector2(0f, Mathf.Sign(dir.y));
+            lastMove = new Vector2(0f, Mathf.Sign(dir.y));  
         }
-
-        waitTimer = patrolPoints[currentIndex].waitTime;
+  
+        waitTimer = patrolPoints[curIndex].waitTime;
     }
 
     private void handleWaitTimer()
     {
-        if (!isWaiting)
+        if (!isWait)
             return;
 
         waitTimer -= Time.deltaTime;
@@ -208,23 +203,23 @@ public class dogAI : MonoBehaviour
         if (waitTimer <= 0f)
         {
             advancePoint();
-            isWaiting = false;
+            isWait = false;
         }
     }
 
     private void advancePoint()
     {
-        currentIndex++;
+        curIndex++;
 
-        if (currentIndex >= patrolPoints.Count)
+        if (curIndex >= patrolPoints.Count)
         {
             if (loop)
             {
-                currentIndex = 0;
+                curIndex = 0;
             }
             else
             {
-                currentIndex = patrolPoints.Count - 1;
+                curIndex = patrolPoints.Count - 1;
             }
         }
     }
