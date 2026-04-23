@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 37652ab641696da4b9b38e4f2b8cf82d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4684145950162098627
+    second: Courtyard_0
+  - first:
+      213: -8052997639918425642
+    second: Courtyard_1
+  - first:
+      213: 8527483883753923959
+    second: Courtyard_2
+  - first:
+      213: 4847586778289136607
+    second: Courtyard_3
+  - first:
+      213: -7474759181249326019
+    second: Courtyard_4
+  - first:
+      213: -1801558848973362767
+    second: Courtyard_5
+  - first:
+      213: 4597910513368986624
+    second: Courtyard_6
+  - first:
+      213: 8001075601333096647
+    second: Courtyard_7
+  - first:
+      213: -2233388489030285510
+    second: Courtyard_8
+  - first:
+      213: 4280743492642265595
+    second: Courtyard_9
+  - first:
+      213: 4993522065745133780
+    second: Courtyard_10
+  - first:
+      213: -77279232210584905
+    second: Courtyard_11
+  - first:
+      213: -7163184227330896563
+    second: Courtyard_12
+  - first:
+      213: -291094987301717632
+    second: Courtyard_13
+  - first:
+      213: -2690540935377306228
+    second: Courtyard_14
+  - first:
+      213: 8259381405263272253
+    second: Courtyard_15
+  - first:
+      213: -96944430728971663
+    second: Courtyard_16
+  - first:
+      213: -5287476350664792068
+    second: Courtyard_17
+  - first:
+      213: 7020764271143165155
+    second: Courtyard_18
+  - first:
+      213: 1953614664849872733
+    second: Courtyard_19
+  - first:
+      213: -2592114446976870603
+    second: Courtyard_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Courtyard_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 17
+        width: 28
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c91f7b8ced610140800000000000000
+      internalID: 4684145950162098627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 69
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d96a9720510e3090800000000000000
+      internalID: -8052997639918425642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 17
+        width: 28
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77565076965b75670800000000000000
+      internalID: 8527483883753923959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 17
+        width: 27
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd3edc1cd76164340800000000000000
+      internalID: 4847586778289136607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 17
+        width: 35
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d345b0ca022544890800000000000000
+      internalID: -7474759181249326019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_5
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 17
+        width: 34
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b92bfc95c39ff6e0800000000000000
+      internalID: -1801558848973362767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 17
+        width: 29
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 004746a404f0fcf30800000000000000
+      internalID: 4597910513368986624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_7
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 52
+        width: 37
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0118e2ed7890f60800000000000000
+      internalID: 8001075601333096647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_8
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 73
+        width: 62
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3747e190096101e0800000000000000
+      internalID: -2233388489030285510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 17
+        width: 32
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf9d185b681486b30800000000000000
+      internalID: 4280743492642265595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_10
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 17
+        width: 47
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d040daacdd8c4540800000000000000
+      internalID: 4993522065745133780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_11
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 54
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bab29f92f27deef0800000000000000
+      internalID: -77279232210584905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_12
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 17
+        width: 44
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4dc24db5e1479c90800000000000000
+      internalID: -7163184227330896563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_13
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 17
+        width: 56
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089fbfdb6a2d5fbf0800000000000000
+      internalID: -291094987301717632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_14
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 17
+        width: 29
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8d303d364749aad0800000000000000
+      internalID: -2690540935377306228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_15
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 52
+        width: 38
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d391f25c0a73f9270800000000000000
+      internalID: 8259381405263272253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_16
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 17
+        width: 23
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a727bcd8597aef0800000000000000
+      internalID: -96944430728971663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_17
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 17
+        width: 40
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf7a858f54c1f96b0800000000000000
+      internalID: -5287476350664792068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 17
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec1e3138e3ce6160800000000000000
+      internalID: 7020764271143165155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_19
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 17
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57de5edf22ac1b10800000000000000
+      internalID: 1953614664849872733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Courtyard_20
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 17
+        width: 31
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53719c2e4a5f60cd0800000000000000
+      internalID: -2592114446976870603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Courtyard_0: 4684145950162098627
+      Courtyard_1: -8052997639918425642
+      Courtyard_10: 4993522065745133780
+      Courtyard_11: -77279232210584905
+      Courtyard_12: -7163184227330896563
+      Courtyard_13: -291094987301717632
+      Courtyard_14: -2690540935377306228
+      Courtyard_15: 8259381405263272253
+      Courtyard_16: -96944430728971663
+      Courtyard_17: -5287476350664792068
+      Courtyard_18: 7020764271143165155
+      Courtyard_19: 1953614664849872733
+      Courtyard_2: 8527483883753923959
+      Courtyard_20: -2592114446976870603
+      Courtyard_3: 4847586778289136607
+      Courtyard_4: -7474759181249326019
+      Courtyard_5: -1801558848973362767
+      Courtyard_6: 4597910513368986624
+      Courtyard_7: 8001075601333096647
+      Courtyard_8: -2233388489030285510
+      Courtyard_9: 4280743492642265595
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
