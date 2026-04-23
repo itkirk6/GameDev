@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7149990435050150261}
   - component: {fileID: 4972828584291348964}
   - component: {fileID: 7345167233347501042}
-  - component: {fileID: 1477622412939658220}
-  - component: {fileID: 188948471519776339}
-  m_Layer: 9
-  m_Name: guard
+  - component: {fileID: 858368767035734711}
+  - component: {fileID: 2908988929859783495}
+  m_Layer: 3
+  m_Name: dog
   m_TagString: Guard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 8426817888908902439, guid: 1f0de3be64f7ad94bb289e04e476ab50, type: 3}
+  m_Sprite: {fileID: -7153063077234432990, guid: 41595d3a9eb88c64bbfe02e3788969d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,40 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &188948471519776339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475872235262945198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae555c4a1fd6ec8429c7e74c5b5d345c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::guardAI
-  patrolPoints:
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: -1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: -1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: 1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: 1}
-  movementSpeed: 0.75
-  loop: 1
-  player: {fileID: 0}
-  viewDistance: 14
-  LOSMask:
-    serializedVersion: 2
-    m_Bits: 8
-  bulletPrefab: {fileID: 769094135114850664, guid: 3ef773e9537f59f49b0fbb8edb10bece, type: 3}
-  fireRate: 1.5
 --- !u!50 &4972828584291348964
 Rigidbody2D:
   serializedVersion: 5
@@ -190,19 +156,19 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02013214, y: -0.17205358}
+  m_Offset: {x: 0.00036749244, y: -0.1344026}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6857143, y: 0.82857144}
+    oldSize: {x: 0.33333334, y: 0.6388889}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3691772, y: 0.4300875}
+  m_Size: {x: 0.29725868, y: 0.3315524}
   m_EdgeRadius: 0
---- !u!95 &1477622412939658220
+--- !u!95 &858368767035734711
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -212,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 4475872235262945198}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 81d0bfc021102eb458acaa57c14a0276, type: 2}
+  m_Controller: {fileID: 9100000, guid: fc617242bae859749baf3614bc479e12, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -224,3 +190,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2908988929859783495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475872235262945198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fa7b5c49b9f3a445a70c5947799fa7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::dogAI
+  patrolPoints: []
+  movementSpeed: 2
+  loop: 1
