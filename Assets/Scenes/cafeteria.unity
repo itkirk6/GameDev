@@ -197,7 +197,7 @@ GameObject:
   - component: {fileID: 263495820}
   - component: {fileID: 263495819}
   m_Layer: 0
-  m_Name: triggerManaager
+  m_Name: triggerManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

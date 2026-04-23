@@ -6,7 +6,6 @@ public class triggerManager : MonoBehaviour
     public static triggerManager instance;
 
     public string spawnPointName;
-    public GameObject playerPrefab;
 
     private void Awake()
     {
@@ -30,13 +29,22 @@ public class triggerManager : MonoBehaviour
 
     void SpawnPlayer()
     {
-        if (playerPrefab == null) return;
-
+        Debug.Log("teleporting player into new scene " + spawnPointName);
         GameObject spawnPoint = GameObject.Find(spawnPointName);
 
         if (spawnPoint != null)
         {
-            Instantiate(playerPrefab, spawnPoint.transform.position, Quaternion.identity);
+            Debug.Log("teleporting player at spawnpoint: " + spawnPoint.transform.position);
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                player.transform.position = spawnPoint.transform.position;
+            }
+        }
+        else
+        {
+            Debug.Log("spawnpoint is null");
         }
     }
 }

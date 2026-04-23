@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
 
     private Animator animator;
     private Rigidbody2D rb;
+    private static playerController instance;
 
     // camera stuffs
     private Camera cam;
@@ -19,11 +20,23 @@ public class playerController : MonoBehaviour
     private Vector2 lastMove = Vector2.down;
 
 
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         cam = FindFirstObjectByType<Camera>();
+
     }
 
     private void Update()
@@ -83,6 +96,11 @@ public class playerController : MonoBehaviour
 
     void handleCamera()
     {
+        if (cam == null)
+        {
+            cam = FindFirstObjectByType<Camera>();
+        }
+        
         Vector3 camPos = cam.transform.position;
 
         float xDiff = transform.position.x - camPos.x;
@@ -102,7 +120,7 @@ public class playerController : MonoBehaviour
         {
             camPos.y = transform.position.y - deadZone.y;
         }
-        if (yDiff < deadZone.y)
+        if (yDiff < -deadZone.y)
         {
             camPos.y = transform.position.y + deadZone.y;
         }
