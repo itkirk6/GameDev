@@ -102,8 +102,6 @@ Packages/packages-lock.json
 *.xcf
 *.aif
 *.aiff
-*.wav
-*.mp3
 *.flac
 *.mp4
 *.mov
@@ -129,3 +127,7 @@ SourceAssets/
 # Optional: Unity test output
 ############################################
 TestResults/
+
+#hardcoded stuff
+Assets/scripts.meta
+Assets/Scripts.meta

@@ -3,18 +3,25 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - GrassPatch
+  - Guard
+  - HealthSlider
+  - EquippedItemBox
+  - DeathPanel
+  - WinPanel
+  - pausePanel
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - Player
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - interactable
+  - pickups
+  - Walls
+  - Guard
   - 
   - 
   - 
@@ -41,6 +48,9 @@ TagManager:
   - name: floor
     uniqueID: 2781235061
     locked: 0
+  - name: behind walls
+    uniqueID: 4260876817
+    locked: 0
   - name: walls
     uniqueID: 4289923065
     locked: 0
@@ -49,6 +59,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2841295741
     locked: 0
   m_RenderingLayers:
   - Default

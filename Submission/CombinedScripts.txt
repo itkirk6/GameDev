@@ -1,0 +1,3003 @@
+
+
+// ========================================
+// FILE: BulletLogic.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class BulletLogic : MonoBehaviour
+{
+    public float speed = 6f;
+    public float lifetime = 3f;  
+    public int damage = 25;   
+
+    public void Shoot(Vector2 direction)
+    {  
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = direction * speed;      
+        Destroy(gameObject, lifetime);
+    } 
+
+    private void OnTriggerEnter2D(Collider2D collision)   
+    { 
+        if (collision.CompareTag("Guard"))    
+            return;  
+
+        if (collision.CompareTag("Player") && !collision.isTrigger) 
+            return;   
+   
+        Debug.Log($"Collided with {collision.name}");  
+        if (collision.CompareTag("Player"))  
+        {   
+            PlayerInventory playerInventory = collision.GetComponent<PlayerInventory>();
+   
+            if (playerInventory != null)    //check if there is no inventory
+            {
+                playerInventory.takeDamage(damage);    
+            }  
+        }    
+        Destroy(gameObject);  
+    }
+}
+
+
+// ========================================
+// FILE: buttonOutline.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class MenuTextHoverSwap : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler  
+{ 
+    [SerializeField] private GameObject normalText;  
+    [SerializeField] private GameObject hoverText;  
+  
+    private void Start()  
+    {
+        if (normalText != null) normalText.SetActive(true);  
+        if (hoverText != null) hoverText.SetActive(false);  
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)  
+    {
+        if (normalText != null) normalText.SetActive(false);  
+        if (hoverText != null) hoverText.SetActive(true);  
+    }
+
+    public void OnPointerExit(PointerEventData eventData)  
+    { 
+        if (normalText != null) normalText.SetActive(true);
+        if (hoverText != null) hoverText.SetActive(false); 
+    }
+}
+
+
+// ========================================
+// FILE: deathMenu.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class deathMenu : MonoBehaviour
+{
+    public string mainMenuSceneName = "MainMenu";  
+
+    public void goToMainMenu()     //call to go to main menu
+    {
+        Time.timeScale = 1f; 
+
+        playerController player = FindFirstObjectByType<playerController>();  
+ 
+        if (player != null)
+        {  
+            Destroy(player.gameObject);
+        }
+
+        SceneManager.LoadScene(mainMenuSceneName);   //loads the main menu
+    }
+}
+
+
+// ========================================
+// FILE: gameController.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class gameController : MonoBehaviour
+{
+    public static gameController instance;  
+
+    [SerializeField] private GameObject playerPrefab;  
+    [SerializeField] private Transform mainSpawn;  
+
+    private void Awake()
+    {   
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }  
+ 
+    private void Start()
+    {
+        spawnMain(); 
+    } 
+
+    void spawnMain()    //call to spawn in prison scene
+    {
+        if (playerPrefab == null || mainSpawn == null)
+        {
+            return;
+        }
+
+        // prevent duplicate player
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+            return;
+
+        Instantiate(playerPrefab, mainSpawn.position, mainSpawn.rotation);
+    }
+}
+
+
+// ========================================
+// FILE: HidingWireCutters.cs
+// ========================================
+
+
+using UnityEngine;
+  
+public class HidingWireCutters : MonoBehaviour 
+{   
+    public bool isHidingWireCutters;   
+}   
+
+
+// ========================================
+// FILE: MainMenuButtons.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class MainMenuManager : MonoBehaviour
+{
+    [Header("Popup Panel")]
+    public GameObject HowToPlayPanel;
+    //public GameObject UICanvas;
+
+    private void Start()
+    {
+        if (HowToPlayPanel != null)
+        {
+            HowToPlayPanel.SetActive(false);
+        }
+    }
+
+    public void PlayButton()
+    {
+        SceneManager.LoadScene("prison");
+        //UICanvas.SetActive(true);
+    }
+
+    public void OpenHowToPlay()
+    {
+        HowToPlayPanel.SetActive(true);
+    }
+
+    public void CloseHowToPlay()
+    {
+        HowToPlayPanel.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
+}
+
+
+// ========================================
+// FILE: particleTriggers.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class surfaceTrigger : MonoBehaviour
+{
+    public bool isGrass;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player"))
+            return;
+
+        walkParticles playerParticles = other.GetComponentInChildren<walkParticles>();
+
+        if (playerParticles != null)
+        {
+            playerParticles.setSurface(isGrass);
+        }
+    }
+}
+
+
+// ========================================
+// FILE: pauseMenu.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class PauseUI : MonoBehaviour
+{
+    [SerializeField] private GameObject pauseButton;   
+    [SerializeField] private GameObject pausePanel;  
+    [SerializeField] private GameObject mainCanvas; 
+
+    private bool isPaused = false;  
+ 
+    private void Awake()  
+    {
+        findPauseUIReferences();    //gets the pause UI
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    } 
+
+    private void OnDisable()  
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void Start()
+    {
+        findPauseUIReferences();
+        UpdatePauseUI(SceneManager.GetActiveScene().name);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        findPauseUIReferences();
+        UpdatePauseUI(scene.name);
+    }
+
+    private void UpdatePauseUI(string sceneName)
+    {
+        isPaused = false;
+        Time.timeScale = 1f;
+
+        if (pauseButton == null || pausePanel == null)
+            return;
+
+        if (sceneName == "MainMenu")
+        {
+            pauseButton.SetActive(false);
+            pausePanel.SetActive(false);
+        }
+        else
+        {
+            pauseButton.SetActive(true);
+            pausePanel.SetActive(false);
+        }
+    }
+
+    public void OpenPausePanel()   //opens the pause panell by setting active
+    {
+        findPauseUIReferences();  
+
+        if (pausePanel == null)  
+            return;
+  
+        isPaused = true; 
+        pausePanel.SetActive(true);  
+        pausePanel.transform.SetAsLastSibling();  
+        Time.timeScale = 0f;   
+    }
+
+    public void ResumeGame()   //for resume button
+    {
+        findPauseUIReferences();  
+
+        if (pausePanel == null)
+            return;
+
+        isPaused = false;
+        pausePanel.SetActive(false);
+        Time.timeScale = 1f;
+    }
+
+    public void GoToMainMenu()   //for mainmenu button
+    {  
+        findPauseUIReferences();
+
+        isPaused = false;
+        Time.timeScale = 1f;
+
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
+
+        if (mainCanvas != null)
+        {
+            mainCanvas.SetActive(false);
+        }  
+
+        playerController player = FindFirstObjectByType<playerController>();  
+        if (player != null)
+        {
+            Destroy(player.gameObject);  
+        }
+ 
+        SceneManager.LoadScene("MainMenu");  
+    }
+
+    private void findPauseUIReferences() 
+    {  
+        if (mainCanvas == null)
+        {
+            GameObject canvasObject = GameObject.Find("UICanvas");
+
+            if (canvasObject != null)  
+            {
+                mainCanvas = canvasObject;   
+            }
+        }
+
+        if (pauseButton == null)  
+        {
+            GameObject pauseButtonObject = GameObject.Find("pauseButton");
+
+            if (pauseButtonObject != null) 
+            {  
+                pauseButton = pauseButtonObject;
+            }  
+        }
+
+        if (pausePanel == null && mainCanvas != null)  
+        {
+            Transform pausePanelTransform = mainCanvas.transform.Find("pausePanel");
+ 
+            if (pausePanelTransform != null) 
+            {
+                pausePanel = pausePanelTransform.gameObject;  
+            }
+        }
+    } 
+}
+
+
+// ========================================
+// FILE: playerController.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngineInternal;
+
+public class playerController : MonoBehaviour
+{
+
+    [SerializeField] private float movementSpeed;
+
+    // footsteps
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private float footstepInterval = 0.4f;
+
+    private Animator animator;
+    private Rigidbody2D rb;
+    private static playerController instance;
+
+    // camera stuffs
+    private Camera cam;
+    [SerializeField] private Vector2 deadZone = new Vector2(1.5f, 1f);
+
+    // runtime variables
+    private AudioSource audioSource;
+    private float footstepTimer;
+    private Vector2 movementInput;
+    private Vector2 lastMove = Vector2.down;
+
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        cam = FindFirstObjectByType<Camera>();
+        audioSource = GetComponent<AudioSource>();
+
+    }
+
+    private void Update()
+    {
+        getInput();
+        handleAnimations();
+        handleCamera();
+        handleFootsteps();
+    }
+
+    private void FixedUpdate()
+    {
+        handleMovement();
+    }
+
+
+    private void getInput()
+    {
+        movementInput.x = Input.GetAxisRaw("Horizontal");
+        movementInput.y = Input.GetAxisRaw("Vertical");
+        movementInput = movementInput.normalized;
+
+        if (movementInput != Vector2.zero)
+        {
+            lastMove = movementInput;
+
+            if (Mathf.Abs(movementInput.x) > 0.01f)
+            {
+                lastMove.x = Mathf.Sign(movementInput.x);
+                lastMove.y = 0f;
+            }
+            else if (movementInput.y > 0)
+            {
+                lastMove.x = 0f;
+                lastMove.y = 1f;
+            }
+            else if (movementInput.y < 0)
+            {
+                lastMove.x = 0f;
+                lastMove.y = -1f;
+            }
+        }
+    }
+
+    private void handleMovement()
+    {
+        // apply movement
+        rb.MovePosition(rb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));
+    }
+
+    private void handleAnimations()
+    {
+        bool isMoving = (movementInput != Vector2.zero);
+        animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveX", lastMove.x);
+        animator.SetFloat("moveY", lastMove.y);
+    }
+
+    void handleCamera()
+    {
+        if (cam == null)
+        {
+            cam = FindFirstObjectByType<Camera>();
+        }
+        
+        Vector3 camPos = cam.transform.position;
+
+        float xDiff = transform.position.x - camPos.x;
+        float yDiff = transform.position.y - camPos.y;
+
+        if (xDiff > deadZone.x)
+        {
+            camPos.x = transform.position.x - deadZone.x;
+        }
+
+        if (xDiff < -deadZone.x)
+        {
+            camPos.x = transform.position.x + deadZone.x;
+        }
+
+        if (yDiff > deadZone.y)
+        {
+            camPos.y = transform.position.y - deadZone.y;
+        }
+        if (yDiff < -deadZone.y)
+        {
+            camPos.y = transform.position.y + deadZone.y;
+        }
+
+        cam.transform.position = new Vector3(camPos.x, camPos.y, cam.transform.position.z);
+
+    }
+
+    private void handleFootsteps()
+    {
+        if (movementInput != Vector2.zero)
+        {
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0f)
+            {
+                audioSource.PlayOneShot(footstepClip);
+                footstepTimer = footstepInterval;
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
+    }
+
+
+
+    public Vector2 getMovementInput()
+    {
+        return movementInput;
+    }
+
+    public Vector2 getLastMove()
+    {
+        return lastMove;
+    }
+
+}
+
+
+// ========================================
+// FILE: playerInventory.cs
+// ========================================
+
+
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class PlayerInventory : MonoBehaviour
+{
+    // public string currentEquippedItem = "None";
+    // public string previouslyEquippedItem;
+    public List<string> keys = new List<string>();
+    public List<string> questItems = new List<string>();
+    public int playerHealth = 100;
+    public Image equippedItemUIBox;
+    public GameObject currentEquippedItem;
+    [SerializeField] private AudioClip pickupClip;
+    public GameObject deathPanel;
+    public GameObject gameOverPanel;
+
+    private AudioSource audioSource;
+    public Slider healthSlider;
+    public int maxHealth = 100;
+    private bool isDead = false;
+    public GameObject pauseButton;
+
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+    void Start()
+    {
+        if (equippedItemUIBox != null)
+            equippedItemUIBox.enabled = false;
+
+        audioSource = GetComponent<AudioSource>();
+        findHealthSlider();
+        findEquippedItemUIBox();
+        updateHealthSlider();
+        findDeathPanel();
+        findGameOverPanel();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
+    }
+
+
+    void Update()
+    {
+        if (playerHealth <= 0 && !isDead)
+        {
+            isDead = true;
+            handleDeath();
+        }
+        if(Input.GetMouseButtonDown(0) && currentEquippedItem != null)
+        {
+            IUsableItem usableItem = currentEquippedItem.GetComponent<IUsableItem>();
+            if(usableItem != null)
+            {
+                usableItem.UseItem();
+            }
+        }
+    }
+    public void ProcessPickup( ItemPickup pickupInfo)
+    {
+        audioSource.PlayOneShot(pickupClip);
+        switch (pickupInfo.itemType)
+        {
+            case ItemPickup.PickupType.Equippable:
+
+                if(currentEquippedItem != null)
+                {
+                    currentEquippedItem.transform.SetParent(null);
+                    currentEquippedItem.transform.localScale = currentEquippedItem.GetComponent<InteractableObject>().originalScale;
+                    currentEquippedItem.transform.position = transform.position;
+                    currentEquippedItem.GetComponent<SpriteRenderer>().enabled = true;
+                    currentEquippedItem.GetComponent<Collider2D>().enabled = true;
+                    currentEquippedItem.GetComponent<InteractableObject>().enabled = true;
+                    currentEquippedItem.GetComponent<ItemPickup>().enabled = true;
+
+                }
+
+                currentEquippedItem = pickupInfo.gameObject;
+
+                currentEquippedItem.transform.SetParent(transform);
+                currentEquippedItem.transform.position = Vector3.zero;
+
+                currentEquippedItem.GetComponent<SpriteRenderer>().enabled = false;
+                currentEquippedItem.GetComponent<Collider2D>().enabled = false;
+
+                currentEquippedItem.GetComponent<InteractableObject>().enabled = false;;
+                currentEquippedItem.GetComponent<ItemPickup>().enabled = false;
+
+                if(equippedItemUIBox != null)
+                {
+                    equippedItemUIBox.sprite = pickupInfo.GetComponent<SpriteRenderer>().sprite;
+                    equippedItemUIBox.enabled = true;
+                    equippedItemUIBox.color = Color.white;
+                }
+
+                Debug.Log($"Equipped: {currentEquippedItem}");
+                break;
+            
+            case ItemPickup.PickupType.Consumable:
+                playerHealth += pickupInfo.itemValue;
+                playerHealth = Mathf.Clamp(playerHealth, 0, maxHealth);
+                updateHealthSlider();
+                Debug.Log($"Restored {pickupInfo.itemValue} health.");
+                Destroy(pickupInfo.gameObject);
+                break;
+
+
+            case ItemPickup.PickupType.Key:
+                if(!keys.Contains(pickupInfo.itemName))
+                {
+                    keys.Add(pickupInfo.itemName);
+                    Debug.Log($"Added {pickupInfo.itemName} key to inventory.");
+                }
+                Destroy(pickupInfo.gameObject);
+                break;
+            
+            case ItemPickup.PickupType.QuestItem:
+                //Debug.Log("Enterd here");
+                if(!questItems.Contains(pickupInfo.itemName))
+                {
+                    questItems.Add(pickupInfo.itemName);
+                    Debug.Log($"Added {pickupInfo.itemName} to inventory.");
+                }
+                Destroy(pickupInfo.gameObject);
+                break;
+
+        }
+        if (pickupInfo.addToKeys && !keys.Contains(pickupInfo.itemName))
+        {
+            keys.Add(pickupInfo.itemName);
+        }
+
+        if (pickupInfo.addToQuestItems && !questItems.Contains(pickupInfo.itemName))
+        {
+            questItems.Add(pickupInfo.itemName);
+        }
+
+    }
+
+    public bool HasKey(string requiredKey)
+    {
+        return keys.Contains(requiredKey);
+    }
+    private void updateHealthSlider()
+    {
+        if (healthSlider == null)
+        {
+            findHealthSlider();
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = playerHealth;
+        }
+    }
+    public void takeDamage(int damageAmount)
+    {
+        playerHealth -= damageAmount;
+        playerHealth = Mathf.Clamp(playerHealth, 0, maxHealth);
+        updateHealthSlider();
+
+        if (playerHealth <= 0)
+        {
+            handleDeath();
+        }
+    }
+    private void findHealthSlider()
+    {
+        if (healthSlider != null)
+            return;
+
+        GameObject sliderObject = GameObject.FindGameObjectWithTag("HealthSlider");
+
+
+        if (sliderObject != null)
+        {
+            healthSlider = sliderObject.GetComponent<Slider>();
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.minValue = 0;
+            healthSlider.maxValue = maxHealth;
+        }
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += onSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= onSceneLoaded;
+    }
+
+    private void onSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        healthSlider = null;
+        equippedItemUIBox = null;
+        deathPanel = null;
+        gameOverPanel = null;
+
+        findHealthSlider();
+        findEquippedItemUIBox();
+        findDeathPanel();
+        findGameOverPanel();
+        updateHealthSlider();
+        updateEquippedItemUI();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
+
+        if (gameOverPanel != null)
+        {
+            gameOverPanel.SetActive(false);
+        }
+    }
+
+
+    private void findEquippedItemUIBox()
+    {
+        if (equippedItemUIBox != null)
+            return;
+
+        GameObject equippedItemObject = GameObject.FindGameObjectWithTag("EquippedItemBox");
+
+        if (equippedItemObject != null)
+        {
+            equippedItemUIBox = equippedItemObject.GetComponent<Image>();
+        }
+    }
+    private void updateEquippedItemUI()
+    {
+        if (equippedItemUIBox == null)
+        {
+            findEquippedItemUIBox();
+        }
+
+        if (equippedItemUIBox == null)
+            return;
+
+        if (currentEquippedItem == null)
+        {
+            equippedItemUIBox.enabled = false;
+            return;
+        }
+
+        SpriteRenderer itemSpriteRenderer = currentEquippedItem.GetComponent<SpriteRenderer>();
+
+        if (itemSpriteRenderer != null)
+        {
+            equippedItemUIBox.sprite = itemSpriteRenderer.sprite;
+            equippedItemUIBox.enabled = true;
+            equippedItemUIBox.color = Color.white;
+        }
+    }  
+
+    private void findDeathPanel()
+    {
+        if (deathPanel != null)
+            return;
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+            return;
+
+        GameObject panelObject = GameObject.FindGameObjectWithTag("DeathPanel");
+
+        if (panelObject != null)
+        {
+            deathPanel = panelObject;
+        }
+    }
+
+    private void handleDeath()
+    {
+        findDeathPanel();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(true);
+        }
+
+        Time.timeScale = 0f;
+    }
+
+    private void findGameOverPanel()
+    {
+        if (gameOverPanel != null)
+            return;
+
+        GameObject panelObject = GameObject.FindGameObjectWithTag("WinPanel");
+
+        if (panelObject != null)
+        {
+            gameOverPanel = panelObject;
+            gameOverPanel.SetActive(false);
+        }
+    }
+
+    public void handleGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+    }
+    
+    private void findPauseButton()
+    {
+        if (pauseButton != null)
+            return;
+
+        GameObject pauseButtonObject = GameObject.Find("pauseButton");
+
+        if (pauseButtonObject != null)
+        {
+            pauseButton = pauseButtonObject;
+        }
+    }
+
+
+
+}
+
+
+// ========================================
+// FILE: walkParticles.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class walkParticles : MonoBehaviour
+{
+    public ParticleSystem grassParticles;
+    public ParticleSystem concreteParticles;
+    public playerController playerController;
+    public float moveThreshold = 0.05f;
+    public Vector3 footOffset = new Vector3(0f, -0.1f, 0f);
+    public float behindDistance = 0.05f;
+
+    private Vector2 lastMoveDirection = Vector2.down;
+    private ParticleSystem currentParticles;
+
+    private void Start()
+    {
+        currentParticles = concreteParticles;
+    }
+
+    private void Update()
+{
+    //Debug.Log("walkParticles update");
+
+    if (playerController == null)
+    {
+        //Debug.Log("playerController is null");
+        return;
+    }
+
+    Vector2 movementInput = playerController.getMovementInput();
+    //Debug.Log("movement input: " + movementInput);
+
+    if (movementInput.magnitude > moveThreshold)
+    {
+        //Debug.Log("movement passed threshold");
+
+        lastMoveDirection = playerController.getLastMove().normalized;
+        updateParticlePosition();
+        playCurrentParticles();
+    }
+    else
+    {
+        stopAllParticles();
+    }
+}
+
+    public void setSurface(bool isOnGrass)
+    {
+        currentParticles = isOnGrass ? grassParticles : concreteParticles;
+    }
+
+    private void updateParticlePosition()
+    {
+        Vector3 behindOffset = (Vector3)(-lastMoveDirection * behindDistance);
+        transform.localPosition = footOffset + behindOffset;
+    }
+
+    private void playCurrentParticles()
+{
+
+    if (currentParticles == null)
+    {
+        //Debug.Log("currentParticles is null");
+        return;
+    }
+
+
+    if (!currentParticles.isPlaying)
+    {
+        currentParticles.Play();
+    }
+
+    if (grassParticles != currentParticles && grassParticles != null && grassParticles.isPlaying)
+        grassParticles.Stop();
+
+    if (concreteParticles != currentParticles && concreteParticles != null && concreteParticles.isPlaying)
+        concreteParticles.Stop();
+
+}
+
+    private void stopAllParticles()
+    {
+        if (grassParticles != null && grassParticles.isPlaying)
+            grassParticles.Stop();
+
+        if (concreteParticles != null && concreteParticles.isPlaying)
+            concreteParticles.Stop();
+        //Debug.Log("stopping particles");
+
+    }
+}
+
+
+// ========================================
+// FILE: dogAI.cs
+// ========================================
+
+
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class dogAI : MonoBehaviour
+{
+
+    [Serializable] public class patrolPoint
+    {
+        public Transform waypoint;
+        public float waitTime = 1f;
+        public Vector2 facingAfterArrival = Vector2.down;
+    }
+
+    
+    [SerializeField] private List<patrolPoint> patrolPoints = new List<patrolPoint>();
+    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private bool loop = true;
+
+    [SerializeField] private AudioClip attackClip;
+    private AudioSource audioSource;
+    public Transform player;
+    public float detectionRadius = 5f;
+    public float chaseSpeed = 3.5f;
+    public float attackRange = 0.2f;
+    public float attackRate = 1.5f;
+    public int damage = 50;
+
+    private Animator animator;
+    private Rigidbody2D rb;
+
+    // runtime variables
+    private Vector2 movementInput;
+    private Vector2 lastMove = Vector2.down;
+
+    private int curIndex = 0;
+    private bool isWait = false;
+    private float waitTimer = 0f;
+
+    private bool isChas = false;
+    private float nextAttackTime = 0f;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {
+        CheckForPlayer();
+
+        if(isChas)
+        {
+            isWait = false;
+            if(Vector2.Distance(transform.position, player.position) <= attackRange)
+            {
+                AttackPlayer();
+            }
+        }
+
+        else
+            handleWaitTimer();
+        handleAnimations();
+    }
+
+    private void FixedUpdate()
+    {
+        if(isChas)
+        {
+            if(Vector2.Distance(transform.position, player.position) > attackRange)
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                movementInput = Vector2.zero;
+            }
+        }
+        else
+            handleMovement();
+    }
+
+    private void CheckForPlayer()
+    {
+        if(player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if(playerObj != null)
+                player = playerObj.transform;
+            else
+                return;
+        }
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        isChas = (distanceToPlayer <= detectionRadius);
+    }
+
+    private void ChasePlayer()
+    {     
+        Vector2 toTarget = (Vector2)player.position - rb.position;
+        movementInput = toTarget.normalized;
+
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);
+        else
+            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));
+
+        rb.MovePosition(rb.position + (movementInput * chaseSpeed * Time.fixedDeltaTime));
+    }
+
+    private void AttackPlayer() 
+    {
+        if (attackClip != null)  
+        {
+            audioSource.PlayOneShot(attackClip); 
+        }
+        movementInput = Vector2.zero;    
+
+        Vector2 toPlayer = (player.position - transform.position).normalized;  //gets position of player
+        if (Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
+            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);  
+        else 
+            lastMove = new Vector2(0f, Mathf.Sign(toPlayer.y));
+
+        if(Time.time >= nextAttackTime)
+        {
+            PlayerInventory playerInventory = player.GetComponent<PlayerInventory>(); 
+
+            if (playerInventory != null)  
+            {   
+                playerInventory.takeDamage(damage);   //applies damage to player
+            }
+            nextAttackTime = Time.time + (1f / attackRate);
+        }  
+    } 
+   
+    private void handleMovement()
+    {  
+        if (patrolPoints.Count == 0 || isWait) 
+        {
+            movementInput = Vector2.zero;    
+            return; 
+        }
+
+        Transform target = patrolPoints[curIndex].waypoint;
+  
+        Vector2 currentPos = rb.position;  
+        Vector2 targetPos = target.position;
+
+        Vector2 toTarget = targetPos - currentPos; 
+
+        if (toTarget.magnitude <= 0.05)
+        {
+            rb.MovePosition(targetPos);  
+            startWaiting();
+            return;
+        }
+
+        movementInput = toTarget.normalized;
+
+        //snap to 4 directions 
+        //copied most of this code from player script
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+        {
+            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);  
+        }
+        else
+        {
+            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));  
+        }
+
+        rb.MovePosition(rb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));  
+    }
+
+    private void startWaiting()   //function for starting a timer
+    {
+        isWait = true;
+        movementInput = Vector2.zero;
+
+        Vector2 dir = patrolPoints[curIndex].facingAfterArrival;  //sets the facing direction immediately
+
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+        {
+            lastMove = new Vector2(Mathf.Sign(dir.x), 0f); 
+        }
+        else
+        {
+            lastMove = new Vector2(0f, Mathf.Sign(dir.y));  
+        }
+  
+        waitTimer = patrolPoints[curIndex].waitTime;
+    }
+
+    private void handleWaitTimer()
+    {
+        if (!isWait)
+            return;
+
+        waitTimer -= Time.deltaTime;
+
+        if (waitTimer <= 0f)
+        {
+            advancePoint();
+            isWait = false;
+        }
+    }
+
+    private void advancePoint()
+    {
+        curIndex++;
+
+        if (curIndex >= patrolPoints.Count)
+        {
+            if (loop)
+            {
+                curIndex = 0;
+            }
+            else
+            {
+                curIndex = patrolPoints.Count - 1;
+            }
+        }
+    }
+
+    private void handleAnimations()
+    {
+        bool isMoving = (movementInput != Vector2.zero);
+
+        animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveX", lastMove.x);
+        animator.SetFloat("moveY", lastMove.y);
+    }
+}
+
+
+// ========================================
+// FILE: guardAI.cs
+// ========================================
+
+
+using System;
+using System.Collections.Generic;
+using UnityEngine; 
+ 
+public class guardAI : MonoBehaviour  
+{
+
+    [Serializable] public class patrolPoint
+    {
+        public Transform waypoint; 
+        public float waitTime = 1f;
+        public Vector2 facingAfterArrival = Vector2.down;  
+    }
+    [SerializeField] private List<patrolPoint> patrolPoints = new List<patrolPoint>();
+    [SerializeField] private float movementSpeed = 2f;
+    [SerializeField] private bool loop = true;
+
+    [SerializeField] private AudioClip attackClip;
+    private AudioSource audioSource;
+
+    public Transform player;  
+    public float viewDistance = 14f; 
+    public float FOV = 120f;  
+    public LayerMask LOSMask; 
+    public GameObject bulletPrefab;  
+    public float fr = 1.5f;   //firerate variable
+
+    private Animator animator;
+    private Rigidbody2D rigb;  //rigidbody
+    private Vector2 movementInput; 
+    private Vector2 lastMove = Vector2.down;  
+    private int currentIndex = 0;
+    private bool isWaiting = false; 
+    private float waitTimer = 0f;
+   
+    private bool seePlayer = false;
+    private float nextFireTime = 0f;
+
+    void Start()
+    {
+        rigb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update()
+    {   
+        CheckLOS();
+        //Debug.Log($"Eyes on Player: {eyesOnPlayer}");
+        if(seePlayer)
+        {  
+            attackPlayer();
+        } 
+        else  
+            waitTimerFunc(); 
+
+        handleAnimations();
+    }
+  
+    private void FixedUpdate()
+    {
+        handleMovement();
+    }
+
+    private void CheckLOS()
+    {
+        if(player == null)
+        { 
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+
+            if(playerObj != null)
+                player = playerObj.transform;
+            else
+                return;
+        }
+
+        seePlayer = false;
+
+        Vector2 toPlayer = player.position - transform.position;
+        Vector2 directionToPlayer = toPlayer.normalized;
+
+        if(toPlayer.magnitude <= viewDistance)
+        {
+            float angleToPlayer = Vector2.Angle(lastMove, directionToPlayer);
+
+            if(angleToPlayer <= FOV/2f)
+            {
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, directionToPlayer, viewDistance, LOSMask);
+
+                if(hit.collider != null && hit.collider.CompareTag("Player"))
+                {
+                    seePlayer = true;
+                    return;
+                }
+            }
+        }
+    }
+
+    private void attackPlayer()
+    {  
+        movementInput = Vector2.zero;
+        isWaiting = false;
+
+        Vector2 toPlayer = (player.position - transform.position).normalized;
+ 
+        if(Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
+            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);  
+        else 
+            lastMove = new Vector2(0f, Mathf.Sign(toPlayer.y));
+
+        if(Time.time >= nextFireTime) 
+        {
+
+            Shoot(toPlayer);  
+            nextFireTime = Time.time + fr;
+        }
+    }
+
+    private void Shoot(Vector2 direction)
+    {
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg + 90f; 
+        Quaternion bulletRotation = Quaternion.Euler(0, 0, angle);  
+        
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, bulletRotation);
+
+        BulletLogic bulletScript = bullet.GetComponent<BulletLogic>(); 
+        if (bulletScript != null)
+        {
+            audioSource.PlayOneShot(attackClip);
+            bulletScript.Shoot(direction);
+        }
+    }
+
+    private void handleMovement()
+    {
+        if (patrolPoints.Count == 0 || isWaiting)
+        {
+            movementInput = Vector2.zero;
+            return;
+        }
+
+        Transform target = patrolPoints[currentIndex].waypoint;
+
+        Vector2 currentPos = rigb.position;
+        Vector2 targetPos = target.position;
+  
+        Vector2 toTarget = targetPos - currentPos;
+  
+        if (toTarget.magnitude <= 0.05)
+        {
+            rigb.MovePosition(targetPos);
+            startWaiting();
+            return;
+        }
+
+        movementInput = toTarget.normalized;
+
+        // snap to 4 directions
+        // copied most of this code from player script
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+        {
+            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);
+        }
+        else
+        {
+            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));
+        }
+
+        rigb.MovePosition(rigb.position + (movementInput * movementSpeed * Time.fixedDeltaTime));
+    }
+
+    private void startWaiting()
+    {
+        isWaiting = true;
+        movementInput = Vector2.zero;
+
+        // set facing direction immediately
+        Vector2 dir = patrolPoints[currentIndex].facingAfterArrival;
+
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+        {
+            lastMove = new Vector2(Mathf.Sign(dir.x), 0f);
+        }
+        else
+        {
+            lastMove = new Vector2(0f, Mathf.Sign(dir.y));
+        }
+
+        waitTimer = patrolPoints[currentIndex].waitTime;
+    }
+
+    private void waitTimerFunc()   //function to handle the wait time
+    {
+        if (!isWaiting)
+            return;
+
+        waitTimer -= Time.deltaTime; 
+
+        if (waitTimer <= 0f)   
+        {  
+            advancePoint();
+            isWaiting = false;
+        }
+    }
+
+    private void advancePoint()
+    { 
+        currentIndex++;
+
+        if (currentIndex >= patrolPoints.Count)
+        {
+            if (loop)
+            {   
+                currentIndex = 0;
+            }
+            else
+            {
+                currentIndex = patrolPoints.Count - 1;
+            }
+        }  
+    }
+
+     private void handleAnimations()
+    {  
+        bool isMoving = (movementInput != Vector2.zero); 
+
+        animator.SetBool("isMoving", isMoving);
+        animator.SetFloat("moveX", lastMove.x); 
+        animator.SetFloat("moveY", lastMove.y);
+    }
+}
+
+
+// ========================================
+// FILE: doorController.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class DoorController : MonoBehaviour
+{
+    [Tooltip("The name of the key that is required to open this specific door. e.g. cafeteria")]
+    public string requiredKeyName;
+    public Sprite closedSprite;
+    public Sprite openSprite;
+    public Dialogue dialogue;
+    public float lockedMessageDuration = 2f;
+    [SerializeField] private AudioClip openDoorClip;
+    [SerializeField] private AudioClip closeDoorClip;
+    public SpriteRenderer spriteRenderer;
+    public Collider2D blockingCollider;
+    private bool isOpen = false;
+    private bool isLocked = true;
+    public bool guardsCanAutoOpen = false;
+    public string guardTag = "Guard";
+    private int guardsInTrigger = 0;
+    private bool openedByGuard = false;
+    private AudioSource audioSource;
+
+
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponent<SpriteRenderer>();
+
+        updateDoorVisual();
+    }
+    private void updateDoorVisual()
+    {
+        if (spriteRenderer != null)
+        {
+            if (isOpen)
+                spriteRenderer.sprite = openSprite;
+            else
+                spriteRenderer.sprite = closedSprite;
+        }
+
+        if (blockingCollider != null)
+            blockingCollider.enabled = !isOpen;
+    }
+
+    public void TryOpen()
+    {
+        PlayerInventory inv = FindFirstObjectByType<PlayerInventory>();
+
+        if(isLocked)
+        {
+            if(inv != null && inv.HasKey(requiredKeyName) || requiredKeyName.ToLower() == "none")
+            {
+                isLocked = false;
+                Debug.Log("unlocked door with " + requiredKeyName);
+            }
+            else
+            {
+                Debug.Log("door is locked, requires " + requiredKeyName);
+                showLockedMessage();
+                return;
+            }
+
+        }
+
+        if (isOpen)
+        {
+            closeDoor();
+        }
+        else
+        {
+            openDoor();
+        }
+    }
+
+    private void openDoor()
+    {
+        if (openDoorClip != null)
+        {
+            audioSource.PlayOneShot(openDoorClip);
+        }
+
+        isOpen = true;
+        updateDoorVisual();
+        //Debug.Log("Door opened");
+    }
+
+    private void closeDoor()
+    {
+        if (closeDoorClip != null)
+        {
+            audioSource.PlayOneShot(closeDoorClip);
+        }
+
+        isOpen = false;
+        updateDoorVisual();
+        //Debug.Log("Door closed");
+    }
+    public void guardEnteredDoorTrigger()
+    {
+        if (!guardsCanAutoOpen)
+            return;
+
+        guardsInTrigger++;
+
+        if (!isOpen)
+        {
+            isLocked = false;
+            openDoor();
+            openedByGuard = true;
+        }
+    }
+
+    public void guardExitedDoorTrigger()
+    {
+        if (!guardsCanAutoOpen)
+            return;
+
+        guardsInTrigger = Mathf.Max(0, guardsInTrigger - 1);
+
+        if (guardsInTrigger == 0 && openedByGuard)
+        {
+            closeDoor();
+            openedByGuard = false;
+        }
+    }
+    private void showLockedMessage()
+    {
+        if (dialogue == null)
+            return;
+
+        dialogue.Say("Need " + requiredKeyName + " key to open.", null, lockedMessageDuration);
+    }
+
+
+}
+
+
+// ========================================
+// FILE: doorTriggers.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class doorTriggers : MonoBehaviour
+{
+    public DoorController doorController;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Guard"))
+            return;
+
+        if (doorController != null)
+        {
+            doorController.guardEnteredDoorTrigger();
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Guard"))
+            return;
+
+        if (doorController != null)
+        {
+            doorController.guardExitedDoorTrigger();
+        }
+    }
+}
+
+
+
+// ========================================
+// FILE: keyTypes.cs
+// ========================================
+
+
+public enum keyTypes
+{
+    None,
+    cellKey,
+    cafeteriaKey,
+    guardRoomKeys,
+    courtYardKey,
+    laundryRoomKey,
+    infirmaryRoomKey
+}
+
+
+// ========================================
+// FILE: Dialogue.cs
+// ========================================
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+
+// IMPORTANT Public METHODS and their use
+
+// Say() can take a string or string array, and proceeds to print it one character at a time. It can also take a character name, and a line delay.
+// Skip() skips to the end of the line and then running skip again with 1 second of the first takes you to the next line in the index. 
+// Clear() clears the stored data and closes the text box. 
+
+
+public class Dialogue : MonoBehaviour  
+{
+    [Header("Setup")]
+    public TextMeshProUGUI textBox;
+    public TextMeshProUGUI nameBox;
+    public Animator animController;
+
+    
+
+    [Header("Input")]
+    [HideInInspector]
+    public string[] sentences;
+    private int index;
+    public float typingSpeed = 0.02f;
+    public float duration = 4f;  
+    private bool active = true;  
+    public bool isTalking { get; private set; } 
+    public bool isOnLastLine => sentences != null && index >= sentences.Length - 1;
+    private bool lineFinished = false;  
+
+    
+    private void Update()
+    {  
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Skip();
+        }
+    }
+
+
+    IEnumerator Type()
+    {
+        if (sentences == null || sentences.Length == 0)
+            yield break;  
+
+        if (index < 0 || index >= sentences.Length)
+            yield break;
+            animController.ResetTrigger("Disappear");
+        textBox.text = "";
+        lineFinished = false; 
+        foreach (var letter in sentences[index].ToCharArray())
+        {
+            if (active)  
+            {
+                textBox.text += letter; 
+                yield return new WaitForSeconds(typingSpeed);
+                animController.ResetTrigger("Appear");
+
+            } 
+            else  
+            {
+                textBox.text = sentences[index];
+                lineFinished = true;
+                yield break; 
+            } 
+  
+        }
+        lineFinished = true;
+
+    }   
+ 
+    
+
+    IEnumerator TypeMany()
+    { 
+        for (int i = 0; i < sentences.Length+1; i++)  
+        {
+             
+            if (index < sentences.Length)
+            {
+                StartCoroutine(Type());
+            }             
+            yield return new WaitForSeconds(duration);
+            if (index < sentences.Length)
+            {
+                index++;
+            }
+            else
+            {
+                
+                //Debug.Log("Should Shrink");
+                animController.SetTrigger("Disappear");
+                
+            }
+            
+        }
+        
+    }
+
+
+
+    //Character Socket  
+    public void UpdateName(string name = null)
+    {
+        if (name == null)
+        {
+            nameBox.gameObject.transform.parent.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (!nameBox.gameObject.transform.parent.gameObject.activeSelf)
+            {
+                nameBox.gameObject.transform.parent.gameObject.SetActive(true);
+            }
+            nameBox.text = name;
+        }
+    }
+
+
+    public void Say(string _text, string _characterName = null, float _duration = 0)
+    {
+        StopAllCoroutines();
+        active = true;
+        isTalking = true;
+        animController.SetTrigger("Appear");
+
+        string[] phrase = { _text };
+        sentences = phrase;
+        index = 0; 
+
+        if (_duration > 0)
+        {
+            duration = _duration;
+        }
+
+        UpdateName(_characterName);
+        Debug.Log("Starting line coroutine");
+        StartCoroutine(Type());
+    }
+
+    public void Say(string[] _text, string _characterName = null, float _duration = 0)
+    {
+        StopAllCoroutines();
+        active = true;
+        isTalking = true;
+        animController.SetTrigger("Appear");
+
+        sentences = _text;
+        index = 0;
+
+        if (_duration > 0)
+        {
+            duration = _duration;
+        }
+
+        UpdateName(_characterName);
+        StartCoroutine(Type());
+    }
+
+
+    public void Skip()
+    {
+        //Debug.Log("skipped");
+        if (sentences == null || sentences.Length == 0)
+            return;
+
+        if (!lineFinished)
+        {
+            active = false;
+            return;
+        }
+
+        if (index < sentences.Length - 1)
+        {
+            index++;
+            active = true;
+            StopAllCoroutines();
+            StartCoroutine(Type());
+            Invoke(nameof(resetActive), 0.1f);
+        }  
+        else
+        {
+            Clear();
+        }
+    }
+    private void resetActive()
+    {
+        active = true;
+    }
+
+    private void SkipInvoke()
+    {
+        active = true; 
+    }
+    private void endDialogue()
+    {  
+        isTalking = false;
+        animController.SetTrigger("Disappear");
+    }
+
+    public void Clear()
+    {
+        StopAllCoroutines();
+        isTalking = false;
+        animController.SetTrigger("Disappear");
+        sentences = null;
+        UpdateName();  
+        textBox.text = "";
+        isTalking = false;
+
+    }
+}
+
+
+
+
+
+// ========================================
+// FILE: DialogueTestScript.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class DialogueTestScript : MonoBehaviour, IInteractable
+{
+    [Header("Dialogue")]
+    public Dialogue dialogue;
+    public string characterName;
+    public string singleLine;
+    public string[] multipleLines;
+    public string[] completedLines;
+    public float delayBetweenLines = 4f;
+    public float typingSpeed = 0.02f;
+
+    [Header("Quest")]
+    public bool isQuestNpc = false;
+    public string requiredItemName;
+    public GameObject rewardItemPrefab;
+    public Transform rewardDropPoint;
+
+    private bool questCompleted = false;
+
+    public void Interact(PlayerInteraction playerInteraction)
+    {
+        if (dialogue == null)
+        {
+            Debug.Log("Dialogue is null - exiting");
+            return;
+        }
+
+        if (dialogue.isTalking)
+        {
+            Debug.Log("Dialogue is already talking - exiting");
+            return;
+        }
+
+        if (isQuestNpc)
+        {
+            Debug.Log("interacting with a quest NPC");
+            PlayerInventory playerInventory = playerInteraction.GetComponent<PlayerInventory>();
+
+            if (!questCompleted && playerInventory != null && playerHasRequiredItem(playerInventory))
+            {
+                Debug.Log("quest completed");
+                completeQuest(playerInventory);
+                startDialogue(completedLines);
+                return;
+            }
+
+            if (questCompleted)
+            {
+                startDialogue(completedLines);
+                return;
+            }
+        }
+        startNormalDialogue();
+    }
+
+    private void startNormalDialogue()
+    {
+        //Debug.Log("starting normal doalogue");
+        dialogue.typingSpeed = typingSpeed;
+
+        if (multipleLines == null || multipleLines.Length == 0)
+        {
+            //Debug.Log("saying only one line?");
+            dialogue.Say(singleLine, characterName, delayBetweenLines);
+        }
+        else
+        {
+            //Debug.Log("saying multiple lines");
+            dialogue.Say(multipleLines, characterName, delayBetweenLines);
+        }
+    }
+
+    private void startDialogue(string[] lines)
+    {
+        if (lines == null || lines.Length == 0)
+            return;
+
+        dialogue.typingSpeed = typingSpeed;
+        dialogue.Say(lines, characterName, delayBetweenLines);
+    }
+
+    private bool playerHasRequiredItem(PlayerInventory playerInventory)
+    {
+        return playerInventory.questItems.Contains(requiredItemName);
+    }
+
+    private void completeQuest(PlayerInventory playerInventory)
+    {
+        if (playerInventory.questItems.Contains(requiredItemName))
+        {
+            playerInventory.questItems.Remove(requiredItemName);
+        }
+
+        Vector3 spawnPosition = transform.position;
+
+        if (rewardDropPoint != null)
+        {
+            spawnPosition = rewardDropPoint.position;
+        }
+
+        if (rewardItemPrefab != null)
+        {
+            Instantiate(rewardItemPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
+        }
+
+        questCompleted = true;
+    }
+}
+
+
+// ========================================
+// FILE: idleNpcController.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class idleNpcController : MonoBehaviour
+{
+    public string npcName;
+    public bool canBeKnockedOver = false;
+    public GameObject droppedKeyPrefab;
+    public Transform dropPoint;
+    public Sprite knockedOverSprite;
+
+    private bool isKnockedOver = false;
+    private SpriteRenderer spriteRenderer;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    public void knockOver()
+    {
+        if (!canBeKnockedOver || isKnockedOver)
+            return;
+
+        isKnockedOver = true;
+
+        if (knockedOverSprite != null && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = knockedOverSprite;
+        }
+
+        Vector3 spawnPosition = transform.position;
+
+        if (dropPoint != null)
+        {
+            spawnPosition = dropPoint.position;
+        }
+
+        if (droppedKeyPrefab != null)
+        {
+            Instantiate(droppedKeyPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
+        }
+    }
+}
+
+
+// ========================================
+// FILE: talkingManager.cs
+// ========================================
+
+
+using UnityEngine;
+using TMPro;
+
+public class talkingManager : MonoBehaviour
+{
+    public static talkingManager instance;
+
+    [Header("UI References")]
+    public GameObject dialoguePanel;
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
+
+    private string[] currentLines;
+    private int currentLineIndex;
+    private bool isTalking;
+    private bool canAdvance = false;
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!isTalking || !canAdvance)
+            return;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            showNextLine();
+        }
+    }
+
+    public void startDialogue(string npcName, string[] lines)
+    {
+        if (lines == null || lines.Length == 0)
+            return;
+
+        currentLines = lines;
+        currentLineIndex = 0;
+        isTalking = true;
+        canAdvance = false;
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(true);
+
+        if (nameText != null)
+            nameText.text = npcName;
+
+        if (dialogueText != null)
+            dialogueText.text = currentLines[currentLineIndex];
+        
+        Invoke(nameof(enableAdvance), 0.1f);
+    }
+
+    public void showNextLine()
+    {
+        if (!isTalking)
+            return;
+
+        currentLineIndex++;
+
+        if (currentLineIndex >= currentLines.Length)
+        {
+            endTalking();
+            return;
+        }
+
+        if (dialogueText != null)
+            dialogueText.text = currentLines[currentLineIndex];
+    }
+
+    public void endTalking()
+    {
+        isTalking = false;
+        currentLines = null;
+        currentLineIndex = 0;
+
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
+    }
+
+    public bool getIsDialogueActive()
+    {
+        return isTalking;
+    }
+    private void enableAdvance()
+    {
+        canAdvance = true;
+    }
+}
+
+
+// ========================================
+// FILE: Flashlight.cs
+// ========================================
+
+
+using NUnit.Framework;
+using UnityEngine;
+
+
+public class Flashlight: MonoBehaviour, IUsableItem
+{
+    private  bool isOn = true;
+    public void UseItem()
+    {
+        Camera mainCamera = FindFirstObjectByType<Camera>();
+        if(isOn)
+        {
+            mainCamera.orthographicSize = 7;
+            isOn = false;
+        }
+        else
+        {
+            mainCamera.orthographicSize = 5;
+            isOn = true;
+        }
+    }
+}
+
+
+// ========================================
+// FILE: Gun.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.Rendering;
+public class Gun : MonoBehaviour, IUsableItem
+{
+    public GameObject bulletPrefab;
+    public Transform firedFrom;
+
+    void Start()
+    {
+        firedFrom = FindFirstObjectByType<playerController>().transform;
+    }
+
+    public void UseItem()
+    {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0f;
+        Vector2 shootDirection = (mousePos - firedFrom.position).normalized;
+        float angle = Mathf.Atan2(shootDirection.y, shootDirection.x) * Mathf.Rad2Deg + 90;
+        Quaternion bulletRotation = Quaternion.Euler(0,0, angle);
+        
+        GameObject bullet = Instantiate(bulletPrefab, firedFrom.position, bulletRotation);
+
+        BulletLogic bulletScript = bullet.GetComponent<BulletLogic>();
+        if(bulletScript != null)
+        {
+            bulletScript.Shoot(shootDirection);
+        }
+    }   
+}
+
+
+// ========================================
+// FILE: IInteractable.cs
+// ========================================
+
+
+ using UnityEngine;
+ using UnityEngine.UIElements;
+
+ public interface IInteractable
+ {
+        void Interact(PlayerInteraction player);
+ }
+
+
+// ========================================
+// FILE: InteractableObject.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.Events;
+
+public class InteractableObject : MonoBehaviour
+{
+    public float hoverMultiplier = 1.1f;
+    public UnityEvent onInteract;
+    public Vector3 originalScale;
+    private bool isHovering = false;
+
+    void Start()
+    {
+        originalScale = transform.localScale;
+    }
+
+    void Update()
+    {
+        if(isHovering && Input.GetKeyDown(KeyCode.F))
+            Interact();
+    }
+
+    private void OnMouseEnter()
+    {
+        isHovering = true;
+        transform.localScale = originalScale * hoverMultiplier;
+    }
+
+    private void OnMouseExit()
+    {
+        isHovering = false;
+        transform.localScale = originalScale;
+    }
+
+    private void Interact()
+    {
+        Debug.Log($"Interacted with {gameObject.name}!");
+        onInteract.Invoke();
+    }
+}
+
+
+// ========================================
+// FILE: IPickup.cs
+// ========================================
+
+
+ public interface IPickup
+ {
+     void pickup(PlayerInteraction playerInteraction);
+ }
+
+
+// ========================================
+// FILE: ItemPickup.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class ItemPickup : MonoBehaviour, IPickup
+{
+    public enum PickupType {Equippable, Key, Consumable, QuestItem}
+    public string itemName;
+    public PickupType itemType;
+    public int itemValue;
+    public float pickupRange = .5f;
+
+    public bool addToKeys = false;
+    public bool addToQuestItems = false;
+
+    public void Collect()
+    {
+        PlayerInventory inv = FindFirstObjectByType<PlayerInventory>();
+
+        if (inv != null)
+        {
+            float distanceToPlayer = Vector2.Distance(transform.position, inv.transform.position);
+            if(distanceToPlayer <= pickupRange)
+                inv.ProcessPickup(this);
+            else
+                Debug.Log($"{itemName} is too far away");
+        }
+    }
+
+    public void pickup(PlayerInteraction playerInteraction)
+    {
+        Collect();
+    }
+}
+
+
+// ========================================
+// FILE: IUsableItem.cs
+// ========================================
+
+
+public interface IUsableItem
+{
+    void UseItem();
+}
+
+
+// ========================================
+// FILE: PlayerInteraction.cs
+// ========================================
+
+
+ using UnityEngine;
+
+ public class PlayerInteraction : MonoBehaviour
+ {
+     public float interactRadius = .1f;
+     public LayerMask interactableLayer;
+     public LayerMask pickupLayer;
+     public GameObject currentItemPrefab;
+
+     void Start()
+     {
+        
+     }
+
+     // Update is called once per frame
+     void Update()
+     {
+         if (Input.GetKeyDown(KeyCode.E))
+         {
+             TryInteract();
+             Debug.Log("poressed e");
+         }
+         if (Input.GetKeyDown(KeyCode.F))
+             TryPickup();
+
+     }
+
+     private void TryInteract()
+     {
+         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactRadius, interactableLayer);
+
+         IInteractable closestInteractable = null;
+         float closestDistance = Mathf.Infinity;
+
+         foreach (Collider2D collider in colliders)
+         {
+             IInteractable interactable = collider.GetComponentInParent<IInteractable>();
+
+             if (interactable != null)
+             {
+                 float distance = Vector2.Distance(transform.position, collider.transform.position);
+
+                 if (distance < closestDistance)
+                 {
+                     closestDistance = distance;
+                     closestInteractable = interactable;
+                 }
+             }
+         }
+
+         if (closestInteractable != null)
+         {
+             Debug.Log("found interactable");
+             closestInteractable.Interact(this);
+         }
+         else
+         {
+             Debug.Log("no interactable found");
+         }
+     }
+     private void TryPickup()
+     {
+         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, interactRadius, pickupLayer);
+
+         IPickup closestPickup = null;
+         float closestDistance = Mathf.Infinity;
+
+         foreach (Collider2D collider in colliders)
+         {
+             IPickup pickup = collider.GetComponentInParent<IPickup>();
+
+            if (pickup != null)
+             {
+                 float distance = Vector2.Distance(transform.position, collider.transform.position);
+
+                if (distance < closestDistance)
+                 {
+                     Debug.Log("found pickup");
+                     closestDistance = distance;
+                     closestPickup = pickup;
+                 }
+             }
+         }
+
+         if (closestPickup != null)
+             closestPickup.pickup(this);
+     }
+
+     public void EquipItem(GameObject newItemPrefab)
+     {
+         if (currentItemPrefab != null)
+             Instantiate(currentItemPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+        
+         currentItemPrefab = newItemPrefab;
+     }
+/*
+     public void UseItem()
+     {
+         ItemInfo info = currentItemPrefab.GetComponent<ItemInfo>();
+         if(info.itemName == "gun")
+         {
+             //TODO: Instantiate bullet 
+            //TODO: Create bullet prefab and scripts
+       }
+
+        
+    }
+*/
+ }
+
+
+// ========================================
+// FILE: Rock.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class Rock : MonoBehaviour, IUsableItem
+{
+    public GameObject rockPrefab;
+    public float throwDist = 3f;
+    public float throwSpeed = 8f;
+
+    public void UseItem()
+    {  
+        playerController player = FindFirstObjectByType<playerController>();
+
+        if (player == null)
+        {  
+            Debug.Log("player is null");
+            return;
+        }
+
+        if (rockPrefab == null)
+        {
+            Debug.Log("rockPrefab is null");
+            return;
+        }
+
+        Vector2 throwDirection = player.getLastMove();
+
+        if (throwDirection == Vector2.zero)
+        {
+            throwDirection = Vector2.down;
+        }
+
+        Vector3 spawnPosition = player.transform.position + (Vector3)(throwDirection * 1f);
+        GameObject thrownRock = Object.Instantiate(rockPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
+
+        rockProjectile projectile = thrownRock.GetComponent<rockProjectile>();
+
+        if (projectile != null)
+        {
+            projectile.setDirection(throwDirection);
+            projectile.throwSpeed = throwSpeed;
+            projectile.maxDistance = throwDist;
+        }
+    }
+
+}
+
+
+// ========================================
+// FILE: rockProjectile.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class rockProjectile : MonoBehaviour
+{
+    public float throwSpeed = 8f;
+    public float maxDistance = 3f;
+
+    private Vector2 moveDirection;
+    private Vector3 startPosition;
+
+    private void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        transform.position += (Vector3)(moveDirection * throwSpeed * Time.deltaTime);
+
+        if (Vector3.Distance(startPosition, transform.position) >= maxDistance)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void setDirection(Vector2 newDirection)
+    {
+        moveDirection = newDirection.normalized;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("rock hit: " + other.name);
+
+        idleNpcController npc = other.GetComponentInParent<idleNpcController>();
+
+        if (npc != null)
+        {
+            npc.knockOver();
+            Destroy(gameObject);
+            return;
+        }
+
+        if (!other.isTrigger)
+        {
+            Destroy(gameObject);
+        }
+    }
+}
+
+
+// ========================================
+// FILE: Shovel.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class Shovel : MonoBehaviour, IUsableItem
+{
+    public GameObject wireCutterPrefab;
+
+    public void UseItem()
+    {
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 mousePos2D = new Vector2(mouseWorldPos.x, mouseWorldPos.y);
+        Collider2D grassCollider = Physics2D.OverlapPoint(mousePos2D);
+
+        if(grassCollider != null)
+        {
+            if(grassCollider.CompareTag("GrassPatch"))
+            {
+                Vector3 spawnPos = grassCollider.transform.position;
+                Destroy(grassCollider.gameObject);
+                if(grassCollider.GetComponent<HidingWireCutters>().isHidingWireCutters)
+                {
+                    Instantiate(wireCutterPrefab, spawnPos, Quaternion.Euler(0, 0, 0));
+                    Debug.Log("Shovel was used to dig up wire cutters from grass patch.");
+                }
+                Debug.Log("You dug up a grass patch");
+            }
+        }
+        else
+            Debug.Log("Shovel can only be used on a grass patch.");
+    }
+    
+}
+
+
+// ========================================
+// FILE: wireCutters.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class WireCutter : MonoBehaviour, IUsableItem
+{
+    public float useDistance = 1.2f;
+    public LayerMask Walls;
+    public string breakableFenceName = "breakFence";
+
+    public void UseItem()
+    {
+        playerController player = FindFirstObjectByType<playerController>();
+
+        if (player == null)
+            return;
+
+        Vector2 useDirection = player.getLastMove();
+
+        if (useDirection == Vector2.zero)
+        {
+            useDirection = Vector2.down;
+        }
+
+        Vector2 origin = player.transform.position;
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, useDirection, useDistance, Walls);
+
+        Debug.DrawRay(origin, useDirection * useDistance, Color.red, 1f);
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            if (hit.collider == null)
+                continue;
+
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject.name == breakableFenceName)
+            {
+                Destroy(hitObject);
+                Debug.Log("Fence cut down");
+                return;
+            }
+        }
+
+        Debug.Log("No breakable fence in range");
+    }
+}
+
+
+
+// ========================================
+// FILE: showerController.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class showerController : MonoBehaviour
+{
+    public ParticleSystem waterParticles;
+    public bool togShower = true;
+
+    private bool isOn = false;
+
+    private void Start()
+    {
+        if (waterParticles != null)
+            waterParticles.Stop();
+            waterParticles.Clear();
+    }
+
+    public void Interact()
+    {
+        if (waterParticles == null)
+            return;
+
+        if (togShower)
+        {  
+            if (isOn)
+                turnOff();  
+            else
+                turnOn();
+        }
+        else
+        {
+            waterParticles.Play();
+        }
+    }
+
+    private void turnOn()
+    {
+        isOn = true;
+        waterParticles.Play();
+    }
+
+    private void turnOff()
+    {
+        isOn = false;
+        waterParticles.Stop();
+    }
+}
+
+
+// ========================================
+// FILE: audioController.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class audioController : MonoBehaviour
+{
+    public static audioController instance;
+
+    [SerializeField] private AudioSource musicSource;
+
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void playMusic(AudioClip clip)
+    {
+        if (musicSource.clip == clip && musicSource.isPlaying)
+        {
+            return;
+        }
+
+        musicSource.clip = clip;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+}
+
+
+// ========================================
+// FILE: sceneMusic.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class sceneMusic : MonoBehaviour
+{
+    [SerializeField] private AudioClip musicClip;
+
+    private void Start()
+    {
+        if (audioController.instance != null)
+        {
+            audioController.instance.playMusic(musicClip);
+        }
+    }
+}
+
+
+// ========================================
+// FILE: endGame.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class endGame : MonoBehaviour
+{
+    public string mainMenuSceneName = "MainMenu";
+    public GameObject winPanel;
+
+    public void goToMainMenu()
+    {
+        Time.timeScale = 1f;
+
+        playerController player = FindFirstObjectByType<playerController>();
+
+        if (player != null)
+        {
+            Destroy(player.gameObject);
+        }
+
+        winPanel.SetActive(false);
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+}
+
+
+// ========================================
+// FILE: gameOverTrigger.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class GameOverTrigger : MonoBehaviour
+{
+    [SerializeField] private AudioClip gameOverSound;
+
+    private AudioSource audioSource;
+    public GameObject gameOverPanel;
+    private GameObject uiCanvas;
+
+    private bool isGameOver = false;
+
+    private void Awake()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.playOnAwake = false;
+    }
+
+    private void Start()
+    {
+        findGameOverPanel();
+        findUICanvas();
+    }
+
+    public void triggerGameOver()
+    {
+        if (!isGameOver)
+        {
+            isGameOver = true;
+            findGameOverPanel();
+
+            if (gameOverPanel != null)
+            {
+                findUICanvas();
+
+                if (uiCanvas != null)
+                {
+                    uiCanvas.SetActive(false);
+                }
+
+                gameOverPanel.SetActive(true);
+            }
+
+            audioSource.PlayOneShot(gameOverSound);
+        }
+    }
+
+
+    private void findGameOverPanel()
+    {
+        if (gameOverPanel != null)
+            return;
+
+        GameObject panelObject = GameObject.FindGameObjectWithTag("WinPanel");
+
+        if (panelObject != null)
+        {
+            gameOverPanel = panelObject;
+            gameOverPanel.SetActive(false);
+        }
+    }
+
+    private void findUICanvas()
+    {
+        if (uiCanvas != null)
+            return;
+
+        uiCanvas = GameObject.Find("UICanvas");
+    }
+
+}
+
+
+// ========================================
+// FILE: GameOverTriggerRelay.cs
+// ========================================
+
+
+using UnityEngine;
+
+public class GameOverTriggerRelay : MonoBehaviour
+{
+    private GameOverTrigger parentTrigger;
+
+    private void Awake()
+    {
+        parentTrigger = GetComponentInParent<GameOverTrigger>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponentInParent<playerController>() != null)
+        {
+            if (parentTrigger != null)
+            {
+                parentTrigger.triggerGameOver();
+            }
+        }
+    }
+}
+
+
+// ========================================
+// FILE: SceneTransition.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneTransition : MonoBehaviour
+{
+    [SerializeField] private string sceneToLoad;
+    [SerializeField] private string spawnPointName;
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponentInParent<playerController>() != null)
+        {
+            triggerManager.instance.spawnPointName = spawnPointName;
+            SceneManager.LoadScene(sceneToLoad);
+        }
+    }
+}
+
+
+// ========================================
+// FILE: triggerManager.cs
+// ========================================
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class triggerManager : MonoBehaviour
+{
+    public static triggerManager instance;
+
+    public string spawnPointName;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        SpawnPlayer();
+    }
+
+    void SpawnPlayer()
+    {
+        Debug.Log("teleporting player into new scene " + spawnPointName);
+        GameObject spawnPoint = GameObject.Find(spawnPointName);
+
+        if (spawnPoint != null)
+        {
+            Debug.Log("teleporting player at spawnpoint: " + spawnPoint.transform.position);
+
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                player.transform.position = spawnPoint.transform.position;
+            }
+        }
+        else
+        {
+            Debug.Log("spawnpoint is null");
+        }
+    }
+}
