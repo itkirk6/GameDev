@@ -445,6 +445,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.7235885
@@ -552,6 +556,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_Name
       value: laundryDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
@@ -872,6 +880,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1594472085162221803, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_TagString
+      value: Guard
+      objectReference: {fileID: 0}
     - target: {fileID: 1594472085409806557, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0.5
@@ -1144,6 +1156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.790506
@@ -1210,6 +1226,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: doorCollider
@@ -1354,6 +1374,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.95408845
@@ -1413,7 +1437,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 663777918}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: areaDoorHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1492,6 +1516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.561185
@@ -1553,6 +1581,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1631,6 +1663,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_Name
       value: courtYardDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1724,6 +1760,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23830,6 +23870,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cafeteriaDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
       value: 0
@@ -24193,6 +24237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardDoorsR
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.54317
@@ -24286,6 +24334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardDoorsL
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: requiredKey
       value: 3
@@ -24346,6 +24398,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24412,11 +24468,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.66
+      value: 12.04
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.94
+      value: -2.44
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -24475,6 +24531,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29374,6 +29434,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.636107
@@ -29433,7 +29497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1346282466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cellDoors
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29485,7 +29549,7 @@ GameObject:
   - component: {fileID: 1352709272}
   - component: {fileID: 1352709271}
   - component: {fileID: 1352709273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46868,6 +46932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardDoors
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: isOpen
       value: 0
@@ -46937,6 +47005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.6395
@@ -46999,7 +47071,7 @@ GameObject:
   - component: {fileID: 1473043093}
   - component: {fileID: 1473043092}
   - component: {fileID: 1473043094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: props
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47939,6 +48011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.8825
@@ -48031,6 +48107,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: m_Name
       value: infirmaryDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
@@ -48132,6 +48212,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48346,6 +48430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: showerDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
       propertyPath: requiredKey
       value: 0
@@ -48427,6 +48515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: guardDoors (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 5d65d535781e33242b4327882361ef07, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 5d65d535781e33242b4327882361ef07, type: 3}
       propertyPath: isOpen
       value: 0
@@ -48498,7 +48590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48559,57 +48651,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[0].waitTime
-      value: 2
+      propertyPath: LOSMask.m_Bits
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: patrolPoints.Array.data[0].waypoint
       value: 
       objectReference: {fileID: 1475493866}
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[1].waitTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: patrolPoints.Array.data[1].waypoint
       value: 
       objectReference: {fileID: 1936943234}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[2].waitTime
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: patrolPoints.Array.data[2].waypoint
       value: 
       objectReference: {fileID: 739693298}
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[3].waitTime
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: patrolPoints.Array.data[3].waypoint
       value: 
       objectReference: {fileID: 577739940}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[0].facingAfterArrival.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[1].facingAfterArrival.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[2].facingAfterArrival.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: patrolPoints.Array.data[3].facingAfterArrival.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.671
@@ -48653,22 +48713,6 @@ PrefabInstance:
     - target: {fileID: 4475872235262945198, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_Name
       value: guard
-      objectReference: {fileID: 0}
-    - target: {fileID: 7345167233347501042, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: m_Size.x
-      value: 0.3691772
-      objectReference: {fileID: 0}
-    - target: {fileID: 7345167233347501042, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: m_Size.y
-      value: 0.4300875
-      objectReference: {fileID: 0}
-    - target: {fileID: 7345167233347501042, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.02013214
-      objectReference: {fileID: 0}
-    - target: {fileID: 7345167233347501042, guid: c528223bc8da7e7478ab618830565536, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.17205358
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -48762,6 +48806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.7958827
@@ -48823,6 +48871,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
@@ -48897,6 +48949,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: cellDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.562597
@@ -48958,6 +49014,10 @@ PrefabInstance:
     - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_Name
       value: cellDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447348095953366993, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKey

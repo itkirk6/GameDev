@@ -28,11 +28,11 @@ public class walkParticles : MonoBehaviour
     }
 
     Vector2 movementInput = playerController.getMovementInput();
-    Debug.Log("movement input: " + movementInput);
+    //Debug.Log("movement input: " + movementInput);
 
     if (movementInput.magnitude > moveThreshold)
     {
-        Debug.Log("movement passed threshold");
+        //Debug.Log("movement passed threshold");
 
         lastMoveDirection = playerController.getLastMove().normalized;
         updateParticlePosition();
@@ -85,7 +85,7 @@ public class walkParticles : MonoBehaviour
 
         if (concreteParticles != null && concreteParticles.isPlaying)
             concreteParticles.Stop();
-        Debug.Log("stopping particles");
+        //Debug.Log("stopping particles");
 
     }
 }

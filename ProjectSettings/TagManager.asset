@@ -5,17 +5,18 @@ TagManager:
   serializedVersion: 3
   tags:
   - GrassPatch
+  - Guard
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - player
+  - Player
   - Water
   - UI
   - interactable
   - pickups
-  - 
-  - 
+  - Walls
+  - Guard
   - 
   - 
   - 
