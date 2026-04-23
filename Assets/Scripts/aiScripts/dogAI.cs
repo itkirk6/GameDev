@@ -17,6 +17,14 @@ public class dogAI : MonoBehaviour
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private bool loop = true;
 
+    [Header("Chasing Player")]
+    public Transform player;
+    public float detectionRadius = 5f;
+    public float chaseSpeed = 3.5f;
+    public float attackRange = 0.2f;
+    public float attackRate = 1.5f;
+    public int damage = 50;
+
     private Animator animator;
     private Rigidbody2D rb;
 
@@ -28,6 +36,9 @@ public class dogAI : MonoBehaviour
     private bool isWaiting = false;
     private float waitTimer = 0f;
 
+    private bool isChasing = false;
+    private float nextAttackTime = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,13 +47,83 @@ public class dogAI : MonoBehaviour
 
     private void Update()
     {
-        handleWaitTimer();
+        CheckForPlayer();
+
+        if(isChasing)
+        {
+            isWaiting = false;
+            if(Vector2.Distance(transform.position, player.position) <= attackRange)
+            {
+                AttackPlayer();
+            }
+        }
+
+        else
+            handleWaitTimer();
         handleAnimations();
     }
 
     private void FixedUpdate()
     {
-        handleMovement();
+        if(isChasing)
+        {
+            if(Vector2.Distance(transform.position, player.position) > attackRange)
+            {
+                ChasePlayer();
+            }
+            else
+            {
+                movementInput = Vector2.zero;
+            }
+        }
+        else
+            handleMovement();
+    }
+
+    private void CheckForPlayer()
+    {
+        if(player == null)
+        {
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+            if(playerObj != null)
+                player = playerObj.transform;
+            else
+                return;
+        }
+
+        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        isChasing = (distanceToPlayer <= detectionRadius);
+    }
+
+    private void ChasePlayer()
+    {
+        Vector2 toTarget = (Vector2)player.position - rb.position;
+        movementInput = toTarget.normalized;
+
+        if (Mathf.Abs(movementInput.x) > Mathf.Abs(movementInput.y))
+            lastMove = new Vector2(Mathf.Sign(movementInput.x), 0f);
+        else
+            lastMove = new Vector2(0f, Mathf.Sign(movementInput.y));
+
+        rb.MovePosition(rb.position + (movementInput * chaseSpeed * Time.fixedDeltaTime));
+    }
+
+    private void AttackPlayer()
+    {
+        movementInput = Vector2.zero;
+
+        Vector2 toPlayer = (player.position - transform.position).normalized;
+        if (Mathf.Abs(toPlayer.x) > Mathf.Abs(toPlayer.y))
+            lastMove = new Vector2(Mathf.Sign(toPlayer.x), 0f);
+        else
+            lastMove = new Vector2(0f, Mathf.Sign(toPlayer.y));
+
+        if(Time.time >= nextAttackTime)
+        {
+            Debug.Log("Dog attacked player");
+            player.GetComponent<PlayerInventory>().playerHealth -= damage;
+            nextAttackTime = Time.time + (1f / attackRate);
+        }
     }
 
     private void handleMovement()

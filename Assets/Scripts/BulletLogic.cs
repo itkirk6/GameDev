@@ -20,13 +20,7 @@ public class BulletLogic : MonoBehaviour
 
         Debug.Log($"Collided with {collision.name}");
         if(collision.CompareTag("Player"))
-        {
-            PlayerInventory inv = collision.GetComponent<PlayerInventory>();
-            if(inv.playerHealth <= damage)
-                Destroy(collision.gameObject);
-            else
-                inv.playerHealth -= damage; 
-        }      
+            collision.GetComponent<PlayerInventory>().playerHealth -= damage;
         Destroy(gameObject);
     }
 }

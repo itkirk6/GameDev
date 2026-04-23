@@ -24,6 +24,11 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
+        if(playerHealth <= 0)
+        {
+            Debug.Log("Player is dead");
+            Destroy(gameObject);
+        }
         if(Input.GetMouseButtonDown(0) && currentEquippedItem != null)
         {
             IUsableItem usableItem = currentEquippedItem.GetComponent<IUsableItem>();
