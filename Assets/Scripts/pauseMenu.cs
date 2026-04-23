@@ -3,8 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
-    public static PauseUI instance;
-
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject mainCanvas;
@@ -13,15 +11,7 @@ public class PauseUI : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        findPauseUIReferences();
     }
 
     private void OnEnable()
@@ -36,11 +26,13 @@ public class PauseUI : MonoBehaviour
 
     private void Start()
     {
+        findPauseUIReferences();
         UpdatePauseUI(SceneManager.GetActiveScene().name);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        findPauseUIReferences();
         UpdatePauseUI(scene.name);
     }
 
@@ -48,6 +40,9 @@ public class PauseUI : MonoBehaviour
     {
         isPaused = false;
         Time.timeScale = 1f;
+
+        if (pauseButton == null || pausePanel == null)
+            return;
 
         if (sceneName == "MainMenu")
         {
@@ -63,6 +58,11 @@ public class PauseUI : MonoBehaviour
 
     public void OpenPausePanel()
     {
+        findPauseUIReferences();
+
+        if (pausePanel == null)
+            return;
+
         isPaused = true;
         pausePanel.SetActive(true);
         pausePanel.transform.SetAsLastSibling();
@@ -71,6 +71,11 @@ public class PauseUI : MonoBehaviour
 
     public void ResumeGame()
     {
+        findPauseUIReferences();
+
+        if (pausePanel == null)
+            return;
+
         isPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
@@ -78,10 +83,54 @@ public class PauseUI : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        findPauseUIReferences();
+
         isPaused = false;
-        pausePanel.SetActive(false);
         Time.timeScale = 1f;
-        mainCanvas.SetActive(false);
+
+        if (pausePanel != null)
+        {
+            pausePanel.SetActive(false);
+        }
+
+        if (mainCanvas != null)
+        {
+            mainCanvas.SetActive(false);
+        }
+
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void findPauseUIReferences()
+    {
+        if (mainCanvas == null)
+        {
+            GameObject canvasObject = GameObject.Find("UICanvas");
+
+            if (canvasObject != null)
+            {
+                mainCanvas = canvasObject;
+            }
+        }
+
+        if (pauseButton == null)
+        {
+            GameObject pauseButtonObject = GameObject.Find("pauseButton");
+
+            if (pauseButtonObject != null)
+            {
+                pauseButton = pauseButtonObject;
+            }
+        }
+
+        if (pausePanel == null && mainCanvas != null)
+        {
+            Transform pausePanelTransform = mainCanvas.transform.Find("pausePanel");
+
+            if (pausePanelTransform != null)
+            {
+                pausePanel = pausePanelTransform.gameObject;
+            }
+        }
     }
 }

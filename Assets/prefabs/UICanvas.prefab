@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7926182344832799738
 RectTransform:
   m_ObjectHideFlags: 0
@@ -831,7 +831,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1594472085162221781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2454,11 +2454,11 @@ GameObject:
   - component: {fileID: 826515339261367160}
   m_Layer: 5
   m_Name: pausePanel
-  m_TagString: Untagged
+  m_TagString: pausePanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9153862394871973312
 RectTransform:
   m_ObjectHideFlags: 0

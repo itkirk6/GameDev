@@ -21,6 +21,7 @@ public class PlayerInventory : MonoBehaviour
     public Slider healthSlider;
     public int maxHealth = 100;
     private bool isDead = false;
+    public GameObject pauseButton;
 
 
     private void Awake()
@@ -42,7 +43,7 @@ public class PlayerInventory : MonoBehaviour
 
     void Update()
     {
-        if(playerHealth <= 0)
+        if (playerHealth <= 0 && !isDead)
         {
             isDead = true;
             handleDeath();
@@ -260,10 +261,17 @@ public class PlayerInventory : MonoBehaviour
     private void handleDeath()
     {
         findDeathPanel();
+        findPauseButton();
+
+        if (pauseButton != null)
+        {
+            pauseButton.SetActive(false);
+        }
 
         if (deathPanel != null)
         {
             deathPanel.SetActive(true);
+            deathPanel.transform.SetAsLastSibling();
         }
 
         Time.timeScale = 0f;
@@ -287,6 +295,20 @@ public class PlayerInventory : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
+
+    private void findPauseButton()
+    {
+        if (pauseButton != null)
+            return;
+
+        GameObject pauseButtonObject = GameObject.Find("pauseButton");
+
+        if (pauseButtonObject != null)
+        {
+            pauseButton = pauseButtonObject;
+        }
+    }
+
 
 
 }
