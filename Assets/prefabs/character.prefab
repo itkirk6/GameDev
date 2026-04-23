@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f50b95b9254848bdbbb4d62b8957d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerController
-  movementSpeed: 1.5
+  movementSpeed: 1.7
   deadZone: {x: 1.5, y: 1}
 --- !u!114 &1029281208009209144
 MonoBehaviour:
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerInventory
   keys: []
+  questItems: []
   playerHealth: 100
   equippedItemUIBox: {fileID: 0}
   currentEquippedItem: {fileID: 0}
