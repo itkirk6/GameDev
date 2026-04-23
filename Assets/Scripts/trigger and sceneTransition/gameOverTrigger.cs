@@ -23,12 +23,9 @@ public class GameOverTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void triggerGameOver()
     {
-        if (other.GetComponentInParent<playerController>() != null)
-        {
-            gameOverCanvas.SetActive(true);
-            audioSource.PlayOneShot(gameOverSound);
-        }
+        gameOverCanvas.SetActive(true);
+        audioSource.PlayOneShot(gameOverSound);
     }
 }
