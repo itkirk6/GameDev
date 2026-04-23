@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: e99a9f85749839f448d02ca4e44c59a2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4146719202606272858
+    second: infirmary_0
+  - first:
+      213: 9200044118012615705
+    second: infirmary_1
+  - first:
+      213: -5546245468701868816
+    second: infirmary_2
+  - first:
+      213: -4232013520613635780
+    second: infirmary_3
+  - first:
+      213: -4319257480758945863
+    second: infirmary_4
+  - first:
+      213: -7973899249482776996
+    second: infirmary_5
+  - first:
+      213: -5010888848801219975
+    second: infirmary_6
+  - first:
+      213: -6515923578931387972
+    second: infirmary_7
+  - first:
+      213: 6113778018959144279
+    second: infirmary_8
+  - first:
+      213: 6454385848975006466
+    second: infirmary_9
+  - first:
+      213: -4383283448121061073
+    second: infirmary_10
+  - first:
+      213: 5088408856858281864
+    second: infirmary_11
+  - first:
+      213: -870617144895897234
+    second: infirmary_12
+  - first:
+      213: 6993960707646519274
+    second: infirmary_13
+  - first:
+      213: 3354864921647800969
+    second: infirmary_14
+  - first:
+      213: 1681853706578619811
+    second: infirmary_15
+  - first:
+      213: -3287199403550413906
+    second: infirmary_16
+  - first:
+      213: -4768549233495585646
+    second: infirmary_17
+  - first:
+      213: -5194408555805948155
+    second: infirmary_18
+  - first:
+      213: -4719401761771413577
+    second: infirmary_19
+  - first:
+      213: 3789894947013353994
+    second: infirmary_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: infirmary_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 12
+        width: 31
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5153aef42b1c8930800000000000000
+      internalID: 4146719202606272858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 12
+        width: 28
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91c5014a16f1daf70800000000000000
+      internalID: 9200044118012615705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_2
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 20
+        width: 30
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fcb7e8a127c703b0800000000000000
+      internalID: -5546245468701868816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 12
+        width: 29
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c398c2b002ed445c0800000000000000
+      internalID: -4232013520613635780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_4
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 12
+        width: 31
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b71ae5a43aee04c0800000000000000
+      internalID: -4319257480758945863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_5
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 72
+        width: 38
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5e33df41e4075190800000000000000
+      internalID: -7973899249482776996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 12
+        width: 30
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97abc3e042fb57ab0800000000000000
+      internalID: -5010888848801219975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_7
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 12
+        width: 30
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1e33e170ac295a0800000000000000
+      internalID: -6515923578931387972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755b6af47b088d450800000000000000
+      internalID: 6113778018959144279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_9
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 12
+        width: 31
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20b967b9bb5929950800000000000000
+      internalID: 6454385848975006466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_10
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 48
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2115e47de27b23c0800000000000000
+      internalID: -4383283448121061073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_11
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 12
+        width: 32
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8874df055e8ad9640800000000000000
+      internalID: 5088408856858281864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_12
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 12
+        width: 45
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e618d17c152fae3f0800000000000000
+      internalID: -870617144895897234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_13
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 12
+        width: 57
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae77f40453a8f0160800000000000000
+      internalID: 6993960707646519274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_14
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 12
+        width: 29
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9826c341fdfde8e20800000000000000
+      internalID: 3354864921647800969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 48
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3adeac80905275710800000000000000
+      internalID: 1681853706578619811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_16
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 12
+        width: 49
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab608d0f858162d0800000000000000
+      internalID: -3287199403550413906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_17
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 50
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29cc88bacb5b2ddb0800000000000000
+      internalID: -4768549233495585646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_18
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 43
+        width: 30
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507cfec80f0c9e7b0800000000000000
+      internalID: -5194408555805948155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_19
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 12
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf13452a11518eb0800000000000000
+      internalID: -4719401761771413577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: infirmary_20
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 12
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0267c4ef59689430800000000000000
+      internalID: 3789894947013353994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      infirmary_0: 4146719202606272858
+      infirmary_1: 9200044118012615705
+      infirmary_10: -4383283448121061073
+      infirmary_11: 5088408856858281864
+      infirmary_12: -870617144895897234
+      infirmary_13: 6993960707646519274
+      infirmary_14: 3354864921647800969
+      infirmary_15: 1681853706578619811
+      infirmary_16: -3287199403550413906
+      infirmary_17: -4768549233495585646
+      infirmary_18: -5194408555805948155
+      infirmary_19: -4719401761771413577
+      infirmary_2: -5546245468701868816
+      infirmary_20: 3789894947013353994
+      infirmary_3: -4232013520613635780
+      infirmary_4: -4319257480758945863
+      infirmary_5: -7973899249482776996
+      infirmary_6: -5010888848801219975
+      infirmary_7: -6515923578931387972
+      infirmary_8: 6113778018959144279
+      infirmary_9: 6454385848975006466
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
