@@ -48742,8 +48742,8 @@ MonoBehaviour:
   delayBetweenLines: 4
   typingSpeed: 0.02
   isQuestNpc: 1
-  requiredItemName: Gun
-  rewardItemPrefab: {fileID: 276403653349295518, guid: cac95bb532f1b4b49823916aa4338cdd, type: 3}
+  requiredItemName: Food
+  rewardItemPrefab: {fileID: 3698358983778486349, guid: db6c1f442a4a1414c9cfaac5627bb4a6, type: 3}
   rewardDropPoint: {fileID: 922454219}
 --- !u!4 &2076695200 stripped
 Transform:
@@ -49033,3 +49033,5 @@ SceneRoots:
   - {fileID: 1277555121}
   - {fileID: 1371857820}
   - {fileID: 1313458834}
+  - {fileID: 1918221815}
+  - {fileID: 365313131}
