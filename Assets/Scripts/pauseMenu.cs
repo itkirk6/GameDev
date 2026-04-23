@@ -64,6 +64,7 @@ public class PauseUI : MonoBehaviour
     {
         isPaused = true;
         pausePanel.SetActive(true);
+        pausePanel.transform.SetAsLastSibling();
         Time.timeScale = 0f;
     }
 
