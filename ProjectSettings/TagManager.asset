@@ -8,6 +8,7 @@ TagManager:
   - Guard
   - HealthSlider
   - EquippedItemBox
+  - DeathPanel
   layers:
   - Default
   - TransparentFX
