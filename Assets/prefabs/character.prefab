@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e8f50b95b9254848bdbbb4d62b8957d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playerController
-  movementSpeed: 1.7
+  movementSpeed: 4.5
   footstepClip: {fileID: 8300000, guid: 1a700ab85a3d9fc40bb5fd6e5b500147, type: 3}
   footstepInterval: 0.3
   deadZone: {x: 1.5, y: 1}
