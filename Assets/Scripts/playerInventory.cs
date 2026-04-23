@@ -1,6 +1,7 @@
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -11,15 +12,19 @@ public class PlayerInventory : MonoBehaviour
     public int playerHealth = 100;
     public Image equippedItemUIBox;
     public GameObject currentEquippedItem;
+    [SerializeField] private AudioClip pickupClip;
+
+    private AudioSource audioSource;
 
     private void Awake()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
     void Start()
     {
         if(equippedItemUIBox != null)
             equippedItemUIBox.enabled = false;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,8 +45,8 @@ public class PlayerInventory : MonoBehaviour
     }
     public void ProcessPickup( ItemPickup pickupInfo)
     {
-        Debug.Log("ProcessPickup() was called");
-        switch(pickupInfo.itemType)
+        audioSource.PlayOneShot(pickupClip);
+        switch (pickupInfo.itemType)
         {
             case ItemPickup.PickupType.Equippable:
 
