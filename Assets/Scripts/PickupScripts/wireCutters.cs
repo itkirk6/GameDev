@@ -4,6 +4,7 @@ public class WireCutter : MonoBehaviour, IUsableItem
 {
     public float useDistance = 1.2f;
     public LayerMask Walls;
+    public string breakableFenceName = "breakFence";
 
     public void UseItem()
     {
@@ -20,19 +21,26 @@ public class WireCutter : MonoBehaviour, IUsableItem
         }
 
         Vector2 origin = player.transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, useDirection, useDistance, Walls);
+        RaycastHit2D[] hits = Physics2D.RaycastAll(origin, useDirection, useDistance, Walls);
 
         Debug.DrawRay(origin, useDirection * useDistance, Color.red, 1f);
 
-        if (hit.collider != null)
+        foreach (RaycastHit2D hit in hits)
         {
-            Destroy(hit.collider.gameObject);
-            Debug.Log("Fence cut down");
+            if (hit.collider == null)
+                continue;
+
+            GameObject hitObject = hit.collider.gameObject;
+
+            if (hitObject.name == breakableFenceName)
+            {
+                Destroy(hitObject);
+                Debug.Log("Fence cut down");
+                return;
+            }
         }
-        else
-        {
-            Debug.Log("No fence in range");
-        }
+
+        Debug.Log("No breakable fence in range");
     }
 }
 

@@ -5,19 +5,14 @@ public class GameOverTrigger : MonoBehaviour
     [SerializeField] private AudioClip gameOverSound;
 
     private AudioSource audioSource;
-    private PlayerInventory playerInventory;
     public GameObject gameOverPanel;
 
     private bool isGameOver = false;
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
-
-        playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
 
     private void Start()
@@ -30,7 +25,13 @@ public class GameOverTrigger : MonoBehaviour
         if (!isGameOver)
         {
             isGameOver = true;
-            playerInventory.handleGameOverPanel();
+            findGameOverPanel();
+
+            if (gameOverPanel != null)
+            {
+                gameOverPanel.SetActive(true);
+            }
+
             audioSource.PlayOneShot(gameOverSound);
         }
     }
