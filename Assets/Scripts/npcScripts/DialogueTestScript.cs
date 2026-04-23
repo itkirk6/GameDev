@@ -102,7 +102,7 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
 
         if (rewardItemPrefab != null)
         {
-            Instantiate(rewardItemPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(rewardItemPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
         }
 
         questCompleted = true;

@@ -30,7 +30,7 @@ public class Rock : MonoBehaviour, IUsableItem
         }
 
         Vector3 spawnPosition = player.transform.position + (Vector3)(throwDirection * 1f);
-        GameObject thrownRock = Object.Instantiate(rockPrefab, spawnPosition, Quaternion.identity);
+        GameObject thrownRock = Object.Instantiate(rockPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
 
         rockProjectile projectile = thrownRock.GetComponent<rockProjectile>();
 

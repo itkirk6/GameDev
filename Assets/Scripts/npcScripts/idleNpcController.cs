@@ -10,12 +10,10 @@ public class idleNpcController : MonoBehaviour
 
     private bool isKnockedOver = false;
     private SpriteRenderer spriteRenderer;
-    private Collider2D npcCollider;
 
     private void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        npcCollider = GetComponent<Collider2D>();
     }
 
     public void knockOver()
@@ -39,7 +37,7 @@ public class idleNpcController : MonoBehaviour
 
         if (droppedKeyPrefab != null)
         {
-            Instantiate(droppedKeyPrefab, spawnPosition, Quaternion.identity);
+            Instantiate(droppedKeyPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
         }
     }
 }

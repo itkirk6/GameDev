@@ -18,7 +18,7 @@ public class Shovel : MonoBehaviour, IUsableItem
                 Destroy(grassCollider.gameObject);
                 if(grassCollider.GetComponent<HidingWireCutters>().isHidingWireCutters)
                 {
-                    Instantiate(wireCutterPrefab, spawnPos, Quaternion.identity);
+                    Instantiate(wireCutterPrefab, spawnPos, Quaternion.Euler(0, 0, 0));
                     Debug.Log("Shovel was used to dig up wire cutters from grass patch.");
                 }
                 Debug.Log("You dug up a grass patch");

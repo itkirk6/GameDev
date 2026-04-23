@@ -89,7 +89,7 @@
      public void EquipItem(GameObject newItemPrefab)
      {
          if (currentItemPrefab != null)
-             Instantiate(currentItemPrefab, transform.position, Quaternion.identity);
+             Instantiate(currentItemPrefab, transform.position, Quaternion.Euler(0, 0, 0));
         
          currentItemPrefab = newItemPrefab;
      }
