@@ -221,6 +221,6 @@ MonoBehaviour:
   viewDistance: 14
   LOSMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 264
   bulletPrefab: {fileID: 769094135114850664, guid: 3ef773e9537f59f49b0fbb8edb10bece, type: 3}
   fireRate: 1.5

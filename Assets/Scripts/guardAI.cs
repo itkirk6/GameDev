@@ -43,7 +43,7 @@ public class guardAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        //player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     private void Update()
@@ -67,7 +67,15 @@ public class guardAI : MonoBehaviour
 
     private void CheckLOS()
     {
-        if(player == null) return;
+        if(player == null)
+        { 
+            GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+
+            if(playerObj != null)
+                player = playerObj.transform;
+            else
+                return;
+        }
 
         eyesOnPlayer = false;
 
