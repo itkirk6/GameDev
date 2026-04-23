@@ -1358,6 +1358,37 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &272626635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272626636}
+  m_Layer: 0
+  m_Name: rockDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &272626636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272626635}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.54865, y: 2.08637, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &404754212
 GameObject:
   m_ObjectHideFlags: 0
@@ -23334,9 +23365,17 @@ PrefabInstance:
       value: Mack Pain
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardDropPoint
+      value: 
+      objectReference: {fileID: 272626636}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: requiredItemName
       value: Medicine
       objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardItemPrefab
+      value: 
+      objectReference: {fileID: 924637469562327405, guid: 46f1d336f01fe54419fa938023cc96b6, type: 3}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 6
@@ -23346,32 +23385,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[0]'
+      propertyPath: multipleLines.Array.data[0]
       value: OOOOUUuuugghh.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[1]'
+      propertyPath: multipleLines.Array.data[1]
       value: The Docs are holdin out meds for me sayin I've already had enough...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[2]'
+      propertyPath: multipleLines.Array.data[2]
       value: This pain is too much to bear...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[3]'
-      value: 'Hey, say you grab me those drugs on the counter and I''ll give you
-        this rock. '
+      propertyPath: multipleLines.Array.data[3]
+      value: 'Hey, say you grab me those drugs on the counter and I''ll give you this
+        rock. '
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[4]'
+      propertyPath: multipleLines.Array.data[4]
       value: I know its just a rock but its the only thing I've got on me right now.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[5]'
+      propertyPath: multipleLines.Array.data[5]
       value: Please I can't keep goin on like this...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'completedLines.Array.data[0]'
+      propertyPath: completedLines.Array.data[0]
       value: Thanks, heres that rock.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24614,4 +24653,5 @@ SceneRoots:
   - {fileID: 14195345}
   - {fileID: 873736716}
   - {fileID: 488652934}
+  - {fileID: 272626636}
   - {fileID: 214399454}

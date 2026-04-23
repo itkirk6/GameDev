@@ -119,6 +119,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &182787985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 182787986}
+  m_Layer: 0
+  m_Name: infKey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &182787986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182787985}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.245, y: -1.864, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200124613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,7 +1237,7 @@ PrefabInstance:
       objectReference: {fileID: 1157350869}
     - target: {fileID: 1594472085162221783, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1594472085162221802, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_Pivot.x
@@ -5345,6 +5376,71 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf48f28582c53674da92f3071af782d6, type: 3}
+--- !u!1001 &1142443565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.26095
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25485
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.692
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.091
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4288614864737791600, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5514934617612430556, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
+      propertyPath: m_Name
+      value: cleanClothes
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ef0cf37bc4ac1aa4b92b89a258b1f3a8, type: 3}
 --- !u!1 &1157350867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5498,45 +5594,77 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 327696306}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: isQuestNpc
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: characterName
       value: John Folder
       objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardDropPoint
+      value: 
+      objectReference: {fileID: 182787986}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: requiredItemName
+      value: Clothes
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardItemPrefab
+      value: 
+      objectReference: {fileID: 3698358983778486349, guid: a6c9c8cb05d31b04cac55e3b522d363c, type: 3}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[0]'
+      propertyPath: completedLines.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: multipleLines.Array.data[0]
       value: HEY YOU!
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[1]'
+      propertyPath: multipleLines.Array.data[1]
       value: You aint doin any work around here so why don't I give ya some.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[2]'
+      propertyPath: multipleLines.Array.data[2]
       value: You know that guy Peter Benson. You know the one all buddy buddy with
         the guards.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[3]'
+      propertyPath: multipleLines.Array.data[3]
       value: Well I noticed at night he brings out a pair of clothes from underneath
         his bead he got from one of his "Guard buddies".
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[4]'
+      propertyPath: multipleLines.Array.data[4]
       value: Now all I want you to do is get those clothes and bring em to me simple
         as that.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[5]'
+      propertyPath: multipleLines.Array.data[5]
       value: Though there is a catch. Peter Always has the guards lock his cell after
         he leaves. So you will need to get a prison door key to get in his cell.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[6]'
-      value: So bring me those clothes and I'll give you this shovel I took while
-        workin in the courtyard. Sound good?
+      propertyPath: multipleLines.Array.data[6]
+      value: So bring me those clothes and I'll give you this Infirmary key. Sound
+        good?
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: completedLines.Array.data[0]
+      value: What a fine pair of clothes!
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: completedLines.Array.data[1]
+      value: Wonder what he had to do to get his hands on these.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: completedLines.Array.data[2]
+      value: Well, heres your reward for your hard work.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6323,4 +6451,6 @@ SceneRoots:
   - {fileID: 625509105}
   - {fileID: 1717921967}
   - {fileID: 345537890}
+  - {fileID: 1142443565}
+  - {fileID: 182787986}
   - {fileID: 656277961}
