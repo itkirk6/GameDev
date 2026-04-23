@@ -301,37 +301,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &168441893
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 168441894}
-  m_Layer: 0
-  m_Name: rockdrop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &168441894
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168441893}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 1.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &200124613
 GameObject:
   m_ObjectHideFlags: 0
@@ -12710,20 +12679,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.41272002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.36924997
-      objectReference: {fileID: 0}
-    - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.1954
+      value: -0.27
       objectReference: {fileID: 0}
     - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5512
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12755,14 +12716,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2524878977820600937, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5599844927206450140, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
-      propertyPath: m_SortingLayer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5599844927206450140, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
-      propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6008498621922733630, guid: 6a9fcdf6376993a498f84ae91a664ed1, type: 3}
@@ -13090,8 +13043,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -1204305195
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -221605874, guid: a9bab0569e47a92489fe0940c1e38eda, type: 3}
@@ -23336,17 +23289,9 @@ PrefabInstance:
       value: Mack Pain
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: rewardDropPoint
-      value: 
-      objectReference: {fileID: 168441894}
-    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: requiredItemName
       value: Medicine
       objectReference: {fileID: 0}
-    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: rewardItemPrefab
-      value: 
-      objectReference: {fileID: 924637469562327405, guid: 46f1d336f01fe54419fa938023cc96b6, type: 3}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 6
@@ -24624,4 +24569,3 @@ SceneRoots:
   - {fileID: 14195345}
   - {fileID: 873736716}
   - {fileID: 488652934}
-  - {fileID: 168441894}

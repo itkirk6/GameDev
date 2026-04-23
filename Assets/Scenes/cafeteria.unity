@@ -7101,10 +7101,6 @@ PrefabInstance:
       value: Knife
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: rewardItemPrefab
-      value: 
-      objectReference: {fileID: 3698358983778486349, guid: fff37b4a3732a9641a8babd001f96d89, type: 3}
-    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -7133,7 +7129,7 @@ PrefabInstance:
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[4]'
       value: Now I need you to get in there somehow and grab me one of them knives
-        and I'll give you this key to the Laundry room.
+        and I'll give you this key to the infirmary.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[5]'
@@ -19518,7 +19514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060705648}
   m_Layer: 0
-  m_Name: laundryKeyDrop
+  m_Name: infirmaryKeyDrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

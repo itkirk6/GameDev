@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 709485191118320488}
   - component: {fileID: 7149990435050150261}
+  - component: {fileID: 188948471519776339}
   - component: {fileID: 4972828584291348964}
   - component: {fileID: 7345167233347501042}
   - component: {fileID: 1477622412939658220}
-  - component: {fileID: 188948471519776339}
-  m_Layer: 9
+  m_Layer: 3
   m_Name: guard
   m_TagString: Guard
   m_Icon: {fileID: 0}
@@ -95,40 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &188948471519776339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4475872235262945198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae555c4a1fd6ec8429c7e74c5b5d345c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::guardAI
-  patrolPoints:
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: -1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: -1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: 1}
-  - waypoint: {fileID: 0}
-    waitTime: 2
-    facingAfterArrival: {x: 0, y: 1}
-  movementSpeed: 0.75
-  loop: 1
-  player: {fileID: 0}
-  viewDistance: 14
-  LOSMask:
-    serializedVersion: 2
-    m_Bits: 8
-  bulletPrefab: {fileID: 769094135114850664, guid: 3ef773e9537f59f49b0fbb8edb10bece, type: 3}
-  fireRate: 1.5
 --- !u!50 &4972828584291348964
 Rigidbody2D:
   serializedVersion: 5
@@ -190,7 +156,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02013214, y: -0.17205358}
+  m_Offset: {x: -0.01878038, y: -0.16525175}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -200,7 +166,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3691772, y: 0.4300875}
+  m_Size: {x: 0.38236004, y: 0.4485666}
   m_EdgeRadius: 0
 --- !u!95 &1477622412939658220
 Animator:
@@ -224,3 +190,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &188948471519776339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475872235262945198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae555c4a1fd6ec8429c7e74c5b5d345c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::guardAI
+  patrolPoints:
+  - waypoint: {fileID: 0}
+    waitTime: 0
+    facingAfterArrival: {x: 0, y: 0}
+  movementSpeed: 0.75
+  loop: 1
