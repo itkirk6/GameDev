@@ -14,7 +14,7 @@ public class BulletLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.CompareTag("Player"))
+        if(!collision.CompareTag("Guard"))
         {
             Debug.Log($"Collided with {collision.name}");
             Destroy(gameObject);

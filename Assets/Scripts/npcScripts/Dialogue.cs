@@ -111,7 +111,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            if (!nameBox.gameObject.transform.parent.gameObject.active)
+            if (!nameBox.gameObject.transform.parent.gameObject.activeSelf)
             {
                 nameBox.gameObject.transform.parent.gameObject.SetActive(true);
             }
