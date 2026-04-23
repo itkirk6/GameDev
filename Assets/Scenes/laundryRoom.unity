@@ -10455,7 +10455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'completedLines.Array.data[2]'
-      value: Well, heres your reward for your hard work.
+      value: 'Well, heres your reward for your hard work: One Infirmary key.'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
