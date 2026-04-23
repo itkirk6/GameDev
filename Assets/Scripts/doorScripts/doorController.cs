@@ -6,10 +6,10 @@ public class DoorController : MonoBehaviour
     public string requiredKeyName;
     public Sprite closedSprite;
     public Sprite openSprite;
-
+    public Dialogue dialogue;
+    public float lockedMessageDuration = 2f;
     [SerializeField] private AudioClip openDoorClip;
     [SerializeField] private AudioClip closeDoorClip;
-
     public SpriteRenderer spriteRenderer;
     public Collider2D blockingCollider;
     private bool isOpen = false;
@@ -58,8 +58,10 @@ public class DoorController : MonoBehaviour
             else
             {
                 Debug.Log("door is locked, requires " + requiredKeyName);
+                showLockedMessage();
                 return;
             }
+
         }
 
         if (isOpen)
@@ -123,5 +125,13 @@ public class DoorController : MonoBehaviour
             openedByGuard = false;
         }
     }
+    private void showLockedMessage()
+    {
+        if (dialogue == null)
+            return;
+
+        dialogue.Say("Need " + requiredKeyName + " key to open.", null, lockedMessageDuration);
+    }
+
 
 }
