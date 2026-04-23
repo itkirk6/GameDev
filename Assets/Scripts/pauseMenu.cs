@@ -3,23 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class PauseUI : MonoBehaviour
 {
-    [SerializeField] private GameObject pauseButton;
-    [SerializeField] private GameObject pausePanel;
-    [SerializeField] private GameObject mainCanvas;
+    [SerializeField] private GameObject pauseButton;   
+    [SerializeField] private GameObject pausePanel;  
+    [SerializeField] private GameObject mainCanvas; 
 
-    private bool isPaused = false;
-
-    private void Awake()
+    private bool isPaused = false;  
+ 
+    private void Awake()  
     {
-        findPauseUIReferences();
+        findPauseUIReferences();    //gets the pause UI
     }
 
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+    } 
 
-    private void OnDisable()
+    private void OnDisable()  
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
@@ -56,22 +56,22 @@ public class PauseUI : MonoBehaviour
         }
     }
 
-    public void OpenPausePanel()
+    public void OpenPausePanel()   //opens the pause panell by setting active
     {
-        findPauseUIReferences();
+        findPauseUIReferences();  
 
-        if (pausePanel == null)
+        if (pausePanel == null)  
             return;
-
-        isPaused = true;
-        pausePanel.SetActive(true);
-        pausePanel.transform.SetAsLastSibling();
-        Time.timeScale = 0f;
+  
+        isPaused = true; 
+        pausePanel.SetActive(true);  
+        pausePanel.transform.SetAsLastSibling();  
+        Time.timeScale = 0f;   
     }
 
-    public void ResumeGame()
+    public void ResumeGame()   //for resume button
     {
-        findPauseUIReferences();
+        findPauseUIReferences();  
 
         if (pausePanel == null)
             return;
@@ -81,8 +81,8 @@ public class PauseUI : MonoBehaviour
         Time.timeScale = 1f;
     }
 
-    public void GoToMainMenu()
-    {
+    public void GoToMainMenu()   //for mainmenu button
+    {  
         findPauseUIReferences();
 
         isPaused = false;
@@ -96,47 +96,47 @@ public class PauseUI : MonoBehaviour
         if (mainCanvas != null)
         {
             mainCanvas.SetActive(false);
-        }
+        }  
 
-        playerController player = FindFirstObjectByType<playerController>();
+        playerController player = FindFirstObjectByType<playerController>();  
         if (player != null)
         {
-            Destroy(player.gameObject);
+            Destroy(player.gameObject);  
         }
-
-        SceneManager.LoadScene("MainMenu");
+ 
+        SceneManager.LoadScene("MainMenu");  
     }
 
-    private void findPauseUIReferences()
-    {
+    private void findPauseUIReferences() 
+    {  
         if (mainCanvas == null)
         {
             GameObject canvasObject = GameObject.Find("UICanvas");
 
-            if (canvasObject != null)
+            if (canvasObject != null)  
             {
-                mainCanvas = canvasObject;
+                mainCanvas = canvasObject;   
             }
         }
 
-        if (pauseButton == null)
+        if (pauseButton == null)  
         {
             GameObject pauseButtonObject = GameObject.Find("pauseButton");
 
-            if (pauseButtonObject != null)
-            {
+            if (pauseButtonObject != null) 
+            {  
                 pauseButton = pauseButtonObject;
-            }
+            }  
         }
 
-        if (pausePanel == null && mainCanvas != null)
+        if (pausePanel == null && mainCanvas != null)  
         {
             Transform pausePanelTransform = mainCanvas.transform.Find("pausePanel");
-
-            if (pausePanelTransform != null)
+ 
+            if (pausePanelTransform != null) 
             {
-                pausePanel = pausePanelTransform.gameObject;
+                pausePanel = pausePanelTransform.gameObject;  
             }
         }
-    }
+    } 
 }

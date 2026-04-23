@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class gameController : MonoBehaviour
 {
-    public static gameController instance;
+    public static gameController instance;  
 
-    [SerializeField] private GameObject playerPrefab;
-    [SerializeField] private Transform mainSpawn;
+    [SerializeField] private GameObject playerPrefab;  
+    [SerializeField] private Transform mainSpawn;  
 
     private void Awake()
-    {
+    {   
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
@@ -17,14 +17,14 @@ public class gameController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
-
+    }  
+ 
     private void Start()
     {
-        SpawnPlayerAtMain();
-    }
+        spawnMain(); 
+    } 
 
-    void SpawnPlayerAtMain()
+    void spawnMain()    //call to spawn in prison scene
     {
         if (playerPrefab == null || mainSpawn == null)
         {

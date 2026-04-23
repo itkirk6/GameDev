@@ -3,19 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class deathMenu : MonoBehaviour
 {
-    public string mainMenuSceneName = "MainMenu";
+    public string mainMenuSceneName = "MainMenu";  
 
-    public void goToMainMenu()
+    public void goToMainMenu()     //call to go to main menu
     {
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; 
 
-        playerController player = FindFirstObjectByType<playerController>();
-
+        playerController player = FindFirstObjectByType<playerController>();  
+ 
         if (player != null)
-        {
+        {  
             Destroy(player.gameObject);
         }
 
-        SceneManager.LoadScene(mainMenuSceneName);
+        SceneManager.LoadScene(mainMenuSceneName);   //loads the main menu
     }
 }
