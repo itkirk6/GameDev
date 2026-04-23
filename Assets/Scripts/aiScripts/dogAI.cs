@@ -12,12 +12,15 @@ public class dogAI : MonoBehaviour
         public Vector2 facingAfterArrival = Vector2.down;
     }
 
-    [Header("Patrol")]
+    
     [SerializeField] private List<patrolPoint> patrolPoints = new List<patrolPoint>();
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private bool loop = true;
 
-    [Header("Chasing Player")]
+    [SerializeField] private AudioClip attackClip;
+    private AudioSource audioSource;
+
+
     public Transform player;
     public float detectionRadius = 5f;
     public float chaseSpeed = 3.5f;
@@ -43,6 +46,7 @@ public class dogAI : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -110,6 +114,10 @@ public class dogAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+        if (attackClip != null)
+        {
+            audioSource.PlayOneShot(attackClip);
+        }
 
         movementInput = Vector2.zero;
 
@@ -121,8 +129,6 @@ public class dogAI : MonoBehaviour
 
         if(Time.time >= nextAttackTime)
         {
-            Debug.Log(player == null);
-            Debug.Log(player.GetComponent<PlayerInventory>() == null);
             player.GetComponent<PlayerInventory>().playerHealth -= damage;
             nextAttackTime = Time.time + (1f / attackRate);
         }
