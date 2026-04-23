@@ -73,31 +73,14 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
 
     private bool playerHasRequiredItem(PlayerInventory playerInventory)
     {
-        if (playerInventory.currentEquippedItem == null)
-            return false;
-
-        ItemPickup heldItemPickup = playerInventory.currentEquippedItem.GetComponent<ItemPickup>();
-
-        if (heldItemPickup == null)
-            return false;
-
-        return heldItemPickup.itemName == requiredItemName;
+        return playerInventory.questItems.Contains(requiredItemName);
     }
 
     private void completeQuest(PlayerInventory playerInventory)
     {
-        GameObject heldItem = playerInventory.currentEquippedItem;
-        playerInventory.currentEquippedItem = null;
-
-        if (playerInventory.equippedItemUIBox != null)
+        if (playerInventory.questItems.Contains(requiredItemName))
         {
-            playerInventory.equippedItemUIBox.sprite = null;
-            playerInventory.equippedItemUIBox.enabled = false;
-        }
-
-        if (heldItem != null)
-        {
-            Destroy(heldItem);
+            playerInventory.questItems.Remove(requiredItemName);
         }
 
         Vector3 spawnPosition = transform.position;

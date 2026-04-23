@@ -11,7 +11,19 @@ public class PlayerInventory : MonoBehaviour
     public int playerHealth = 100;
     public Image equippedItemUIBox;
     public GameObject currentEquippedItem;
+    public static PlayerInventory instance;
 
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     void Start()
     {
         if(equippedItemUIBox != null)

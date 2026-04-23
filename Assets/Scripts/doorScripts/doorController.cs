@@ -11,15 +11,20 @@ public class DoorController : MonoBehaviour
     public Collider2D blockingCollider;
     private bool isOpen = false;
     private bool isLocked = true;
+    public bool guardsCanAutoOpen = false;
+    public string guardTag = "Guard";
+    private int guardsInTrigger = 0;
+    private bool openedByGuard = false;
+
 
     private void Awake()
     {
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
 
-        UpdateDoorVisual();
+        updateDoorVisual();
     }
-    private void UpdateDoorVisual()
+    private void updateDoorVisual()
     {
         if (spriteRenderer != null)
         {
@@ -52,22 +57,51 @@ public class DoorController : MonoBehaviour
         }
 
         if(isOpen)
-            CloseDoor();
+            closeDoor();
         else
-            OpenDoor();
+            openDoor();
     }
 
-    private void OpenDoor()
+    private void openDoor()
     {
         isOpen = true;
-        UpdateDoorVisual();
+        updateDoorVisual();
         Debug.Log("Door opened");
     }
 
-    private void CloseDoor()
+    private void closeDoor()
     {
         isOpen = false;
-        UpdateDoorVisual();
+        updateDoorVisual();
         Debug.Log("Door closed");
     }
+    public void guardEnteredDoorTrigger()
+    {
+        if (!guardsCanAutoOpen)
+            return;
+
+        guardsInTrigger++;
+
+        if (!isOpen)
+        {
+            isLocked = false;
+            openDoor();
+            openedByGuard = true;
+        }
+    }
+
+    public void guardExitedDoorTrigger()
+    {
+        if (!guardsCanAutoOpen)
+            return;
+
+        guardsInTrigger = Mathf.Max(0, guardsInTrigger - 1);
+
+        if (guardsInTrigger == 0 && openedByGuard)
+        {
+            closeDoor();
+            openedByGuard = false;
+        }
+    }
+
 }

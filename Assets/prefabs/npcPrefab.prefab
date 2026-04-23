@@ -261,5 +261,10 @@ MonoBehaviour:
   characterName: 
   singleLine: 
   multipleLines: []
+  completedLines: []
   delayBetweenLines: 4
   typingSpeed: 0.02
+  isQuestNpc: 0
+  requiredItemName: 
+  rewardItemPrefab: {fileID: 0}
+  rewardDropPoint: {fileID: 0}
