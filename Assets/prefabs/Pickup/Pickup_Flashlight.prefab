@@ -154,8 +154,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
   itemName: Flashlight
-  itemType: 0
+  itemType: 3
   itemValue: 0
+  pickupRange: 3
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!114 &8864214524959470008
 MonoBehaviour:
   m_ObjectHideFlags: 0
