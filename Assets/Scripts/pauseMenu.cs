@@ -12,7 +12,15 @@ public class PauseUI : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject); 
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
