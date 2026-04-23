@@ -7238,7 +7238,7 @@ PrefabInstance:
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: rewardItemPrefab
       value: 
-      objectReference: {fileID: 3698358983778486349, guid: a6c9c8cb05d31b04cac55e3b522d363c, type: 3}
+      objectReference: {fileID: 3698358983778486349, guid: fff37b4a3732a9641a8babd001f96d89, type: 3}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 6
@@ -7276,7 +7276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'completedLines.Array.data[0]'
-      value: Thanks for snaggin that knife for me here's that key to the Infirmary.
+      value: Thanks for snaggin that knife for me here's that key to the Laundry.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

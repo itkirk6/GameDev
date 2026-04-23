@@ -2128,7 +2128,7 @@ PrefabInstance:
       objectReference: {fileID: 1227913106}
     - target: {fileID: 5984859719475265003, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: requiredKeyName
-      value: None
+      value: Cell
       objectReference: {fileID: 0}
     - target: {fileID: 5999863406511293609, guid: 1b109aefd93ac754ea6265759a70ec55, type: 3}
       propertyPath: m_LocalPosition.x
