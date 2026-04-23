@@ -345,6 +345,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
+<<<<<<< HEAD
     m_TransformParent: {fileID: 1013889174}
     m_Modifications:
     - target: {fileID: 188948471519776339, guid: c528223bc8da7e7478ab618830565536, type: 3}
@@ -358,6 +359,17 @@ PrefabInstance:
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.45447
+=======
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.98431
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.72
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalPosition.z
@@ -369,6 +381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalRotation.x
+<<<<<<< HEAD
       value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
@@ -378,6 +391,17 @@ PrefabInstance:
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
+=======
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
       objectReference: {fileID: 0}
     - target: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1437,11 +1461,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1689350128}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!4 &398925582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 709485191118320488, guid: c528223bc8da7e7478ab618830565536, type: 3}
   m_PrefabInstance: {fileID: 1918221815}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
 --- !u!114 &451465117 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5984859719475265003, guid: cf48f28582c53674da92f3071af782d6, type: 3}
@@ -1781,6 +1808,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5999863406511293609, guid: 5d65d535781e33242b4327882361ef07, type: 3}
   m_PrefabInstance: {fileID: 1810736752}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &684343308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1855,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::gameController
   playerPrefab: {fileID: 4475872235262945198, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
   mainSpawn: {fileID: 1758899207}
+=======
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
 --- !u!1 &739693297
 GameObject:
   m_ObjectHideFlags: 0
@@ -25005,6 +25035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231937167}
   serializedVersion: 2
+<<<<<<< HEAD
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.29296, y: -0.71699, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -25014,6 +25045,61 @@ Transform:
   - {fileID: 132611601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 709485191118320488, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4475872235262945198, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+      propertyPath: m_Name
+      value: character
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
 --- !u!4 &1299226859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5999863406511293609, guid: cf48f28582c53674da92f3071af782d6, type: 3}
@@ -50004,6 +50090,7 @@ SceneRoots:
   - {fileID: 663777918}
   - {fileID: 574800371}
   - {fileID: 314577437}
+<<<<<<< HEAD
   - {fileID: 1659978569}
   - {fileID: 818273036}
   - {fileID: 2143011979}
@@ -50011,3 +50098,20 @@ SceneRoots:
   - {fileID: 1758899207}
   - {fileID: 1231937168}
   - {fileID: 1423806138}
+=======
+  - {fileID: 350266060}
+  - {fileID: 68062837}
+  - {fileID: 941983872}
+  - {fileID: 38366132}
+  - {fileID: 308450422}
+  - {fileID: 132611601}
+  - {fileID: 1277555121}
+  - {fileID: 1313458834}
+  - {fileID: 1918221815}
+  - {fileID: 365313131}
+  - {fileID: 40779262}
+  - {fileID: 1689350128}
+  - {fileID: 207952232}
+  - {fileID: 818273036}
+  - {fileID: 2143011979}
+>>>>>>> parent of 54a5f78 (Fulll  questline implemented)
