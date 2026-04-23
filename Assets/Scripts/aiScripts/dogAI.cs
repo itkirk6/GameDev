@@ -110,6 +110,7 @@ public class dogAI : MonoBehaviour
 
     private void AttackPlayer()
     {
+
         movementInput = Vector2.zero;
 
         Vector2 toPlayer = (player.position - transform.position).normalized;
@@ -120,7 +121,8 @@ public class dogAI : MonoBehaviour
 
         if(Time.time >= nextAttackTime)
         {
-            Debug.Log("Dog attacked player");
+            Debug.Log(player == null);
+            Debug.Log(player.GetComponent<PlayerInventory>() == null);
             player.GetComponent<PlayerInventory>().playerHealth -= damage;
             nextAttackTime = Time.time + (1f / attackRate);
         }
