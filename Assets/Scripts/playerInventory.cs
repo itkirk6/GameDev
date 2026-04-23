@@ -14,10 +14,12 @@ public class PlayerInventory : MonoBehaviour
     public Image equippedItemUIBox;
     public GameObject currentEquippedItem;
     [SerializeField] private AudioClip pickupClip;
+    public GameObject deathPanel;
 
     private AudioSource audioSource;
     public Slider healthSlider;
     public int maxHealth = 100;
+    private bool isDead = false;
 
 
     private void Awake()
@@ -32,6 +34,7 @@ public class PlayerInventory : MonoBehaviour
         findHealthSlider();
         findEquippedItemUIBox();
         updateHealthSlider();
+        findDeathPanel();
     }
 
 
@@ -39,8 +42,8 @@ public class PlayerInventory : MonoBehaviour
     {
         if(playerHealth <= 0)
         {
-            Debug.Log("Player is dead");
-            Destroy(gameObject);
+            isDead = true;
+            handleDeath();
         }
         if(Input.GetMouseButtonDown(0) && currentEquippedItem != null)
         {
@@ -156,8 +159,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (playerHealth <= 0)
         {
-            Debug.Log("Player is dead");
-            Destroy(gameObject);
+            handleDeath();
         }
     }
     private void findHealthSlider()
@@ -165,7 +167,8 @@ public class PlayerInventory : MonoBehaviour
         if (healthSlider != null)
             return;
 
-        GameObject sliderObject = GameObject.Find("HealthSlider");
+        GameObject sliderObject = GameObject.FindGameObjectWithTag("HealthSlider");
+
 
         if (sliderObject != null)
         {
@@ -195,7 +198,7 @@ public class PlayerInventory : MonoBehaviour
 
         findHealthSlider();
         findEquippedItemUIBox();
-
+        findDeathPanel();
         updateHealthSlider();
         updateEquippedItemUI();
     }
@@ -238,7 +241,31 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    private void findDeathPanel()
+    {
+        if (deathPanel != null)
+            return;
 
+        GameObject panelObject = GameObject.FindGameObjectWithTag("DeathPanel");
+
+        if (panelObject != null)
+        {
+            deathPanel = panelObject;
+            deathPanel.SetActive(false);
+        }
+    }
+
+    private void handleDeath()
+    {
+        findDeathPanel();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(true);
+        }
+
+        Time.timeScale = 0f;
+    }
 
 
 }
