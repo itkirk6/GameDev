@@ -5,6 +5,7 @@ public class MainMenuManager : MonoBehaviour
 {
     [Header("Popup Panel")]
     public GameObject HowToPlayPanel;
+    public GameObject UICanvas;
 
     private void Start()
     {
@@ -17,6 +18,7 @@ public class MainMenuManager : MonoBehaviour
     public void PlayButton()
     {
         SceneManager.LoadScene("prison");
+        UICanvas.SetActive(true);
     }
 
     public void OpenHowToPlay()

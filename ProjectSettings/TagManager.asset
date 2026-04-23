@@ -9,6 +9,7 @@ TagManager:
   - HealthSlider
   - EquippedItemBox
   - DeathPanel
+  - WinPanel
   layers:
   - Default
   - TransparentFX

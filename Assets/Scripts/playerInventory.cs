@@ -15,6 +15,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject currentEquippedItem;
     [SerializeField] private AudioClip pickupClip;
     public GameObject deathPanel;
+    public GameObject gameOverPanel;
 
     private AudioSource audioSource;
     public Slider healthSlider;
@@ -35,6 +36,7 @@ public class PlayerInventory : MonoBehaviour
         findEquippedItemUIBox();
         updateHealthSlider();
         findDeathPanel();
+        findGameOverPanel();
     }
 
 
@@ -265,6 +267,25 @@ public class PlayerInventory : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+    }
+
+    private void findGameOverPanel()
+    {
+        if (gameOverPanel != null)
+            return;
+
+        GameObject panelObject = GameObject.FindGameObjectWithTag("WinPanel");
+
+        if (panelObject != null)
+        {
+            gameOverPanel = panelObject;
+            gameOverPanel.SetActive(false);
+        }
+    }
+
+    public void handleGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
     }
 
 

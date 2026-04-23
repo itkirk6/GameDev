@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class GameOverTrigger : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverCanvas;
     [SerializeField] private AudioClip gameOverSound;
 
     private AudioSource audioSource;
+    private PlayerInventory playerInventory;
+    public GameObject gameOverPanel;
 
     private bool isGameOver = false;
 
@@ -15,14 +16,13 @@ public class GameOverTrigger : MonoBehaviour
 
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.playOnAwake = false;
+
+        playerInventory = FindFirstObjectByType<PlayerInventory>();
     }
 
     private void Start()
     {
-        if (gameOverCanvas != null)
-        {
-            gameOverCanvas.SetActive(false);
-        }
+        findGameOverPanel();
     }
 
     public void triggerGameOver()
@@ -30,8 +30,24 @@ public class GameOverTrigger : MonoBehaviour
         if (!isGameOver)
         {
             isGameOver = true;
-            gameOverCanvas.SetActive(true);
+            playerInventory.handleGameOverPanel();
             audioSource.PlayOneShot(gameOverSound);
         }
     }
+
+
+    private void findGameOverPanel()
+    {
+        if (gameOverPanel != null)
+            return;
+
+        GameObject panelObject = GameObject.FindGameObjectWithTag("WinPanel");
+
+        if (panelObject != null)
+        {
+            gameOverPanel = panelObject;
+            gameOverPanel.SetActive(false);
+        }
+    }
+
 }

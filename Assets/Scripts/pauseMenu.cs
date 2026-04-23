@@ -7,6 +7,7 @@ public class PauseUI : MonoBehaviour
 
     [SerializeField] private GameObject pauseButton;
     [SerializeField] private GameObject pausePanel;
+    [SerializeField] private GameObject mainCanvas;
 
     private bool isPaused = false;
 
@@ -80,6 +81,7 @@ public class PauseUI : MonoBehaviour
         isPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+        mainCanvas.SetActive(false);
         SceneManager.LoadScene("MainMenu");
     }
 }
