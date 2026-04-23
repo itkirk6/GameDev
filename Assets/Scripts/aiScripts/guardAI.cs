@@ -15,6 +15,10 @@ public class guardAI : MonoBehaviour
     [SerializeField] private List<patrolPoint> patrolPoints = new List<patrolPoint>();
     [SerializeField] private float movementSpeed = 2f;
     [SerializeField] private bool loop = true;
+
+    [SerializeField] private AudioClip attackClip;
+    private AudioSource audioSource;
+
     public Transform player;  
     public float viewDistance = 14f; 
     public float FOV = 120f;  
@@ -36,7 +40,8 @@ public class guardAI : MonoBehaviour
     void Start()
     {
         rigb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -106,6 +111,7 @@ public class guardAI : MonoBehaviour
 
         if(Time.time >= nextFireTime) 
         {
+
             Shoot(toPlayer);  
             nextFireTime = Time.time + fr;
         }
