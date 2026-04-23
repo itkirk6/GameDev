@@ -10935,12 +10935,24 @@ PrefabInstance:
       value: John Wayne
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardDropPoint
+      value: 
+      objectReference: {fileID: 7304750434115916983, guid: d18d080c63e8e564690ffd147a3b6813, type: 3}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: requiredItemName
+      value: Infirmary
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardItemPrefab
+      value: 
+      objectReference: {fileID: 1615538285643278395, guid: d18d080c63e8e564690ffd147a3b6813, type: 3}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: completedLines.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[0]'
@@ -10952,8 +10964,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[2]'
-      value: you see theres a prisoner named Cole Maxton that jumped me with a bunch
-        of his crones the otherday.
+      value: you see theres a prisoner named Cole Maxton that jumped me and stole
+        my key to the Courtyard.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[3]'
@@ -10971,8 +10983,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[6]'
-      value: You do this for me and I'll tell you where I burried some wire cutters
-        in the CourtYard.
+      value: You do this for me and I'll tell you where I burried somethin that'll
+        prolly bring more trouble than its worth in the CourtYard along with this
+        shovel I used to do it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'multipleLines.Array.data[7]'
+      value: You do this for me and I'll tell you where I burried somethin that'll
+        prolly bring more trouble than its worth in the CourtYard along with this
+        shovel I used to do it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[0]'
+      value: Good work, that oughta teach em a lesson.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[1]'
+      value: 'Here''s that shovel and the treasure is burried in uhhhhh... thats
+        right under one of the bushes but can''t remeber which one.  '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[2]'
+      value: Welp, have fun treasure huntin!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16379,7 +16411,7 @@ PrefabInstance:
       objectReference: {fileID: 1157350869}
     - target: {fileID: 1594472085162221783, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1594472085162221802, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_Pivot.x
@@ -17092,6 +17124,37 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &2001375111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2001375112}
+  m_Layer: 0
+  m_Name: shovelDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2001375112
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001375111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.23, y: -1.69, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004247724
 GameObject:
   m_ObjectHideFlags: 0
@@ -17198,3 +17261,4 @@ SceneRoots:
   - {fileID: 663980117}
   - {fileID: 978313794}
   - {fileID: 1129035649}
+  - {fileID: 2001375112}
