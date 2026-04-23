@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/showers.unity
     guid: 104da0a35b5367b4a9eb3d871d9c58a5
+  - enabled: 1
+    path: Assets/Scenes/prison.unity
+    guid: 283d45c5da1d47e4db3220d8cc5823a2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

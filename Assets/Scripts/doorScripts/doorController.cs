@@ -7,6 +7,9 @@ public class DoorController : MonoBehaviour
     public Sprite closedSprite;
     public Sprite openSprite;
 
+    [SerializeField] private AudioClip openDoorClip;
+    [SerializeField] private AudioClip closeDoorClip;
+
     public SpriteRenderer spriteRenderer;
     public Collider2D blockingCollider;
     private bool isOpen = false;
@@ -15,10 +18,13 @@ public class DoorController : MonoBehaviour
     public string guardTag = "Guard";
     private int guardsInTrigger = 0;
     private bool openedByGuard = false;
+    private AudioSource audioSource;
 
 
     private void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+
         if (spriteRenderer == null)
             spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -56,24 +62,38 @@ public class DoorController : MonoBehaviour
             }
         }
 
-        if(isOpen)
+        if (isOpen)
+        {
             closeDoor();
+        }
         else
+        {
             openDoor();
+        }
     }
 
     private void openDoor()
     {
+        if (openDoorClip != null)
+        {
+            audioSource.PlayOneShot(openDoorClip);
+        }
+
         isOpen = true;
         updateDoorVisual();
-        Debug.Log("Door opened");
+        //Debug.Log("Door opened");
     }
 
     private void closeDoor()
     {
+        if (closeDoorClip != null)
+        {
+            audioSource.PlayOneShot(closeDoorClip);
+        }
+
         isOpen = false;
         updateDoorVisual();
-        Debug.Log("Door closed");
+        //Debug.Log("Door closed");
     }
     public void guardEnteredDoorTrigger()
     {
