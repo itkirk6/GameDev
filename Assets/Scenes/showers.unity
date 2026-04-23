@@ -10550,56 +10550,56 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[0]
+      propertyPath: 'multipleLines.Array.data[0]'
       value: This might not be the best time, but I got a job if you want it.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[1]
+      propertyPath: 'multipleLines.Array.data[1]'
       value: or more like a hit...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[2]
+      propertyPath: 'multipleLines.Array.data[2]'
       value: you see theres a prisoner named Cole Maxton that jumped me with a bunch
         of his crones the otherday and stole my key to the Courtyard.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[3]
+      propertyPath: 'multipleLines.Array.data[3]'
       value: Maxton hangs out near the courtyard door and is wearing a read flanel.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[4]
+      propertyPath: 'multipleLines.Array.data[4]'
       value: I want revenge on that bastard, but I cant get in anymore trouble than
         I already am.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[5]
+      propertyPath: 'multipleLines.Array.data[5]'
       value: So thats where you come in and beat the crap out of him for me!
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[6]
+      propertyPath: 'multipleLines.Array.data[6]'
       value: Though I need it to be a little more violent... lets say with a rock
         to the head.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: multipleLines.Array.data[7]
+      propertyPath: 'multipleLines.Array.data[7]'
       value: You do this for me and I'll tell you where I burried somethin nice in
         the CourtYard along with the shovel I used to bury it.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[0]
+      propertyPath: 'completedLines.Array.data[0]'
       value: Good work, that oughta teach him not to mess with me
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[1]
+      propertyPath: 'completedLines.Array.data[1]'
       value: Now here's that shovel, and the location of the treasure is uhhhh...
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[2]
-      value: 'I can''t really remeber but I buried it under one of the bushes in the
-        courtyard. '
+      propertyPath: 'completedLines.Array.data[2]'
+      value: 'I can''t really remeber but I buried it under one of the bushes in
+        the courtyard. '
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: completedLines.Array.data[3]
+      propertyPath: 'completedLines.Array.data[3]'
       value: Oh, and you can keep that key I managed to get a spare.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -16135,6 +16135,14 @@ PrefabInstance:
     - target: {fileID: 1594472085162221803, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_Name
       value: UICanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
