@@ -98,6 +98,12 @@ public class PauseUI : MonoBehaviour
             mainCanvas.SetActive(false);
         }
 
+        playerController player = FindFirstObjectByType<playerController>();
+        if (player != null)
+        {
+            Destroy(player.gameObject);
+        }
+
         SceneManager.LoadScene("MainMenu");
     }
 
