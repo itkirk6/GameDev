@@ -7385,6 +7385,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UICanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1594472085249328480, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1594472085409806557, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 13
@@ -7398,7 +7402,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_AnchoredPosition.x
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 2695419729343455188, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 96
+      objectReference: {fileID: 0}
+    - target: {fileID: 6297855608976877896, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
