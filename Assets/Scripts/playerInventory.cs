@@ -30,14 +30,20 @@ public class PlayerInventory : MonoBehaviour
     }
     void Start()
     {
-        if(equippedItemUIBox != null)
+        if (equippedItemUIBox != null)
             equippedItemUIBox.enabled = false;
+
         audioSource = GetComponent<AudioSource>();
         findHealthSlider();
         findEquippedItemUIBox();
         updateHealthSlider();
         findDeathPanel();
         findGameOverPanel();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
     }
 
 
@@ -198,13 +204,20 @@ public class PlayerInventory : MonoBehaviour
     {
         healthSlider = null;
         equippedItemUIBox = null;
+        deathPanel = null;
 
         findHealthSlider();
         findEquippedItemUIBox();
         findDeathPanel();
         updateHealthSlider();
         updateEquippedItemUI();
+
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(false);
+        }
     }
+
 
     private void findEquippedItemUIBox()
     {
@@ -242,11 +255,14 @@ public class PlayerInventory : MonoBehaviour
             equippedItemUIBox.enabled = true;
             equippedItemUIBox.color = Color.white;
         }
-    }
+    }  
 
     private void findDeathPanel()
     {
         if (deathPanel != null)
+            return;
+
+        if (SceneManager.GetActiveScene().name == "MainMenu")
             return;
 
         GameObject panelObject = GameObject.FindGameObjectWithTag("DeathPanel");
@@ -254,24 +270,16 @@ public class PlayerInventory : MonoBehaviour
         if (panelObject != null)
         {
             deathPanel = panelObject;
-            deathPanel.SetActive(false);
         }
     }
 
     private void handleDeath()
     {
         findDeathPanel();
-        findPauseButton();
-
-        if (pauseButton != null)
-        {
-            pauseButton.SetActive(false);
-        }
 
         if (deathPanel != null)
         {
             deathPanel.SetActive(true);
-            deathPanel.transform.SetAsLastSibling();
         }
 
         Time.timeScale = 0f;
@@ -295,7 +303,7 @@ public class PlayerInventory : MonoBehaviour
     {
         gameOverPanel.SetActive(true);
     }
-
+    
     private void findPauseButton()
     {
         if (pauseButton != null)
