@@ -22,17 +22,25 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
     public void Interact(PlayerInteraction playerInteraction)
     {
         if (dialogue == null)
+        {
+            Debug.Log("Dialogue is null - exiting");
             return;
+        }
 
         if (dialogue.isTalking)
+        {
+            Debug.Log("Dialogue is already talking - exiting");
             return;
+        }
 
         if (isQuestNpc)
         {
+            Debug.Log("interacting with a quest NPC");
             PlayerInventory playerInventory = playerInteraction.GetComponent<PlayerInventory>();
 
             if (!questCompleted && playerInventory != null && playerHasRequiredItem(playerInventory))
             {
+                Debug.Log("quest completed");
                 completeQuest(playerInventory);
                 startDialogue(completedLines);
                 return;
@@ -44,20 +52,22 @@ public class DialogueTestScript : MonoBehaviour, IInteractable
                 return;
             }
         }
-
         startNormalDialogue();
     }
 
     private void startNormalDialogue()
     {
+        //Debug.Log("starting normal doalogue");
         dialogue.typingSpeed = typingSpeed;
 
         if (multipleLines == null || multipleLines.Length == 0)
         {
+            //Debug.Log("saying only one line?");
             dialogue.Say(singleLine, characterName, delayBetweenLines);
         }
         else
         {
+            //Debug.Log("saying multiple lines");
             dialogue.Say(multipleLines, characterName, delayBetweenLines);
         }
     }
