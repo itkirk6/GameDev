@@ -134,6 +134,8 @@ MonoBehaviour:
   equippedItemUIBox: {fileID: 0}
   currentEquippedItem: {fileID: 0}
   pickupClip: {fileID: 8300000, guid: 697d5017ee880b8438bb2a2679462c07, type: 3}
+  healthSlider: {fileID: 0}
+  maxHealth: 100
 --- !u!114 &1538394026013086189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 649793aee424a3e4f80e0ba75526ac0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  interactRadius: 0.5
+  interactRadius: 0.1
   interactableLayer:
     serializedVersion: 2
     m_Bits: 64

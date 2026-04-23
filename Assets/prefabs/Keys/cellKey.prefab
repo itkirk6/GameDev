@@ -168,6 +168,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!114 &5291967784999794077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,3 +184,6 @@ MonoBehaviour:
   itemName: Cell
   itemType: 1
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0

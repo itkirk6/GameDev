@@ -3,7 +3,7 @@
 
  public class PlayerInteraction : MonoBehaviour
  {
-     public float interactRadius = .5f;
+     public float interactRadius = .1f;
      public LayerMask interactableLayer;
      public LayerMask pickupLayer;
      public GameObject currentItemPrefab;

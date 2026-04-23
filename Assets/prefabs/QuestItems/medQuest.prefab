@@ -172,3 +172,6 @@ MonoBehaviour:
   itemName: MedBottle
   itemType: 3
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0

@@ -184,5 +184,6 @@ MonoBehaviour:
   itemName: CourtYard
   itemType: 3
   itemValue: 0
+  pickupRange: 0.5
   addToKeys: 1
   addToQuestItems: 1

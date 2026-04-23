@@ -138,6 +138,9 @@ MonoBehaviour:
   itemName: Knife
   itemType: 3
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!61 &7889446110423698345
 BoxCollider2D:
   m_ObjectHideFlags: 0

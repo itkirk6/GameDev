@@ -181,7 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemPrefab: {fileID: 0}
   itemName: Medkit
   itemType: 2
   itemValue: 60
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0

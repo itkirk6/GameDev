@@ -168,6 +168,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  originalScale: {x: 0, y: 0, z: 0}
 --- !u!114 &6303216674784828143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +181,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemName: GuardRoom
+  itemName: Guard
   itemType: 1
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0

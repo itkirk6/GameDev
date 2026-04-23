@@ -152,6 +152,9 @@ MonoBehaviour:
   itemName: Shovel
   itemType: 0
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!61 &8901061088671128433
 BoxCollider2D:
   m_ObjectHideFlags: 0

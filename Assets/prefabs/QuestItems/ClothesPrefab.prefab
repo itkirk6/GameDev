@@ -138,6 +138,9 @@ MonoBehaviour:
   itemName: Clothes
   itemType: 3
   itemValue: 0
+  pickupRange: 0.5
+  addToKeys: 0
+  addToQuestItems: 0
 --- !u!61 &7346187462497292519
 BoxCollider2D:
   m_ObjectHideFlags: 0
