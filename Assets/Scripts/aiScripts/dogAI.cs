@@ -123,7 +123,12 @@ public class dogAI : MonoBehaviour
         {
             Debug.Log(player == null);
             Debug.Log(player.GetComponent<PlayerInventory>() == null);
-            player.GetComponent<PlayerInventory>().playerHealth -= damage;
+            PlayerInventory playerInventory = player.GetComponent<PlayerInventory>();
+
+            if (playerInventory != null)
+            {
+                playerInventory.takeDamage(damage);
+            }
             nextAttackTime = Time.time + (1f / attackRate);
         }
     }

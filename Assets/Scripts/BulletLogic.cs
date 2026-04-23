@@ -15,12 +15,24 @@ public class BulletLogic : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Guard")) return;
-        if(collision.CompareTag("Player") && !collision.isTrigger) return;
+        if (collision.CompareTag("Guard")) 
+            return;
+
+        if (collision.CompareTag("Player") && !collision.isTrigger) 
+            return;
 
         Debug.Log($"Collided with {collision.name}");
-        if(collision.CompareTag("Player"))
-            collision.GetComponent<PlayerInventory>().playerHealth -= damage;
+
+        if (collision.CompareTag("Player"))
+        {
+            PlayerInventory playerInventory = collision.GetComponent<PlayerInventory>();
+
+            if (playerInventory != null)
+            {
+                playerInventory.takeDamage(damage);
+            }
+        }
+
         Destroy(gameObject);
     }
 }

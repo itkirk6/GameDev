@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class PlayerInventory : MonoBehaviour
     public int playerHealth = 100;
     public Image equippedItemUIBox;
     public GameObject currentEquippedItem;
+    public Slider healthSlider;
+    public int maxHealth = 100;
+
 
     private void Awake()
     {
@@ -18,9 +22,11 @@ public class PlayerInventory : MonoBehaviour
     }
     void Start()
     {
-        if(equippedItemUIBox != null)
-            equippedItemUIBox.enabled = false;
+        findHealthSlider();
+        findEquippedItemUIBox();
+        updateHealthSlider();
     }
+
 
     void Update()
     {
@@ -80,9 +86,12 @@ public class PlayerInventory : MonoBehaviour
             
             case ItemPickup.PickupType.Consumable:
                 playerHealth += pickupInfo.itemValue;
+                playerHealth = Mathf.Clamp(playerHealth, 0, maxHealth);
+                updateHealthSlider();
                 Debug.Log($"Restored {pickupInfo.itemValue} health.");
                 Destroy(pickupInfo.gameObject);
                 break;
+
 
             case ItemPickup.PickupType.Key:
                 if(!keys.Contains(pickupInfo.itemName))
@@ -120,5 +129,109 @@ public class PlayerInventory : MonoBehaviour
     {
         return keys.Contains(requiredKey);
     }
+    private void updateHealthSlider()
+    {
+        if (healthSlider == null)
+        {
+            findHealthSlider();
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.value = playerHealth;
+        }
+    }
+    public void takeDamage(int damageAmount)
+    {
+        playerHealth -= damageAmount;
+        playerHealth = Mathf.Clamp(playerHealth, 0, maxHealth);
+        updateHealthSlider();
+
+        if (playerHealth <= 0)
+        {
+            Debug.Log("Player is dead");
+            Destroy(gameObject);
+        }
+    }
+    private void findHealthSlider()
+    {
+        if (healthSlider != null)
+            return;
+
+        GameObject sliderObject = GameObject.Find("HealthSlider");
+
+        if (sliderObject != null)
+        {
+            healthSlider = sliderObject.GetComponent<Slider>();
+        }
+
+        if (healthSlider != null)
+        {
+            healthSlider.minValue = 0;
+            healthSlider.maxValue = maxHealth;
+        }
+    }
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += onSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= onSceneLoaded;
+    }
+
+    private void onSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        healthSlider = null;
+        equippedItemUIBox = null;
+
+        findHealthSlider();
+        findEquippedItemUIBox();
+
+        updateHealthSlider();
+        updateEquippedItemUI();
+    }
+
+    private void findEquippedItemUIBox()
+    {
+        if (equippedItemUIBox != null)
+            return;
+
+        GameObject equippedItemObject = GameObject.FindGameObjectWithTag("EquippedItemBox");
+
+        if (equippedItemObject != null)
+        {
+            equippedItemUIBox = equippedItemObject.GetComponent<Image>();
+        }
+    }
+    private void updateEquippedItemUI()
+    {
+        if (equippedItemUIBox == null)
+        {
+            findEquippedItemUIBox();
+        }
+
+        if (equippedItemUIBox == null)
+            return;
+
+        if (currentEquippedItem == null)
+        {
+            equippedItemUIBox.enabled = false;
+            return;
+        }
+
+        SpriteRenderer itemSpriteRenderer = currentEquippedItem.GetComponent<SpriteRenderer>();
+
+        if (itemSpriteRenderer != null)
+        {
+            equippedItemUIBox.sprite = itemSpriteRenderer.sprite;
+            equippedItemUIBox.enabled = true;
+            equippedItemUIBox.color = Color.white;
+        }
+    }
+
+
+
 
 }
