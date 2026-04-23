@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
+
 public class Flashlight: MonoBehaviour, IUsableItem
 {
     private  bool isOn = true;
