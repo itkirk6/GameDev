@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &924637469562327405
+--- !u!1 &1615538285643278395
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6080753367526072002}
-  - component: {fileID: 6745885469084999152}
-  - component: {fileID: 400306810166063697}
-  - component: {fileID: 8755375321950016633}
-  - component: {fileID: -4168422006910216191}
-  - component: {fileID: 7579670561431441296}
-  m_Layer: 6
-  m_Name: Pickup_Rock
+  - component: {fileID: 7304750434115916983}
+  - component: {fileID: 297714100370558890}
+  - component: {fileID: 400638924530650960}
+  - component: {fileID: 2484625625187313965}
+  - component: {fileID: 8230516329500744038}
+  - component: {fileID: 8901061088671128433}
+  m_Layer: 0
+  m_Name: Pickup_wireCutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6080753367526072002
+--- !u!4 &7304750434115916983
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
+  m_GameObject: {fileID: 1615538285643278395}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.86, y: 2.98, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalPosition: {x: 0.77172, y: 0.24131, z: 0}
+  m_LocalScale: {x: 0.11, y: 0.11, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &6745885469084999152
+--- !u!212 &297714100370558890
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
+  m_GameObject: {fileID: 1615538285643278395}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 3452003437791708593, guid: 91eb042f80c092946890970c6a66cc87, type: 3}
+  m_Sprite: {fileID: -5951239237938727409, guid: 0367e70ec85200347905a6dddd44aded, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,13 +95,70 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &400306810166063697
+--- !u!114 &400638924530650960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615538285643278395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c758dd6617b76d84a94fa0dd389402fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shovel
+  wireCutterPrefab: {fileID: 1615538285643278395}
+--- !u!114 &2484625625187313965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615538285643278395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 299e8b532554631468ec6b47cc5f44cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
+  hoverMultiplier: 1.1
+  onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8230516329500744038}
+        m_TargetAssemblyTypeName: ItemPickup, Assembly-CSharp
+        m_MethodName: Collect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  originalScale: {x: 0, y: 0, z: 0}
+--- !u!114 &8230516329500744038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1615538285643278395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
+  itemName: Shovel
+  itemType: 0
+  itemValue: 0
+--- !u!61 &8901061088671128433
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
+  m_GameObject: {fileID: 1615538285643278395}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -129,74 +186,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0054376125, y: 0.005437672}
+  m_Offset: {x: 0.012913346, y: -0.00000047683716}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.76, y: 0.56}
+    oldSize: {x: 4.68, y: 6.02}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.88038206, y: 0.6411499}
+  m_Size: {x: 4.5664053, y: 4.988762}
   m_EdgeRadius: 0
---- !u!114 &8755375321950016633
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 485ce03939f3fb84fb4a15288f8c0e2e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Rock
-  rockPrefab: {fileID: 924637469562327405, guid: 464c86177bac62345b97730b0cb37a90, type: 3}
-  throwDistance: 3
-  throwSpeed: 8
---- !u!114 &-4168422006910216191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 299e8b532554631468ec6b47cc5f44cd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InteractableObject
-  hoverMultiplier: 1.1
-  onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7579670561431441296}
-        m_TargetAssemblyTypeName: ItemPickup, Assembly-CSharp
-        m_MethodName: Collect
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  originalScale: {x: 0, y: 0, z: 0}
---- !u!114 &7579670561431441296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 924637469562327405}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 870d2aa9c02a48f4992f56ab34699d30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemPickup
-  itemName: Rock
-  itemType: 0
-  itemValue: 0

@@ -216,7 +216,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::triggerManager
   spawnPointName: fromPrison
-  playerPrefab: {fileID: 4475872235262945198, guid: 9a394353d5748854bbfa33337a6fb3ee, type: 3}
 --- !u!4 &263495820
 Transform:
   m_ObjectHideFlags: 0
@@ -7100,6 +7099,10 @@ PrefabInstance:
       propertyPath: requiredItemName
       value: Knife
       objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardItemPrefab
+      value: 
+      objectReference: {fileID: 3698358983778486349, guid: a6c9c8cb05d31b04cac55e3b522d363c, type: 3}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
       value: 6

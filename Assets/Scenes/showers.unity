@@ -10935,12 +10935,24 @@ PrefabInstance:
       value: John Wayne
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardDropPoint
+      value: 
+      objectReference: {fileID: 870358169}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: requiredItemName
+      value: Cafeteria
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: rewardItemPrefab
+      value: 
+      objectReference: {fileID: 1615538285643278395, guid: d18d080c63e8e564690ffd147a3b6813, type: 3}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: multipleLines.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: completedLines.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[0]'
@@ -10953,32 +10965,84 @@ PrefabInstance:
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[2]'
       value: you see theres a prisoner named Cole Maxton that jumped me with a bunch
-        of his crones the otherday.
+        of his crones the otherday and stole my key to the Courtyard.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'multipleLines.Array.data[3]'
+      value: Maxton hangs out near the courtyard door and is wearing a read flanel.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'multipleLines.Array.data[4]'
       value: I want revenge on that bastard, but I cant get in anymore trouble than
         I already am.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[4]'
+      propertyPath: 'multipleLines.Array.data[5]'
       value: So thats where you come in and beat the crap out of him for me!
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[5]'
+      propertyPath: 'multipleLines.Array.data[6]'
       value: Though I need it to be a little more violent... lets say with a rock
         to the head.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
-      propertyPath: 'multipleLines.Array.data[6]'
-      value: You do this for me and I'll tell you where I burried some wire cutters
-        in the CourtYard.
+      propertyPath: 'multipleLines.Array.data[7]'
+      value: You do this for me and I'll tell you where I burried somethin nice in
+        the CourtYard along with the shovel I used to bury it.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[0]'
+      value: Good work, that oughta teach him not to mess with me
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[1]'
+      value: Now here's that shovel, and the location of the treasure is uhhhh...
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[2]'
+      value: 'I can''t really remeber but I buried it under one of the bushes in
+        the courtyard. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+      propertyPath: 'completedLines.Array.data[3]'
+      value: Oh, and you can keep that key I managed to get a spare.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
+--- !u!1 &870358168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 870358169}
+  m_Layer: 0
+  m_Name: shovelDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &870358169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870358168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.12, y: -1.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881531874
 GameObject:
   m_ObjectHideFlags: 0
@@ -16379,7 +16443,7 @@ PrefabInstance:
       objectReference: {fileID: 1157350869}
     - target: {fileID: 1594472085162221783, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_RenderMode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1594472085162221802, guid: 9e2be8eb880c8cc4094d465d19874448, type: 3}
       propertyPath: m_Pivot.x
@@ -17198,3 +17262,4 @@ SceneRoots:
   - {fileID: 663980117}
   - {fileID: 978313794}
   - {fileID: 1129035649}
+  - {fileID: 870358169}

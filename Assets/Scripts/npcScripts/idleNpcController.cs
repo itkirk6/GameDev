@@ -2,6 +2,44 @@ using UnityEngine;
 
 public class idleNpcController : MonoBehaviour
 {
-    [Header("NPC Info")]
     public string npcName;
+    public bool canBeKnockedOver = false;
+    public GameObject droppedKeyPrefab;
+    public Transform dropPoint;
+    public Sprite knockedOverSprite;
+
+    private bool isKnockedOver = false;
+    private SpriteRenderer spriteRenderer;
+    private Collider2D npcCollider;
+
+    private void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        npcCollider = GetComponent<Collider2D>();
+    }
+
+    public void knockOver()
+    {
+        if (!canBeKnockedOver || isKnockedOver)
+            return;
+
+        isKnockedOver = true;
+
+        if (knockedOverSprite != null && spriteRenderer != null)
+        {
+            spriteRenderer.sprite = knockedOverSprite;
+        }
+
+        Vector3 spawnPosition = transform.position;
+
+        if (dropPoint != null)
+        {
+            spawnPosition = dropPoint.position;
+        }
+
+        if (droppedKeyPrefab != null)
+        {
+            Instantiate(droppedKeyPrefab, spawnPosition, Quaternion.identity);
+        }
+    }
 }
