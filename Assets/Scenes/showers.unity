@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 200124616}
   - component: {fileID: 200124615}
   - component: {fileID: 200124617}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10600,7 +10600,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'completedLines.Array.data[3]'
-      value: Oh, and you can keep that key I managed to get a spare.
+      value: Oh, and you can keep that key to the courtyard Cole dropped, I managed
+        to get a spare.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

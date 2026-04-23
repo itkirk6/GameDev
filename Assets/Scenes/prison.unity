@@ -51007,7 +51007,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'completedLines.Array.data[0]'
-      value: Nice, here's the key.
+      value: Nice, here's the key. I swiped this off a guard so I'm pretty sure it
+        can open all the cells.
       objectReference: {fileID: 0}
     - target: {fileID: 8365984140137022275, guid: 4524c014f7461fa46af879a9f1f57eb1, type: 3}
       propertyPath: 'completedLines.Array.data[1]'
@@ -52369,7 +52370,8 @@ MonoBehaviour:
     I yoinked before I was caught.
   - You get me some food, and I'll give you the key.
   completedLines:
-  - Ah you're a life saver man, heres that key I promised.
+  - Ah you're a life saver man, heres that key I promised. This baby will get you
+    behind the counter in the cafeteria.
   delayBetweenLines: 4
   typingSpeed: 0.02
   isQuestNpc: 1
